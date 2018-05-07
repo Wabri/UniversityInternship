@@ -1,0 +1,3 @@
+[submodule "AngularJs/angularJS-Up-And-Running"]
+	path = AngularJs/angularJS-Up-And-Running
+	url = git@github.com:Wabri/angularJS-Up-And-Running.git
