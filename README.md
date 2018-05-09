@@ -17,4 +17,6 @@
 * Analisi di un chatbot (vedi: [repository](https://github.com/girliemac/web-speech-ai))
 
 ## Day 4 [05/05/18]
-* Creazione di un chatbot locale (vedi [repository]()
+* Creazione di un chatbot locale (vedi [repository](https://github.com/Wabri/BVChatBot)) 
+* Creazione di un prototipo di inteligenza artificiale per pagamenti usando [dialogflow](https://dialogflow.com)
+* Tentativo di comprensione del vecchio prototipo (risultato: riesce solo a eseguire un singolo test e a generare un json con le diverse valute europee)
