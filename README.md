@@ -3,9 +3,18 @@
 ## Day 1 [02/05/18] :
 * Spiegazione architettura software
 * Individato un percorso indicativo da seguire: AngularJS, Spring, ChatBot
-* Inizio studio di AngularJS sul libro: AngularJS Up & Running Book for O'Reilly
-* Arrivato fino al capitolo 2 del libro
+* Inizio studio di AngularJS sul libro: AngularJS Up & Running Book for O'Reilly (vedi: [AngularJSRepo](https://github.com/Wabri/UniversityInternship/tree/master/AngularJs))
+* Arrivato fino al capitolo 2 del libro (vedi: [AngularJSRepo](https://github.com/Wabri/UniversityInternship/tree/master/AngularJs))
 
 ## Day 2 [03/05/18]
-* Continuato lo studio di AngularJS fino al capitolo 3
+* Continuato lo studio di AngularJS fino al capitolo 3 (vedi: [AngularJSRepo](https://github.com/Wabri/UniversityInternship/tree/master/AngularJs))
 * Varie prove di unit test usando Jasmine per l'implementazione dei test e Karma per il running
+
+## Day 3 [04/05/18]
+* Continuato lo studio di AngularJS fino a capitolo 4 (vedi: [AngularJSRepo](https://github.com/Wabri/UniversityInternship/tree/master/AngularJs))
+* Studio del vecchio progetto chatBot su macchina remota
+* Vari test su dialogflow per la generazione di file di configurazione per il chatbot
+* Analisi di un chatbot (vedi: [repository](https://github.com/girliemac/web-speech-ai))
+
+## Day 4 [05/05/18]
+* Creazione di un chatbot locale (vedi [repository]()
