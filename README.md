@@ -23,4 +23,4 @@
 
 ## Day 4 [10/05/18]
 * Continuato la stesura del codice del chatbot (vedi [repository](https://github.com/Wabri/BVChatBot))
-* Studio degli strumenti usati nella chat: [SpeechRecognition](https://developer.mozilla.org/en-US/docs/Web/API/SpeechRecognition), [Socket.io](https://socket.io/) , [API.AI](https://dialogflow.com/docs/getting-started/basics)
+* Studio degli strumenti usati nella chat: [SpeechRecognition](https://developer.mozilla.org/en-US/docs/Web/API/SpeechRecognition), [Socket.io](https://socket.io/) , [API.AI](https://github.com/dialogflow/dialogflow-nodejs-client-v2)
