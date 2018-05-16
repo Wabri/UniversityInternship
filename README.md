@@ -21,6 +21,9 @@
 * Creazione di un prototipo di inteligenza artificiale per pagamenti usando [dialogflow](https://dialogflow.com)
 * Tentativo di comprensione del vecchio prototipo (risultato: riesce solo a eseguire un singolo test e a generare un json con le diverse valute europee)
 
-## Day 4 [10/05/18]
+## Day 5 [10/05/18]
 * Continuato la stesura del codice del chatbot (vedi [repository](https://github.com/Wabri/BVChatBot))
 * Studio degli strumenti usati nella chat: [SpeechRecognition](https://developer.mozilla.org/en-US/docs/Web/API/SpeechRecognition), [Socket.io](https://socket.io/) , [API.AI](https://github.com/dialogflow/dialogflow-nodejs-client-v2)
+
+## Day 6 [16/05/18]
+* Continuato lo studio di AngularJS fino al capitolo 6 (vedi: [AngularJSRepo](https://github.com/Wabri/UniversityInternship/tree/master/AngularJs)) 
