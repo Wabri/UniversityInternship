@@ -27,3 +27,6 @@
 
 ## Day 6 [16/05/18] : 7,5 ore
 * Continuato lo studio di AngularJS fino al capitolo 6 (vedi: [AngularJSRepo](https://github.com/Wabri/UniversityInternship/tree/master/AngularJs)) 
+
+## Day 7 [17/05/18] : 5,5 ore
+* Integrazione text chat bot (vedi [repository](https://github.com/Wabri/BVChatBot))
