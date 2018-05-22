@@ -31,6 +31,6 @@
 ## Day 7 [17/05/18] : 5,5 ore
 * Integrazione text chat bot (vedi repository: [BVChatBot](https://github.com/Wabri/BVChatBot))
 
-## day 8 [22/05/18] : 
+## Day 8 [22/05/18] : 6,5 ore
 * Studio della documentazione dello strumento open source [rasa](https://rasa.com/) che permette di usare strumenti di machine learning, dovrebbe sostituire dialogflow permettendo di trattenere dati sensibili all'interno della rete del software sviluppato evitando l'intermediario google.
 * Creazione di alcuni esempi per l'utilizzo di [rasa](https://rasa.com/) (vedi repository: [LearningRasaNLU](https://github.com/Wabri/LearningRasaNLU/))
