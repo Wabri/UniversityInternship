@@ -35,3 +35,6 @@
 * Studio della documentazione dello strumento open source [rasa](https://rasa.com/) che permette di usare strumenti di machine learning, dovrebbe sostituire dialogflow permettendo di trattenere dati sensibili all'interno della rete del software sviluppato evitando l'intermediario google.
 * Creazione di alcuni esempi per l'utilizzo di [rasa](https://rasa.com/) (vedi repository: [LearningRasaNLU](https://github.com/Wabri/LearningRasaNLU/))
 * Installazione componenti necessari per sviluppo [rasa](https://rasa.com/) su sistema operativo windows: python, pip, [spacy](https://spacy.io/), rasa_nlu, rasa_core
+
+## Day 9 [23/05/18] :
+* Studio di Rasa NLU nei docs della pagina ufficiale [rasa](https://rasa.com/)
