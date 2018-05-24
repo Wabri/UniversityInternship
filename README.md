@@ -41,4 +41,8 @@
 * Studio dell'architettura MVC con servizi Rest e [spring boot](https://spring.io/guides)
 * Studio di un esempio spring e vari test usando swagger (vedi directory: [exampleSpringRest](https://github.com/Wabri/UniversityInternship/tree/master/exampleSpringRest/BV-SERVICES-TEST))
 
-## Day 10 [24/05/18] :
+## Day 10 [24/05/18] : 
+* Ricerca di un esempio di chat bot testuale
+* Generazione del front-end base
+* Esecuzione di una comunicazione base tra back-end [exampleSpringRest](https://github.com/Wabri/UniversityInternship/tree/master/exampleSpringRest/BV-SERVICES-TEST)) e front-end
+* Problemi con la spring boot e grunt, la richiesta inviata tramite front-end non veniva accettata dal back-end in localhost quindi è stato necessario inserire una configurazione globale che potesse consentire lo scambio di dati
