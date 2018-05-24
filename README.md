@@ -39,6 +39,6 @@
 ## Day 9 [23/05/18] : 6,5
 * Studio di Rasa NLU nei docs della pagina ufficiale [rasa](https://rasa.com/)
 * Studio dell'architettura MVC con servizi Rest e spring boot
-* Studio di un esempio spring e vari test usando swagger
+* Studio di un esempio spring e vari test usando swagger (vedi directory: [exampleSpringRest](https://github.com/Wabri/UniversityInternship/tree/master/exampleSpringRest/BV-SERVICES-TEST))
 
 ## Day 10 [24/05/18] :
