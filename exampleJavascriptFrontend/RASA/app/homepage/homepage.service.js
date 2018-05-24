@@ -6,8 +6,8 @@
 
   /**
    * bvAlertService
-   * @param {*}  
-   * @param {*}  
+   * @param {*}
+   * @param {*}
    */
   function HomePageService($http, $timeout, $q, $translate, bvApiService, bvStoreFactory, bvHttpPromisesFactory, bvBusyService) {
 
@@ -18,14 +18,13 @@
     self.rest1 = rest1;
 
     /**
-     * 
+     *
      */
     function rest1() {
 
       var waitPromise = bvHttpPromisesFactory.defer('Prova rest1 in corso...');
-
       // la chiamata
-      var url = bvApiService.getEndpoint() + '/login';
+      var url = bvApiService.getEndpoint() + 'dataById?id=12';
       $http
         .get(url)
         .then(function (res) {

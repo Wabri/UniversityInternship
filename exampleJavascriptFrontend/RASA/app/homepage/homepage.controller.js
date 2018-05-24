@@ -41,7 +41,6 @@
 
       return defer.promise.then(
         function (ds) {
-          vm.api31.setDataSource(ds);
         },
         function (error) {
           defer.reject();
