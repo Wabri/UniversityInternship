@@ -36,5 +36,9 @@
 * Creazione di alcuni esempi per l'utilizzo di [rasa](https://rasa.com/) (vedi repository: [LearningRasaNLU](https://github.com/Wabri/LearningRasaNLU/))
 * Installazione componenti necessari per sviluppo [rasa](https://rasa.com/) su sistema operativo windows: python, pip, [spacy](https://spacy.io/), rasa_nlu, rasa_core
 
-## Day 9 [23/05/18] :
+## Day 9 [23/05/18] : 6,5
 * Studio di Rasa NLU nei docs della pagina ufficiale [rasa](https://rasa.com/)
+* Studio dell'architettura MVC con servizi Rest e spring boot
+* Studio di un esempio spring e vari test usando swagger
+
+## Day 10 [24/05/18] :
