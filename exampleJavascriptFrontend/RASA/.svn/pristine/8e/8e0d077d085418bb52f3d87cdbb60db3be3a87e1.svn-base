@@ -1,0 +1,24 @@
+(function () {
+    'use strict';
+
+    angular.module('revux')
+        .directive('lowercase', lowercase);
+
+    function lowercase() {
+        return {
+            restrict: "A",
+            require: "?ngModel",
+            link: function (scope, element, attrs, ngModel) {
+
+                //This part of the code manipulates the model
+                ngModel.$parsers.push(function (input) {
+                    return input ? input.toLowerCase() : "";
+                });
+
+                //This part of the code manipulates the viewvalue of the element
+                element.css("text-transform", "lowercase");
+            }
+        }
+    }
+})();
+

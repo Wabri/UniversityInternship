@@ -1,0 +1,30 @@
+#download2 {
+  // float:left;
+  cursor: pointer;
+  color: #ccc;
+  padding: 3px;
+}
+
+#download2:hover {
+  color: #dddd;
+}
+
+
+canvas {
+    background-color: #f3f3f3;
+    -webkit-box-shadow: 3px 3px 3px 0 #e3e3e3;
+    -moz-box-shadow: 3px 3px 3px 0 #e3e3e3;
+    box-shadow: 3px 3px 3px 0 #e3e3e3;
+    border: 1px solid #c3c3c3;
+    height: 100px;
+    margin: 6px 0 0 6px;
+}
+
+
+#snapshot2 {
+  border-style: none;
+  background-color: black;
+  width: rem(300);
+  height: rem(250);
+  box-shadow: none;
+}

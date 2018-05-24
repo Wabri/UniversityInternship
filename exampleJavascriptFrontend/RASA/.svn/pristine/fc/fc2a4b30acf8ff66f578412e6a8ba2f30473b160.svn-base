@@ -1,0 +1,26 @@
+(function() {
+  'use strict';
+
+  angular.module(APP_NAME)
+    .service('missingVictimService', missingVictimService)
+
+  /**
+   * bvAlertService
+   * @param {*}
+   * @param {*}
+   */
+  function missingVictimService(bvStoreFactory) {
+
+    // methods
+    var self = this;
+
+    //metodi
+    self.method1 = method1;
+
+    function method1() {
+      bvStoreFactory.missingVictim.param1 = 12;
+    }
+
+  }
+
+})();

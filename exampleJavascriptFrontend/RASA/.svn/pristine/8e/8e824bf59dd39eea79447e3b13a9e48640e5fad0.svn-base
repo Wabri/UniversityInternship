@@ -1,0 +1,14 @@
+(function() {
+  'use strict';
+
+
+  angular.module('revux')
+  .filter('dateInDifferentYear', function() {
+    return function(date) {
+      return moment(date).year() != moment().year() ? true : false;
+    };
+  });
+
+
+
+})();

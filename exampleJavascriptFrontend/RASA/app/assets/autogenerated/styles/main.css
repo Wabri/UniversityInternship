@@ -1,0 +1,814 @@
+/**
+ALTERNATIVA
+*/
+@keyframes circle-loader {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: url(/assets/fonts/MaterialIcons/MaterialIcons-Regular.eot);
+  /* For IE6-8 */
+  src: local("Material Icons"), local("MaterialIcons-Regular"), url(/assets/fonts/MaterialIcons/MaterialIcons-Regular.woff2) format("woff2"), url(/assets/fonts/MaterialIcons/MaterialIcons-Regular.woff) format("woff"), url(/assets/fonts/MaterialIcons/MaterialIcons-Regular.ttf) format("truetype");
+}
+/* line 13, ../../styles/base/_fonts.scss */
+.material-icons {
+  font-family: "Material Icons";
+  font-weight: normal;
+  font-style: normal;
+  font-size: 1.4285714286rem;
+  /* Preferred icon size */
+  display: inline-block;
+  line-height: 0.0714285714rem;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+  /* Support for IE. */
+  font-feature-settings: "liga";
+}
+
+/* Rules for sizing the icon. */
+/* line 39, ../../styles/base/_fonts.scss */
+.material-icons.md-18 {
+  font-size: 1.2857142857rem;
+}
+
+/* line 43, ../../styles/base/_fonts.scss */
+.material-icons.md-24 {
+  font-size: 1.7142857143rem;
+}
+
+/* line 47, ../../styles/base/_fonts.scss */
+.material-icons.md-36 {
+  font-size: 2.5714285714rem;
+}
+
+/* line 51, ../../styles/base/_fonts.scss */
+.material-icons.md-48 {
+  font-size: 3.4285714286rem;
+}
+
+/* Rules for using icons as black on a light background. */
+/* line 58, ../../styles/base/_fonts.scss */
+.material-icons.md-dark {
+  color: rgba(0, 0, 0, 0.54);
+}
+
+/* line 62, ../../styles/base/_fonts.scss */
+.material-icons.md-dark.md-inactive {
+  color: rgba(0, 0, 0, 0.26);
+}
+
+/* Rules for using icons as white on a dark background. */
+/* line 69, ../../styles/base/_fonts.scss */
+.material-icons.md-light {
+  color: white;
+}
+
+/* line 73, ../../styles/base/_fonts.scss */
+.material-icons.md-light.md-inactive {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+@font-face {
+  font-family: "OpenSans";
+  src: url(/assets/fonts/OpenSans/OpenSans-Regular.ttf) format("ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "OpenSans";
+  src: url(/assets/fonts/OpenSans/OpenSans-Bold.ttf) format("ttf");
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: "OpenSans";
+  src: url(/assets/fonts/OpenSans/OpenSans-Italic.ttf) format("ttf");
+  font-weight: normal;
+  font-style: italic;
+}
+@font-face {
+  font-family: "OpenSans";
+  src: url(/assets/fonts/OpenSans/OpenSans-BoldItalic.ttf) format("ttf");
+  font-weight: bold;
+  font-style: italic;
+}
+/**
+ * Clear inner floats
+ */
+/* line 9, ../../styles/base/_helpers.scss */
+.clearfix::after {
+  clear: both;
+  content: '';
+  display: table;
+}
+
+/**
+ * Hide text while making it readable for screen readers
+ * 1. Needed in WebKit-based browsers because of an implementation bug;
+ *    See: https://code.google.com/p/chromium/issues/detail?id=457146
+ */
+/* line 22, ../../styles/base/_helpers.scss */
+.hide-text {
+  overflow: hidden;
+  padding: 0;
+  /* 1 */
+  text-indent: 101%;
+  white-space: nowrap;
+}
+
+/**
+ * Hide element while making it readable for screen readers
+ * Shamelessly borrowed from HTML5Boilerplate:
+ * https://github.com/h5bp/html5-boilerplate/blob/master/src/css/main.css#L119-L133
+ */
+/* line 37, ../../styles/base/_helpers.scss */
+.visually-hidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+/* line 1, ../../styles/layout/_header.scss */
+.navbar-header .navbar-toggle {
+  float: left;
+}
+
+/* line 6, ../../styles/layout/_header.scss */
+.language-select {
+  margin-top: 8px;
+}
+/* line 10, ../../styles/layout/_header.scss */
+.language-select select {
+  -webkit-appearance: menulist-button;
+}
+
+/* line 1, ../../styles/components/_wait.scss */
+.bv-dialog-wait {
+  height: 5.7142857143rem;
+  overflow: hidden;
+  padding: 0.3571428571rem;
+}
+
+/* line 7, ../../styles/components/_wait.scss */
+.bv-dialog-wait-title {
+  text-align: center;
+  margin-top: 0.3571428571rem;
+  margin-bottom: 0.3571428571rem;
+}
+
+/* line 1, ../../styles/vendor/_vendor.scss */
+.md-title {
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 0.005em;
+}
+
+/*! normalize-scss | MIT/GPLv2 License | bit.ly/normalize-scss */
+/* Document
+   ========================================================================== */
+/**
+ * 1. Correct the line height in all browsers.
+ * 2. Prevent adjustments of font size after orientation changes in
+ *    IE on Windows Phone and in iOS.
+ */
+/* line 56, ../../../../bower_components/normalize-scss/sass/normalize/_normalize-mixin.scss */
+html {
+  line-height: 1.15;
+  /* 1 */
+  -ms-text-size-adjust: 100%;
+  /* 2 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */
+}
+
+/* Sections
+   ========================================================================== */
+/**
+ * Remove the margin in all browsers (opinionated).
+ */
+/* line 85, ../../../../bower_components/normalize-scss/sass/normalize/_normalize-mixin.scss */
+body {
+  margin: 0;
+}
+
+/**
+ * Add the correct display in IE 9-.
+ */
+/* line 93, ../../../../bower_components/normalize-scss/sass/normalize/_normalize-mixin.scss */
+article,
+aside,
+footer,
+header,
+nav,
+section {
+  display: block;
+}
+
+/**
+ * Correct the font size and margin on `h1` elements within `section` and
+ * `article` contexts in Chrome, Firefox, and Safari.
+ */
+/* line 107, ../../../../bower_components/normalize-scss/sass/normalize/_normalize-mixin.scss */
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+/* Grouping content
+   ========================================================================== */
+/**
+ * Add the correct display in IE 9-.
+ */
+/* line 200, ../../../../bower_components/normalize-scss/sass/normalize/_normalize-mixin.scss */
+figcaption,
+figure {
+  display: block;
+}
+
+/**
+ * Add the correct margin in IE 8.
+ */
+/* line 209, ../../../../bower_components/normalize-scss/sass/normalize/_normalize-mixin.scss */
+figure {
+  margin: 1em 40px;
+}
+
+/**
+ * 1. Add the correct box sizing in Firefox.
+ * 2. Show the overflow in Edge and IE.
+ */
+/* line 223, ../../../../bower_components/normalize-scss/sass/normalize/_normalize-mixin.scss */
+hr {
+  box-sizing: content-box;
+  /* 1 */
+  height: 0;
+  /* 1 */
+  overflow: visible;
+  /* 2 */
+}
+
+/**
+ * Add the correct display in IE.
+ */
+/* line 233, ../../../../bower_components/normalize-scss/sass/normalize/_normalize-mixin.scss */
+main {
+  display: block;
+}
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+/* line 253, ../../../../bower_components/normalize-scss/sass/normalize/_normalize-mixin.scss */
+pre {
+  font-family: monospace, monospace;
+  /* 1 */
+  font-size: 1em;
+  /* 2 */
+}
+
+/* Links
+   ========================================================================== */
+/**
+ * 1. Remove the gray background on active links in IE 10.
+ * 2. Remove gaps in links underline in iOS 8+ and Safari 8+.
+ */
+/* line 268, ../../../../bower_components/normalize-scss/sass/normalize/_normalize-mixin.scss */
+a {
+  background-color: transparent;
+  /* 1 */
+  -webkit-text-decoration-skip: objects;
+  /* 2 */
+}
+
+/* Text-level semantics
+   ========================================================================== */
+/**
+ * 1. Remove the bottom border in Chrome 57- and Firefox 39-.
+ * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
+ */
+/* line 283, ../../../../bower_components/normalize-scss/sass/normalize/_normalize-mixin.scss */
+abbr[title] {
+  border-bottom: none;
+  /* 1 */
+  text-decoration: underline;
+  /* 2 */
+  text-decoration: underline dotted;
+  /* 2 */
+}
+
+/**
+ * Prevent the duplicate application of `bolder` by the next rule in Safari 6.
+ */
+/* line 293, ../../../../bower_components/normalize-scss/sass/normalize/_normalize-mixin.scss */
+b,
+strong {
+  font-weight: inherit;
+}
+
+/**
+ * Add the correct font weight in Chrome, Edge, and Safari.
+ */
+/* line 302, ../../../../bower_components/normalize-scss/sass/normalize/_normalize-mixin.scss */
+b,
+strong {
+  font-weight: bolder;
+}
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+/* line 312, ../../../../bower_components/normalize-scss/sass/normalize/_normalize-mixin.scss */
+code,
+kbd,
+samp {
+  font-family: monospace, monospace;
+  /* 1 */
+  font-size: 1em;
+  /* 2 */
+}
+
+/**
+ * Add the correct font style in Android 4.3-.
+ */
+/* line 323, ../../../../bower_components/normalize-scss/sass/normalize/_normalize-mixin.scss */
+dfn {
+  font-style: italic;
+}
+
+/**
+ * Add the correct background and color in IE 9-.
+ */
+/* line 331, ../../../../bower_components/normalize-scss/sass/normalize/_normalize-mixin.scss */
+mark {
+  background-color: #ff0;
+  color: #000;
+}
+
+/**
+ * Add the correct font size in all browsers.
+ */
+/* line 340, ../../../../bower_components/normalize-scss/sass/normalize/_normalize-mixin.scss */
+small {
+  font-size: 80%;
+}
+
+/**
+ * Prevent `sub` and `sup` elements from affecting the line height in
+ * all browsers.
+ */
+/* line 349, ../../../../bower_components/normalize-scss/sass/normalize/_normalize-mixin.scss */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+/* line 357, ../../../../bower_components/normalize-scss/sass/normalize/_normalize-mixin.scss */
+sub {
+  bottom: -0.25em;
+}
+
+/* line 361, ../../../../bower_components/normalize-scss/sass/normalize/_normalize-mixin.scss */
+sup {
+  top: -0.5em;
+}
+
+/* Embedded content
+   ========================================================================== */
+/**
+ * Add the correct display in IE 9-.
+ */
+/* line 374, ../../../../bower_components/normalize-scss/sass/normalize/_normalize-mixin.scss */
+audio,
+video {
+  display: inline-block;
+}
+
+/**
+ * Add the correct display in iOS 4-7.
+ */
+/* line 383, ../../../../bower_components/normalize-scss/sass/normalize/_normalize-mixin.scss */
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+
+/**
+ * Remove the border on images inside links in IE 10-.
+ */
+/* line 392, ../../../../bower_components/normalize-scss/sass/normalize/_normalize-mixin.scss */
+img {
+  border-style: none;
+}
+
+/**
+ * Hide the overflow in IE.
+ */
+/* line 400, ../../../../bower_components/normalize-scss/sass/normalize/_normalize-mixin.scss */
+svg:not(:root) {
+  overflow: hidden;
+}
+
+/* Forms
+   ========================================================================== */
+/**
+ * 1. Change the font styles in all browsers (opinionated).
+ * 2. Remove the margin in Firefox and Safari.
+ */
+/* line 414, ../../../../bower_components/normalize-scss/sass/normalize/_normalize-mixin.scss */
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: sans-serif;
+  /* 1 */
+  font-size: 100%;
+  /* 1 */
+  line-height: 1.15;
+  /* 1 */
+  margin: 0;
+  /* 2 */
+}
+
+/**
+ * Show the overflow in IE.
+ */
+/* line 434, ../../../../bower_components/normalize-scss/sass/normalize/_normalize-mixin.scss */
+button {
+  overflow: visible;
+}
+
+/**
+ * Remove the inheritance of text transform in Edge, Firefox, and IE.
+ * 1. Remove the inheritance of text transform in Firefox.
+ */
+/* line 443, ../../../../bower_components/normalize-scss/sass/normalize/_normalize-mixin.scss */
+button,
+select {
+  /* 1 */
+  text-transform: none;
+}
+
+/**
+ * 1. Prevent a WebKit bug where (2) destroys native `audio` and `video`
+ *    controls in Android 4.
+ * 2. Correct the inability to style clickable types in iOS and Safari.
+ */
+/* line 454, ../../../../bower_components/normalize-scss/sass/normalize/_normalize-mixin.scss */
+button,
+html [type="button"],
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: button;
+  /* 2 */
+}
+
+/* line 461, ../../../../bower_components/normalize-scss/sass/normalize/_normalize-mixin.scss */
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+  /**
+   * Remove the inner border and padding in Firefox.
+   */
+  /**
+   * Restore the focus styles unset by the previous rule.
+   */
+}
+/* line 470, ../../../../bower_components/normalize-scss/sass/normalize/_normalize-mixin.scss */
+button::-moz-focus-inner,
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+/* line 479, ../../../../bower_components/normalize-scss/sass/normalize/_normalize-mixin.scss */
+button:-moz-focusring,
+[type="button"]:-moz-focusring,
+[type="reset"]:-moz-focusring,
+[type="submit"]:-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
+
+/**
+ * Show the overflow in Edge.
+ */
+/* line 488, ../../../../bower_components/normalize-scss/sass/normalize/_normalize-mixin.scss */
+input {
+  overflow: visible;
+}
+
+/**
+ * 1. Add the correct box sizing in IE 10-.
+ * 2. Remove the padding in IE 10-.
+ */
+/* line 497, ../../../../bower_components/normalize-scss/sass/normalize/_normalize-mixin.scss */
+[type="checkbox"],
+[type="radio"] {
+  box-sizing: border-box;
+  /* 1 */
+  padding: 0;
+  /* 2 */
+}
+
+/**
+ * Correct the cursor style of increment and decrement buttons in Chrome.
+ */
+/* line 507, ../../../../bower_components/normalize-scss/sass/normalize/_normalize-mixin.scss */
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+/**
+ * 1. Correct the odd appearance in Chrome and Safari.
+ * 2. Correct the outline style in Safari.
+ */
+/* line 517, ../../../../bower_components/normalize-scss/sass/normalize/_normalize-mixin.scss */
+[type="search"] {
+  -webkit-appearance: textfield;
+  /* 1 */
+  outline-offset: -2px;
+  /* 2 */
+  /**
+   * Remove the inner padding and cancel buttons in Chrome and Safari on macOS.
+   */
+}
+/* line 525, ../../../../bower_components/normalize-scss/sass/normalize/_normalize-mixin.scss */
+[type="search"]::-webkit-search-cancel-button, [type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/**
+ * 1. Correct the inability to style clickable types in iOS and Safari.
+ * 2. Change font properties to `inherit` in Safari.
+ */
+/* line 536, ../../../../bower_components/normalize-scss/sass/normalize/_normalize-mixin.scss */
+::-webkit-file-upload-button {
+  -webkit-appearance: button;
+  /* 1 */
+  font: inherit;
+  /* 2 */
+}
+
+/**
+ * Correct the padding in Firefox.
+ */
+/* line 545, ../../../../bower_components/normalize-scss/sass/normalize/_normalize-mixin.scss */
+fieldset {
+  padding: 0.35em 0.75em 0.625em;
+}
+
+/**
+ * 1. Correct the text wrapping in Edge and IE.
+ * 2. Correct the color inheritance from `fieldset` elements in IE.
+ * 3. Remove the padding so developers are not caught out when they zero out
+ *    `fieldset` elements in all browsers.
+ */
+/* line 556, ../../../../bower_components/normalize-scss/sass/normalize/_normalize-mixin.scss */
+legend {
+  box-sizing: border-box;
+  /* 1 */
+  display: table;
+  /* 1 */
+  max-width: 100%;
+  /* 1 */
+  padding: 0;
+  /* 3 */
+  color: inherit;
+  /* 2 */
+  white-space: normal;
+  /* 1 */
+}
+
+/**
+ * 1. Add the correct display in IE 9-.
+ * 2. Add the correct vertical alignment in Chrome, Firefox, and Opera.
+ */
+/* line 570, ../../../../bower_components/normalize-scss/sass/normalize/_normalize-mixin.scss */
+progress {
+  display: inline-block;
+  /* 1 */
+  vertical-align: baseline;
+  /* 2 */
+}
+
+/**
+ * Remove the default vertical scrollbar in IE.
+ */
+/* line 579, ../../../../bower_components/normalize-scss/sass/normalize/_normalize-mixin.scss */
+textarea {
+  overflow: auto;
+}
+
+/* Interactive
+   ========================================================================== */
+/*
+ * Add the correct display in Edge, IE, and Firefox.
+ */
+/* line 592, ../../../../bower_components/normalize-scss/sass/normalize/_normalize-mixin.scss */
+details {
+  display: block;
+}
+
+/*
+ * Add the correct display in all browsers.
+ */
+/* line 600, ../../../../bower_components/normalize-scss/sass/normalize/_normalize-mixin.scss */
+summary {
+  display: list-item;
+}
+
+/*
+ * Add the correct display in IE 9-.
+ */
+/* line 608, ../../../../bower_components/normalize-scss/sass/normalize/_normalize-mixin.scss */
+menu {
+  display: block;
+}
+
+/* Scripting
+   ========================================================================== */
+/**
+ * Add the correct display in IE 9-.
+ */
+/* line 641, ../../../../bower_components/normalize-scss/sass/normalize/_normalize-mixin.scss */
+canvas {
+  display: inline-block;
+}
+
+/**
+ * Add the correct display in IE.
+ */
+/* line 649, ../../../../bower_components/normalize-scss/sass/normalize/_normalize-mixin.scss */
+template {
+  display: none;
+}
+
+/* Hidden
+   ========================================================================== */
+/**
+ * Add the correct display in IE 10-.
+ */
+/* line 662, ../../../../bower_components/normalize-scss/sass/normalize/_normalize-mixin.scss */
+[hidden] {
+  display: none;
+}
+
+/* line 1, ../../../homepage/homepage.scss */
+main {
+  overflow-y: auto;
+}
+
+/* line 29, ../../styles/main.scss */
+.browsehappy {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
+
+/* line 36, ../../styles/main.scss */
+body {
+  padding: 0;
+}
+
+/* Everything but the jumbotron gets side spacing for mobile first views */
+/* line 42, ../../styles/main.scss */
+.header,
+.marketing,
+.footer {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+/* Custom page header */
+/* line 51, ../../styles/main.scss */
+.header {
+  border-bottom: 1px solid #e5e5e5;
+  margin-bottom: 10px;
+  /* Make the masthead heading the same height as the navigation */
+}
+/* line 55, ../../styles/main.scss */
+.header h3 {
+  margin-top: 0;
+  margin-bottom: 0;
+  line-height: 40px;
+  padding-bottom: 19px;
+}
+
+/* Custom page footer */
+/* line 65, ../../styles/main.scss */
+.footer {
+  padding-top: 19px;
+  color: #777;
+  border-top: 1px solid #e5e5e5;
+}
+
+/* line 71, ../../styles/main.scss */
+.container-narrow > hr {
+  margin: 30px 0;
+}
+
+/* Main marketing message and sign up button */
+/* line 77, ../../styles/main.scss */
+.jumbotron {
+  text-align: center;
+  border-bottom: 1px solid #e5e5e5;
+}
+/* line 80, ../../styles/main.scss */
+.jumbotron .btn {
+  font-size: 21px;
+  padding: 14px 24px;
+}
+
+/* Supporting marketing content */
+/* line 88, ../../styles/main.scss */
+.marketing {
+  margin: 40px 0;
+}
+/* line 90, ../../styles/main.scss */
+.marketing p + h4 {
+  margin-top: 28px;
+}
+
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: 768px) {
+  /* line 98, ../../styles/main.scss */
+  .container {
+    max-width: 768px;
+  }
+
+  /* Remove the padding we set earlier */
+  /* line 102, ../../styles/main.scss */
+  .header,
+  .marketing,
+  .footer {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  /* Space out the masthead */
+  /* line 109, ../../styles/main.scss */
+  .header {
+    margin-bottom: 30px;
+  }
+
+  /* Remove the bottom border on the jumbotron for visual effect */
+  /* line 113, ../../styles/main.scss */
+  .jumbotron {
+    border-bottom: 0;
+  }
+}
+/* line 118, ../../styles/main.scss */
+#app-loading-wrapper {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
+/* line 124, ../../styles/main.scss */
+#app-loading-wrapper .app-loading {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  opacity: 0.8;
+  content: '';
+  border-radius: 50%;
+  font-size: 12.5px;
+  width: 1em;
+  height: 1em;
+  margin: -0.5em 0 0 -0.5em;
+  box-shadow: 0 -1.6em 0 0 white, -1.12em -1.12em 0 0 rgba(255, 255, 255, 0.75), -1.6em 0 0 0 rgba(255, 255, 255, 0.5), -1.12em 1.12em 0 0 rgba(255, 255, 255, 0.25);
+  animation: 0.85s circle-loader steps(8) infinite;
+}
+
+/*# sourceMappingURL=main.css.map */

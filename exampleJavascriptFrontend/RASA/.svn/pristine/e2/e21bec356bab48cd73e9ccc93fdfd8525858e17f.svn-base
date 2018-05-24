@@ -1,0 +1,205 @@
+<!-- FORM DI RICHIESTA CAMBIO PASSWORD -->
+<div class="main-login" id="login_page">
+
+    <!-- BOX INFORMAZIONI -->
+    <div ng-show="true">
+        <div class="row">
+            <div class="col-md-offset-2 col-md-8 col-md-offset-2 col-xs-12">
+                <div style="text-align:left">
+                    <p class="login_broadcast_text"
+                       data-ng-bind-html="'login.changePasswordRules' | translate">
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- PASSWORD ERRATA DA SERVER-->
+    <div ng-show="ctrl.auth.newPassword.confirmed == false && ctrl.auth.newPassword.showError==true">
+        <div class="row">
+            <div class="col-md-offset-2 col-md-8 col-md-offset-2 col-xs-12">
+                <!-- A BOX di ERRORE password ERRATA-->
+                <div class="main-login">
+                    <div class="form-group login_info_wrap">
+                        <div class="login_info_immagine_warning">
+                            <i aria-hidden="true" class="fa fa-times fa-3x" style="height:64px;line-height: 64px">
+                            </i>
+                        </div>
+                        <div class="login_info_testo">
+                            <p style="color:red;text-align: center">
+                                {{ 'login.password.new.invalid.title' | translate}}
+                            </p>
+                            <p>
+                                {{ ctrl.auth.newPassword.messageError }}
+                            </p>
+                        </div>
+                        <br/>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- PASSWORD CONFERMATA ds SERVER -->
+    <div ng-show="ctrl.auth.newPassword.confirmed == true">
+        <div class="row">
+            <div class="col-md-offset-2 col-md-8 col-md-offset-2 col-xs-12">
+                <div class="form-group login_info_wrap">
+                    <div class="login_info_immagine_success">
+                        <i aria-hidden="true" class="fa fa-check fa-3x" style="height:64px;line-height: 64px">
+                        </i>
+                    </div>
+                    <div class="password_info_testo">
+                        <p>
+                            {{ 'login.password.new.set' | translate}}
+                        </p>
+                    </div>
+                    <br/>
+                </div>
+            </div>
+            <div class="form-group">
+                <button class="btn bps-btn-primary btn-lg btn-block" ng-click="ctrl.confirmed()">
+                    {{
+                    'login.password.new.button.goon' | translate}}
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- form da far vedere solo quando è da confermare -->
+    <div ng-show="ctrl.auth.newPassword.confirmed == false">
+
+        <div class="row">
+            <div class="col-md-offset-2 col-md-8 col-md-offset-2 col-xs-12">
+
+                <!-- FORM per il cambio password -->
+                <form class="form" id="formChangePassword" name="formChangePassword" novalidate="">
+
+                    <!-- serve per assegnare la form al controller -->
+                    <div ng-init="ctrl.setFormNewPassword(formChangePassword);"/>
+
+                    <!-- PASSWORD ERRATA DA SERVER PERCHE' LA STESSA -->
+                    <!--
+                    <div class="main-login"
+                         ng-show="ctrl.auth.newPassword.confirmed == false && ctrl.auth.newPassword.tryChange == true && ctrl.auth.newPassword.samePassword == true">
+                        <div class="form-group login_info_wrap">
+                            <div class="login_info_immagine_warning">
+                                <i aria-hidden="true" class="fa fa-times fa-3x"
+                                   style="height:64px;line-height: 64px">
+                                </i>
+                            </div>
+                            <div class="login_info_testo">
+                                <p style="color:red;text-align: center">
+                                    {{ 'login.password.new.invalid.title' |
+                                    translate}}
+                                </p>
+                                <p>
+                                    {{ ctrl.auth.newPassword.additionalInfo }}
+                                </p>
+                            </div>
+                            <br/>
+                        </div>
+                    </div>
+                    -->
+
+                    <!-- PASSWORD ATTUALE -->
+
+                    <div class="form-group">
+                        <!-- IL CAMPO DI PASSWORD -->
+                        <div class="input-group">
+                            <input aria-invalid="false" class="form-control form-control-lg"
+                                   focus-on="oldPassword"
+                                   name="oldPassword" ng-blur="ctrl.showPasswordError=true"
+                                   ng-keypress="ctrl.showPasswordError = false;ctrl.clearPasswordInserted('password')"
+                                   ng-keyup="$event.keyCode == 13 && $('formChangePassword').submit();"
+                                   ng-model="ctrl.auth.newPassword.form.oldPassword"
+                                   ng-model-options="{ updateOn: 'blur' }"
+                                   ng-pattern="ctrl.newPasswordValidator" ng-required="true"
+                                   onblur="$('.icon-password').css({'border': 'none'});"
+                                   onfocus="$('.icon-password').css( {'border-top': '1px solid #66afe9', 'border-right': '1px solid #66afe9','border-bottom': '1px solid #66afe9'}  );"
+                                   placeholder="Password Corrente" type="password">
+                            </input>
+                        </div>
+                        <!-- MESSAGGI DAI VALIDATORI -->
+                        <p class="login_validation_error" ng-show="(formChangePassword.oldPassword.$error.required && !formChangePassword.oldPassword.$pristine) ||
+                            (formChangePassword.oldPassword.$error.required && formChangePassword.oldPassword.$touched && formChangePassword.oldPassword.$pristine)">
+                            {{ 'error.field.mandatory' | translate}}
+                        </p>
+                        <p class="login_validation_error"
+                           ng-show="(formChangePassword.oldPassword.$error.pattern && !formChangePassword.oldPassword.$pristine)">
+                            {{'login.password.new.regex' | translate}}
+                        </p>
+                    </div>
+
+                    <div class="form-group">
+                        <!-- IL CAMPO DI PASSWORD -->
+
+                        <div class="input-group">
+                            <input aria-invalid="false" class="form-control form-control-lg"
+                                   focus-on="newPassword"
+                                   name="newPassword" ng-blur="ctrl.showPasswordError=true"
+                                   ng-keypress="ctrl.showPasswordError = false;ctrl.clearPasswordInserted('password')"
+                                   ng-keyup="$event.keyCode == 13 && $('formChangePassword').submit();"
+                                   ng-model="ctrl.auth.newPassword.form.newPassword"
+                                   ng-model-options="{ updateOn: 'blur' }"
+                                   ng-pattern="ctrl.newPasswordValidator" ng-required="true"
+                                   onblur="$('.icon-password').css({'border': 'none'});"
+                                   onfocus="$('.icon-password').css( {'border-top': '1px solid #66afe9', 'border-right': '1px solid #66afe9','border-bottom': '1px solid #66afe9'}  );"
+                                   placeholder="Password" type="password">
+                            </input>
+                        </div>
+                        <!-- MESSAGGI DAI VALIDATORI -->
+                        <p class="login_validation_error" ng-show="(formChangePassword.newPassword.$error.required && !formChangePassword.newPassword.$pristine ) ||
+                        (formChangePassword.newPassword.$error.required && formChangePassword.newPassword.$touched && formChangePassword.newPassword.$pristine)">
+                            {{ 'error.field.mandatory' | translate}}
+                        </p>
+                        <p class="login_validation_error"
+                           ng-show="(formChangePassword.newPassword.$error.pattern && !formChangePassword.newPassword.$pristine)">
+                            {{'login.password.new.regex' | translate}}
+                        </p>
+                    </div>
+
+
+                    <div class="form-group">
+                        <div class="input-group">
+                            <!-- IL CAMPO DI VERIFICA PASSWORD -->
+                            <input aria-invalid="false" class="form-control form-control-lg"
+                                   focus-on="passwordConferma"
+                                   match-password="newPassword" name="repeatNewPassword"
+                                   ng-blur="ctrl.showPasswordConfermaError=true"
+                                   ng-keypress="ctrl.showPasswordConfermaError = false;ctrl.clearPasswordInserted($event)"
+                                   ng-keyup="$event.keyCode == 13 && $('formChangePassword').submit();"
+                                   ng-model="ctrl.auth.newPassword.form.repeatNewPassword"
+                                   ng-model-options="{ updateOn: 'blur' }" ng-required="true"
+                                   nx-equal-ex="ctrl.auth.newPassword.password"
+                                   onblur="$('.icon-passwordConferma').css({'border': 'none'});"
+                                   onfocus="$('.icon-passwordConferma').css( {'border-top': '1px solid #66afe9', 'border-right': '1px solid #66afe9','border-bottom': '1px solid #66afe9'}  );"
+                                   placeholder="Conferma password" type="password">
+                            </input>
+                        </div>
+                        <!-- MESSAGGI DAI VALIDATORI -->
+                        <p class="login_validation_error" ng-if="(formChangePassword.repeatNewPassword.$error.required && !formChangePassword.repeatNewPassword.$pristine && ctrl.showPasswordConfermaError) ||
+                            (formChangePassword.repeatNewPassword.$error.required && formChangePassword.repeatNewPassword.$touched && formChangePassword.repeatNewPassword.$pristine && ctrl.showPasswordConfermaError)">
+                            {{ 'error.field.mandatory' | translate}}
+                        </p>
+                        <p class="login_validation_error"
+                           ng-if="(formChangePassword.repeatNewPassword.$error.pattern && !formChangePassword.repeatNewPassword.$pristine && ctrl.showPasswordConfermaError)">
+                            {{'login.passwordconferma.new.regex_same_value' | translate}}
+                        </p>
+                        <p class="login_validation_error" ng-if="(formChangePassword.repeatNewPassword.$error.passwordMatch && !formChangePassword.repeatNewPassword.$pristine && ctrl.showPasswordConfermaError) &&
+                    !formChangePassword.repeatNewPassword.$error.pattern && !formChangePassword.repeatNewPassword.$error.required && ctrl.showPasswordConfermaError">
+                            {{'login.passwordconferma.new.regex_same_value' | translate}}
+                        </p>
+                    </div>
+
+                    <div class="form-group">
+                        <button class="btn bps-btn-primary btn-lg btn-block" ng-click="ctrl.confirm()"
+                                ng-disabled="!formChangePassword.$valid" type="button">
+                            {{'app.action.edit' | translate | uppercase}}
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

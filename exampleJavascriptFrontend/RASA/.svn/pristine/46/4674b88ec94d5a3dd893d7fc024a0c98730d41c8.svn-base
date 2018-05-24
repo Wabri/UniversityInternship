@@ -1,0 +1,10 @@
+<article style="width:20%;margin:auto;margin-top:20px;">
+  <video id="video" width="320" height="200" autoplay></video>
+  <section>
+    <button id="btnStart">Start video</button>
+    <button id="btnStop">Stop video</button>
+    <button id="btnPhoto">Take a photo</button>
+  </section>
+  <canvas id="snapshot2" width="320" height="240"></canvas>
+  <a id="download2">Download as image</a>
+</article>

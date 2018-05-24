@@ -1,0 +1,74 @@
+(function () {
+    'use strict';
+
+    angular.module('revux').directive('selectMonth', selectMonth);
+
+    function selectMonth() {
+
+        var directive = {
+            templateUrl: 'common/directives/selectMonth/selectMonth.directive.html',
+            restrict: 'E',
+            controller: controller,
+            controllerAs: 'ctrl',
+            bindToController: true,
+            scope: {
+                monthSelected: '=',
+                monthsBefore: '=',
+                monthsCount: '='
+            }
+        };
+
+        return directive;
+    }
+
+    /**
+     *
+     */
+    function controller($scope) {
+
+        var vm = this;
+
+        init();
+
+        /**
+         *
+         */
+        function init() {
+
+            vm.monthYear = [];
+
+            var appMonthYear;
+            var eNow = new Date();
+            var eMoment = moment(eNow);
+
+            // se non passato default
+            if (!vm.monthSelected) {
+                vm.monthSelected = {
+                    "id": 0,
+                    "description": eMoment.format('MMMM') + ' ' + eMoment.format('YYYY'),
+                    "year": eMoment.format('YYYY'),
+                    "month" : eMoment.format('MM')
+                };
+            }
+
+            // per adattare la partenza
+            eMoment = eMoment.add((Math.abs(vm.monthsBefore) + 1) * -1, 'months');
+
+            //var indexPeriod = -11;
+            for (var i = vm.monthsBefore; i < (Math.abs(vm.monthsCount) - Math.abs(vm.monthsBefore)); i++) {
+
+                eMoment = eMoment.add(1, 'months');
+                appMonthYear = {
+                    "id": i,
+                    "description": eMoment.format('MMMM') + ' ' + eMoment.format('YYYY'),
+                    "year": eMoment.format('YYYY'),
+                    "month" : eMoment.format('MM')
+                };
+
+                vm.monthYear.push(appMonthYear);
+            }
+        }
+
+    };
+
+}());

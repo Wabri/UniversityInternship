@@ -1,0 +1,47 @@
+<span>
+<div ng-repeat="slip in beneficiary.slips">
+  <slip-type type="{{slip.type}}"></slip-type>
+  <br />
+</div>
+<hr>
+
+<!-- box 2 -->
+<div class="list-group-item-movement-abstract">
+  <div class="list-group-movement-beneficiary">
+    <!-- MB <h5 class="bps-h5">{{'payment.paid.by' | translate}}</h5>-->
+    <h5 class="bps-h5">{{'payment.customer' | translate}}</h5>
+    <p class="text-s">{{debitCustomer.description}}</p>
+    <!-- aggiunto sotto da mb -->
+    <h5 class="bps-h5">{{'payment.creditaccount' | translate}}</h5>
+    <p class="text-s">{{beneficiary.debitAccount.code}}</p>
+
+  </div>
+</div>
+<hr>
+<!-- end box 2 -->
+
+<!-- box 3 : Info esecuzione -->
+<div class="list-group-item-movement-abstract">
+  <div class="list-group-movement-beneficiary">
+    <div class="list-group-movement-beneficiary">
+      <h5 class="bps-h5">{{'payment.infoexecution' | translate}}</h5>
+      <p class="text-s" translate="payment.execution.executionDate.summary.description" translate-value-date="{{beneficiary.execution.executionDate | amParse:'YYYY-MM-DD' | amDateFormat:('date_format'|language_service) }}"></p>
+      <p class="text-s">{{ ("payment.execution.adviceType." + beneficiary.execution.adviceType + ".summary.description") | translate}}</p>
+    </div>
+  </div>
+</div>
+
+<!--Contributi attuali-->
+<div class="list-group-item-movement-abstract" ng-show="beneficiary.totalContributions">
+  <div class="list-group-movement-beneficiary">
+    <h5 class="bps-h5">{{'payment.actualcontribution' | translate}}</h5>
+    <p class="text-s">{{beneficiary.totalContributions}}/60</p>
+    <p class="text-s" ng-repeat="cb in beneficiary.contributors track by $index">
+    {{$index+1}}) {{cb.contribution}}/{{beneficiary.totalContributions}} (  {{cb.name}} - {{cb.date | amDateFormat:('date_format'|language_service)}} )
+    </p>
+  </div>
+</div>
+<h5 class="bps-h5">{{'payment.status' | translate}}</h5>
+<p class="text-s">{{ ("payment.status." + beneficiary.status) | translate}}</p>
+<!-- end box 3 -->
+</span>

@@ -1,0 +1,44 @@
+<div>
+  <div>
+    <h5 class="bps-h5">
+        {{'payment.template.table.creationdate' | translate}}
+    </h5>
+    <p class="text-s">
+        {{template.payment.creationDate |  amDateFormat:('date_format'|language_service)}}
+    </p>
+  </div>
+  <hr>
+        <span>
+            <div ng-repeat="slip in template.payment.slips">
+                <slip-type type="{{slip.type}}">
+                </slip-type>
+                <hr/>
+            </div>
+        </span>
+        <div class="list-group-item-movement-abstract">
+            <div class="list-group-movement-beneficiary">
+                <h5 class="bps-h5">
+                    {{'payment.customer' | translate}}
+                </h5>
+                <p class="text-s">
+                    {{debitCustomer.shortDesc}}
+                </p>
+                <h5 class="bps-h5">
+                    {{'payment.creditaccount' | translate}}
+                </h5>
+                <p class="text-s">
+                    {{template.payment.debitAccount.code}}
+                </p>
+            </div>
+        </div>
+
+        <span>
+                <hr>
+                    <a class="bps-btn-link link-action uppercase" ng-click="generatePayment(template.payment.id,template.templateInfo.modelName,template.templateInfo.preferred)" >
+                        <i class="fa fa-edit">
+                        </i>
+                        {{ 'payment.template.generate' | translate }}
+                    </a>
+            </hr>
+            </span>
+</div>

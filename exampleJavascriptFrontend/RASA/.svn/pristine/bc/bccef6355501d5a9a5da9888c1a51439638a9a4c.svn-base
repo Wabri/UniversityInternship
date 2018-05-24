@@ -1,0 +1,68 @@
+(function() {
+  'use strict';
+
+  angular.module('revux').directive('paymentTemplateDetail', paymentTemplateDetail);
+
+  function paymentTemplateDetail(DebitCustomerService,PaymentsUtilityService,PaymentsService, $translate, $state) {
+
+    var directive = {
+      templateUrl: 'common/directives/paymentTemplateDetail/paymentTemplate.detail.directive.html',
+      restrict: 'E',
+      link: link,
+      replace:true,
+      scope: {
+        template:"="
+      }
+    };
+
+    return directive;
+
+
+
+    function link(scope) {
+
+      scope.generatePayment = generatePayment;
+      init();
+
+      //////////////////////
+
+      function init() {
+
+        scope.$watch(function() {
+            return  scope.template;
+        }, function(template, oldValue) {
+          if(template){
+            DebitCustomerService.getPromiseReady().then(
+              function(){
+                scope.debitCustomer=DebitCustomerService.getDebitCustomerById(template.payment.debitAccount.customerId);
+              }
+            );
+
+          }
+        }, true);
+      }
+
+      function generatePayment(templateId,templateName,preferred){
+        var template={
+          templateId:templateId,
+          templateName:templateName,
+          preferred:preferred
+        };
+        var text = $translate.instant("payment.template.title");
+        var uistate = $state.current.name;
+        var backTo={text: text, uistate: uistate};
+        PaymentsService.getPaymentDTOFromTemplateId(templateId).then(function(paymentDTO){
+          PaymentsUtilityService.goToPayment(paymentDTO, template, backTo);
+        });
+      }
+
+
+
+
+    }
+  }
+
+
+
+
+}());

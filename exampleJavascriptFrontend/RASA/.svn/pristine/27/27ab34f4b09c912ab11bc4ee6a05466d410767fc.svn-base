@@ -1,0 +1,57 @@
+@mixin fontSize($size) {
+  font-size: $size;
+  font-size: calculateRem($size);
+}
+
+@mixin xs {
+  @media (min-width: #{$xs-min-width}) and (max-width: #{$sm-min-width - rem(1)}) {
+    @content;
+  }
+}
+
+@mixin sm {
+  @media (min-width: #{$sm-min-width}) and (max-width: #{$md-min-width - rem(1)}) {
+    @content;
+  }
+}
+
+@mixin md {
+  @media (min-width: #{$md-min-width}) and (max-width: #{$lg-min-width - rem(1)}) {
+    @content;
+  }
+}
+
+@mixin lg {
+  @media (min-width: #{$lg-min-width}) and (max-width: #{$xl-min-width - rem(1)}) {
+    @content;
+  }
+}
+
+@mixin xl {
+  @media (min-width: #{$xl-min-width}) {
+    @content;
+  }
+}
+
+
+/**
+ALTERNATIVA
+*/
+
+@mixin mobile {
+  @media (min-width: #{$xs-min-width}) and (max-width: #{$sm-min-width - rem(1)}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: #{$sm-min-width}) and (max-width: #{$lg-min-width - rem(1)}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: #{$lg-min-width}) {
+    @content;
+  }
+}

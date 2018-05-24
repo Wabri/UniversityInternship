@@ -1,0 +1,106 @@
+/*
+ angular.module('revux.directives.movements', [])
+ .directive('payment-list', function ($rootScope, $state, MovementsService, Events, UtilsService){
+ 'use strict';
+ var controller = function($scope){
+
+ $scope.pagesize = $scope.limit;
+
+ $scope.$on(Events.RESET_MOVEMENTS, function(){
+ $scope.pagesize = $scope.limit;
+ });
+
+
+ $scope.showDetails = function(br, showDetails){
+ if(showDetails || !$scope.source.paymentsDetails){
+ return false;
+ }
+
+ var res = $scope.source.paymentsDetails.payments.map(function(item){
+ return item.id === br.paymentId;
+ });
+
+ return res.indexOf(true) !== -1;
+ };
+
+ $scope.showYear=function(momentDate){
+ return moment(momentDate).year()<moment().year()?true:false;
+ };
+
+ MovementsService.getDebitCustomers().then(function successCallback(data){
+ $scope.debitCustomers=data;
+ });
+
+ };
+
+ return {
+ templateUrl: 'common/directives/movements.html',
+ restrict: 'E',
+ controller: controller,
+ scope: {
+ limit: '=',
+ dwnload: '=',
+ source: '='
+ }
+ };
+ });
+ */
+(function() {
+  'use strict';
+
+  angular.module('revux.directives.movements').directive('paymentList', paymentList);
+
+  function paymentList(Events, MovementsService, $http, bvAlertService, $translate, bvApiService) {
+
+    var directive = {
+      templateUrl: 'common/directives/paymentList/paymentList.directive.html',
+      restrict: 'E',
+      controller: controller,
+      replace: true,
+      scope: {
+        limit: '=',
+        source: '='
+      }
+    };
+
+    return directive;
+
+    function controller($scope) {
+      $scope.pagesize = $scope.limit;
+      $scope.copyPayment = MovementsService.copyPayment;
+      $scope.modifyPayment = MovementsService.modifyPayment;
+      $scope.deletePayment = deletePayment;
+      $scope.getPaymentPdfDownloadUrl = MovementsService.getPaymentPdfDownloadUrl;
+
+
+      $scope.showDetails = function(br, showDetails) {
+        return !showDetails;
+      };
+
+
+      function deletePayment(payId) {
+        bvAlertService.confirm($scope, $translate.instant('payment.cancelled.payment')).then(
+          function alertConfirm() {
+            var url = bvApiService.getEndpoint() + "/rest/payments/deletepayment?payId=" + payId;
+            $http.get(url).then(function successCallback(response) {
+              $scope.source = $scope.source.filter(function(payment) { return payment.id != payId; });
+            });
+          },
+          function alertCancel() {
+
+          });
+      }
+
+
+
+    }
+
+
+
+
+
+
+
+
+  }
+}());

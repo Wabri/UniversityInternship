@@ -1,0 +1,8 @@
+{
+  "common.wait.title": "Attendere...",
+  "common.exempio": "COMMON.ESEMPIO",
+  "common.button.close": "Chiudi",
+  "directives.language-select.Language": "Seleziona la lingua",
+  "PAGE_TITLE": "i18n for your AngularJS applications",
+  "PAGE_CONTENT": "How to translate your AngularJS applications without page reload with angular-translate"
+}

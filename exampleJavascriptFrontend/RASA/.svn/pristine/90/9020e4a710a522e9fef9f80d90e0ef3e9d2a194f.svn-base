@@ -1,0 +1,121 @@
+(function() {
+  'use strict';
+
+  /*opzioni (indicato il valore di default:
+  {
+    activation:{
+      device: true
+      mobile: true
+      desktop: true
+    },
+    events:"click",
+    extraPaddingTop{
+      device: defaultvalue
+      mobile: defaultvalue
+      desktop: defaultvalue
+    }
+    selector:null
+  }
+
+
+  */
+
+
+  angular.module('revux').directive('scrollUpOnEvent', scrollUpOnEvent);
+
+  function scrollUpOnEvent(bvBreakpointsService, $timeout) {
+    var directive = {
+      restrict: 'A',
+      link: link,
+      scope: {}
+    };
+
+    return directive;
+
+
+    function link(scope, element, attr, ngModel) {
+      var opts = getOptions();
+      var isDevice = isDevice();
+      var $htmlOrBody = $(opts.selector);
+      element.on(opts.events, function() {
+        scrollToTop(opts, $htmlOrBody, isDevice);
+      });
+
+      function getOptions() {
+        //defaultOpts
+        var opts = {
+          activation: {
+            device: true,
+            mobile: true,
+            desktop: true
+          },
+          events: 'click',
+          extraPaddingTop: {
+            device: 20,
+            mobile: 20,
+            desktop: 20,
+          },
+          selector: 'html,body'
+        };
+        return angular.extend({}, opts, scope.$eval(attr.scrollUpOnEvent));
+      }
+
+      function isScrollActivable(opts, isDevice) {
+        return opts.activation.device && isDevice || opts.activation.mobile && bvBreakpointsService.isMobile() || opts.activation.desktop && !bvBreakpointsService.isMobile();
+      }
+
+      function isDevice() {
+        var isDevice = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+        return isDevice;
+      }
+
+      function scrollToTop(opts, $htmlOrBody, isDevice) {
+        if (isScrollActivable(opts, isDevice))
+          activateScroll(opts, $htmlOrBody, isDevice);
+      }
+
+      function activateScroll(opts) {
+        if (opts.selector == 'html,body') {
+          var offset = Math.floor(element.offset().top) - selectPaddingTop(opts, $htmlOrBody, isDevice);
+        } else {
+          var offset = Math.floor(element.offset().top + $htmlOrBody.scrollTop() - selectPaddingTop(opts, $htmlOrBody, isDevice));
+        }
+        //console.log("Math.floor(element.offset().top)",Math.floor(element.offset().top));
+        //console.log("selectPaddingTop(opts,$htmlOrBody,isDevice)",selectPaddingTop(opts,$htmlOrBody,isDevice));
+        //console.log("offset",offset);
+        //console.log("---------------------");
+
+        $htmlOrBody.stop().animate({
+          scrollTop: offset
+        }, 500);
+      }
+
+      function selectPaddingTop(opts, $htmlOrBody, isDevice) {
+        var isMobile = bvBreakpointsService.isMobile()
+        var header = [];
+        var headerSelector = isMobile ? '#menubar' : '#topbar';
+        header = $htmlOrBody.find(headerSelector);
+        if (header.length) {
+          header = header.is(":visible") ? header : [];
+        }
+        //console.log("$htmlOrBody",$htmlOrBody);
+        //onsole.log("header",header);
+
+        var extraPadding;
+        if (isDevice) {
+          extraPadding = opts.extraPaddingTop.device || 0;
+        }
+        if (isMobile) {
+          extraPadding = opts.extraPaddingTop.mobile || 0;
+        } else {
+          extraPadding = opts.extraPaddingTop.desktop || 0;
+        }
+        var paddingTop = (header.length ? header[0].clientHeight : 0) + extraPadding;
+        return paddingTop;
+      }
+
+    }
+  }
+
+
+})();

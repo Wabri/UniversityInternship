@@ -1,0 +1,24 @@
+.bv-login {
+  display: flex;
+  justify-content: center;
+
+}
+
+.bv-loginLanguage {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.bv-md-select {
+  margin-left: rem(15);
+}
+
+.bv-md-userpw {
+  display: flex;
+  align-items: center;
+}
+
+.bv-md-input {
+  margin-left: rem(15);
+}

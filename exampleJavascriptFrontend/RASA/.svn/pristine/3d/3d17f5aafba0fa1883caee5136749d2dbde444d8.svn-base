@@ -1,0 +1,317 @@
+<!-- <md-content style="background-image: url('https://upload.wikimedia.org/wikipedia/it/6/6c/Logo_del_Corpo_Nazionale_dei_Vigili_del_Fuoco.svg');
+background-position: center;background-attachment:fixed;background-repeat: no-repeat;"> -->
+<h1 class="header">{{ 'SCHEDA INDIVIDUAZIONE SITI OPERATIVI' | translate }}</h1>
+
+
+<div layout-gt-xs="row" layout-xs="column" layout-align="center">
+
+  <md-input-container flex-gt-sm="30" flex-sm="35">
+    <label>{{'Settore' | translate}}</label>
+    <input required name="sector" ng-model="vm.project.sector">
+    <div ng-messages="projectForm.sector.$error">
+      <div ng-message="required">{{'Campo Obbligatorio.' | translate}}</div>
+    </div>
+  </md-input-container>
+
+  <md-input-container flex-gt-sm="30" flex-sm="35">
+    <label>{{'Sito' | translate}}</label>
+    <input required name="site" ng-model="vm.project.site">
+    <div ng-messages="projectForm.site.$error">
+      <div ng-message="required">{{'Campo Obbligatorio.' | translate}}</div>
+    </div>
+  </md-input-container>
+</div>
+
+<gps-coords></gps-coords>
+
+
+<!-- <div layout-gt-xs="row" layout-xs="column" layout-align="center">
+  <md-input-container flex-gt-sm="30" flex-sm="35">
+    <label>{{'Coordinate GPS' | translate}}
+    </label>
+    <input required name="coords" ng-model="vm.project.coords">
+    <div ng-messages="projectForm.coords.$error">
+      <div ng-message="required">{{'Campo Obbligatorio.' | translate}}</div>
+    </div>
+  </md-input-container>
+
+  <md-input-container flex-gt-sm="30" flex-sm="35">
+    <label>{{'Indirizzo' | translate}}</label>
+    <input name="address" ng-model="vm.project.address">
+    <div ng-messages="projectForm.address.$error">
+    </div>
+  </md-input-container>
+</div> -->
+
+<div layout-gt-xs="row" layout-xs="column" layout-align="center">
+  <md-input-container flex-gt-sm="60" flex-sm="70">
+    <label>{{'Descrizione confini sito' | translate}}</label>
+    <textarea class="bv-max-height" ng-model="vm.project.description" md-maxlength="500" rows="5" md-select-on-focus></textarea>
+    <!-- <form class="lineCount">
+      <textarea id="countMe" cols="30" rows="8" ng-model="project.description" md-maxlength="500" md-select-on-focus></textarea><br />
+    </form> -->
+  </md-input-container>
+</div>
+
+<div layout-gt-xs="row" layout-xs="column" layout-align="center">
+  <md-input-container flex-gt-sm="30" flex-sm="35">
+    <label>{{'ID Team valutazione' | translate}}</label>
+    <input name="idTeam" ng-model="vm.project.idTeam">
+    <div ng-messages="projectForm.idTeam.$error">
+    </div>
+  </md-input-container>
+  <md-input-container flex-gt-sm="30" flex-sm="35">
+    <label>{{'Destinazione uso' | translate}}</label>
+    <input name="destination" ng-model="vm.project.destination">
+    <div ng-messages="projectForm.destination.$error">
+    </div>
+  </md-input-container>
+</div>
+
+
+<div layout-gt-xs="row" layout-xs="column" layout-align="center">
+  <md-container flex-gt-sm="60" flex-sm="70">
+    <!-- <div class="md-padding checkboxdemoBasicUsage" ng-cloak=""> -->
+    <fieldset class="standard bv-padding-left">
+      <legend class="bv-margin-bottom"><strong>{{ 'Tipo costruzione' | translate }}</strong></legend>
+      <div layout-wrap layout-gt-sm="row">
+        <div flex-gt-sm="50">
+          <md-checkbox ng-model="vm.data.cb1" aria-label="Checkbox 1">
+            {{'Legno' | translate}}
+          </md-checkbox>
+        </div>
+        <div flex-gt-sm="50">
+          <md-checkbox ng-model="vm.data.cb2" aria-label="Checkbox 2">
+            {{'Calcestruzzo' | translate}}
+          </md-checkbox>
+        </div>
+        <div flex-gt-sm="50">
+          <md-checkbox ng-model="vm.data.cb3" aria-label="Checkbox 3">
+            {{'Pietra' | translate}}
+          </md-checkbox>
+        </div>
+        <div flex-gt-sm="50">
+          <md-checkbox ng-model="vm.data.cb4" aria-label="Checkbox 4">
+            {{'Cemento armato' | translate}}
+          </md-checkbox>
+        </div>
+        <div flex-gt-sm="50">
+          <md-checkbox ng-model="vm.data.cb5" aria-label="Checkbox 5">
+            {{'Mattoni' | translate}}
+          </md-checkbox>
+        </div>
+        <div flex-gt-sm="50">
+          <md-checkbox ng-model="vm.data.cb6" aria-label="Checkbox 6">
+            {{'Prefabbricato' | translate}}
+          </md-checkbox>
+        </div>
+      </div>
+    </fieldset>
+  </md-container>
+</div>
+
+<div style="margin-top:2rem" layout-gt-xs="row" layout-xs="column" layout-align="center">
+  <md-input-container flex-gt-sm="60" flex-sm="70">
+    <label>{{'Area interessata dal crollo (mq)' | translate}}</label>
+    <input name="area" type="number" min="0" ng-model="vm.project.area">
+    <div ng-messages="projectForm.area.$error">
+      <div ng-message="">{{'Campo numerico.' | translate}}</div>
+    </div>
+  </md-input-container>
+</div>
+
+<div layout-gt-xs="row" layout-xs="column" layout-align="center">
+  <md-input-container flex-gt-sm="30" flex-sm="35">
+    <label>{{'Piani fuori terra' | translate}}</label>
+    <input name="floors" type="number" min="0" step="1" ng-model="vm.project.floors">
+    <div ng-messages="projectForm.floors.$error">
+      <div ng-message="">{{'Campo numerico intero.' | translate}}</div>
+    </div>
+  </md-input-container>
+
+  <md-input-container flex-gt-sm="30" flex-sm="35">
+    <label>{{'Piani interrati' | translate}}</label>
+    <input name="underground" type="number" min="0" step="1" ng-model="vm.project.underground">
+    <div ng-messages="projectForm.underground.$error">
+      <div ng-message="">{{'Campo numerico intero.' | translate}}</div>
+    </div>
+  </md-input-container>
+</div>
+
+<div layout-gt-xs="row" layout-xs="column" layout-align="center">
+  <md-input-container flex-gt-sm="60" flex-sm="70">
+    <label>{{'N° dispersi sul sito' | translate}}</label>
+    <input name="missing" type="number" min="0" step="1" ng-model="vm.project.missing">
+    <div ng-messages="projectForm.missing.$error">
+      <div ng-message="">{{'Campo numerico intero.' | translate}}</div>
+    </div>
+  </md-input-container>
+</div>
+
+<div layout-gt-xs="row" layout-xs="column" layout-align="center">
+  <md-input-container flex-gt-sm="60" flex-sm="70">
+    <label>{{'Vittime individuate vive (ancora da estrarre)' | translate}}</label>
+    <input name="victims" type="number" min="0" step="1" ng-model="vm.project.victims">
+    <div ng-messages="projectForm.victims.$error">
+      <div ng-message="">{{'Campo numerico intero.' | translate}}</div>
+    </div>
+  </md-input-container>
+</div>
+
+<!-- <div>TABELLA TRIAGE</div> -->
+
+<div layout-gt-xs="row" layout-xs="column" layout-align="center">
+  <md-container flex-gt-sm="60" flex-sm="70">
+    <h3>TRIAGE</h3>
+  </md-container>
+</div>
+<div layout-gt-xs="row" layout-xs="column" layout-align="center">
+  <md-container class="bv-table-item" flex-gt-sm="60" flex-sm="70">
+    <div class="bv-margin" layout="row">
+      <div flex="30"></div>
+      <div flex="35" class="bv-center">Livello 3 SAR rapido</div>
+      <div flex="35" class="bv-center">Livello 4 SAR completo</div>
+    </div>
+    <div layout="row" class="bv-margin-bottom">
+      <div class="bv-padding-left" flex="30">Vittime vive confermate</div>
+      <div flex="35" class="bv-center">
+        <md-checkbox ng-model="vm.dataTriage.cb1" aria-label="datatriage 1">
+          A
+        </md-checkbox>
+      </div>
+      <div flex="35" class="bv-center">
+        <md-checkbox ng-model="vm.dataTriage.cb2" aria-label="datatriage 2">
+          B
+        </md-checkbox>
+      </div>
+    </div>
+
+    <div layout="row" class="bv-margin-bottom">
+      <div class="bv-padding-left" flex="30">Vittime e grandi vuoti</div>
+      <div flex="35" class="bv-center">
+        <md-checkbox ng-model="vm.dataTriage.cb3" aria-label="datatriage 3">
+          C
+        </md-checkbox>
+      </div>
+      <div flex="35" class="bv-center">
+        <md-checkbox ng-model="vm.dataTriage.cb4" aria-label="datatriage 4">
+          E
+        </md-checkbox>
+      </div>
+    </div>
+    <div layout="row">
+      <div class="bv-padding-left" flex="30">Vittime e piccoli vuoti</div>
+      <div flex="35" class="bv-center">
+        <md-checkbox ng-model="vm.dataTriage.cb5" aria-label="datatriage 5">
+          D
+        </md-checkbox>
+      </div>
+      <div flex="35" class="bv-center">
+        <md-checkbox ng-model="vm.dataTriage.cb6" aria-label="datatriage 6">
+          F
+        </md-checkbox>
+      </div>
+    </div>
+  </md-container>
+</div>
+
+
+
+<div layout-gt-xs="row" layout-xs="column" layout-align="center">
+  <md-container flex-gt-sm="60" flex-sm="70">
+    <h3>{{ 'Tipologia di collasso' | translate }}</h3>
+    <div layout-wrap layout-gt-sm="row">
+      <div flex-gt-sm="50">
+        <img src="../assets/images/pancake.jpg" class="imageCheck">
+        <md-checkbox ng-model="vm.dataCollapse.cb1" aria-label="datacollapse 1">
+          {{'Pancake' | translate}}
+        </md-checkbox>
+      </div>
+      <div flex-gt-sm="50">
+        <img src="../assets/images/piano_inclinato.jpg" class="imageCheck">
+        <md-checkbox ng-model="vm.dataCollapse.cb2" aria-label="datacollapse 2">
+          {{'Piano inclinato' | translate}}
+        </md-checkbox>
+      </div>
+      <div flex-gt-sm="50">
+        <img src="../assets/images/crollo_a_v.jpg" class="imageCheck">
+        <md-checkbox ng-model="vm.dataCollapse.cb3" aria-label="datacollapse 3">
+          {{"Crollo a 'V'" | translate}}
+        </md-checkbox>
+      </div>
+      <div flex-gt-sm="50">
+        <img src="../assets/images/crollo_a_sbalzo.jpg" class="imageCheck">
+        <md-checkbox ng-model="vm.dataCollapse.cb4" aria-label="datacollapse 4">
+          {{"Crollo a 'Sbalzo'" | translate}}
+        </md-checkbox>
+      </div>
+      <div flex-gt-sm="50">
+        <img src="../assets/images/crollo_a_tenda.jpg" class="imageCheck">
+        <md-checkbox ng-model="vm.dataCollapse.cb5" aria-label="datacollapse 5">
+          {{"Crollo a 'Tenda'" | translate}}
+        </md-checkbox>
+      </div>
+      <div flex-gt-sm="50">
+        <img src="../assets/images/crollo_a_90.jpg" class="imageCheck">
+        <md-checkbox ng-model="vm.dataCollapse.cb6" aria-label="datacollapse 6">
+          {{"Crollo a '90°'" | translate}}
+        </md-checkbox>
+      </div>
+      <div flex-gt-sm="50">
+        <img src="../assets/images/crollo_a_tendina.jpg" class="imageCheck">
+        <md-checkbox ng-model="vm.dataCollapse.cb7" aria-label="datacollapse 7">
+          {{"Crollo a 'Tendina'" | translate}}
+        </md-checkbox>
+      </div>
+      <div flex-gt-sm="50">
+        <img src="../assets/images/crollo_interno_esterno.jpg" class="imageCheck">
+        <md-checkbox ng-model="vm.dataCollapse.cb8" aria-label="datacollapse 8">
+          {{"Crollo interno/esterno" | translate}}
+        </md-checkbox>
+      </div>
+    </div>
+
+  </md-container>
+</div>
+
+<div layout-gt-xs="row" layout-xs="column" layout-align="center">
+  <md-input-container flex-gt-sm="30" flex-sm="35">
+    <h3>{{'operativeSites.damage' | translate:{msg_0:vm.project.damage} }}</h3>
+    <!-- <label>{{'GRADO DI DANNEGGIAMENTO' | translate}}</label> -->
+    <input name="damage" type="range" min="0" step="5" max="100" ng-model="vm.project.damage">
+    <!-- <div ng-messages="projectForm.damage.$error">
+      <div ng-message="">{{'Campo numerico intero.' | translate}}</div>
+    </div> -->
+  </md-input-container>
+</div>
+
+<div layout-gt-xs="row" layout-xs="column" layout-align="center">
+  <md-input-container flex-gt-sm="60" flex-sm="70">
+    <label>{{'Pericoli inusuali sito' | translate}}</label>
+    <input name="danger" ng-model="vm.project.danger">
+    <div ng-messages="projectForm.danger.$error">
+    </div>
+  </md-input-container>
+</div>
+
+<webcam-capture></webcam-capture>
+
+<div layout-gt-xs="row" layout-xs="column" layout-align="center">
+  <md-button class="md-raised md-primary bv-button-confirm">{{"CONFERMA" | translate}}</md-button>
+</div>
+
+
+<!-- <md-content class="md-no-momentum"> -->
+<!-- <md-input-container class="md-icon-float md-block"> -->
+
+<!-- <md-icon md-svg-src="img/icons/ic_person_24px.svg" class="name"></md-icon> -->
+<!-- <i class="material-icons">alarm_on</i>
+    <i class="material-icons">person</i> -->
+<!-- <i class="material-icons">place</i>
+    <i class="mi mi-24 mi-directions-bike"></i>
+    <i class="mi mi-24 mi-person"></i>
+    <i class="mi mi-24 mi-phone"></i> -->
+<!-- <input ng-model="user.name" type="text"> -->
+<!-- </md-input-container> -->
+<!-- </md-content> -->
+<!-- </md-content> -->

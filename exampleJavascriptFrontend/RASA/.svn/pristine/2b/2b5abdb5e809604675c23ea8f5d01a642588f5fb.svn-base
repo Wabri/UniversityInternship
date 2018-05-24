@@ -1,0 +1,346 @@
+<h1 class="interview__header">{{'SCHEDA INTERVISTA' | translate}}</h1>
+
+
+<div layout-gt-xs="row" layout-xs="column" layout-align="center">
+	<md-input-container flex-gt-sm="40" flex-sm="40">
+		<fieldset class="standard">
+			<legend>
+				<h5>{{'COMPILATA DA*' | translate}}</h5></legend>
+			<md-radio-group ng-model="data.group1">
+				<md-radio-button value="Triage" class="md-primary">{{'Triage' | translate}}</md-radio-button>
+				<md-radio-button value="Squadra">{{'Squadra' | translate}}</md-radio-button>
+				<md-radio-button value="CCU">{{'CCU' | translate}}</md-radio-button>
+			</md-radio-group>
+	</md-input-container>
+
+</div>
+
+
+<div layout-gt-xs="row" layout-xs="column" layout-align="center">
+
+	<md-input-container flex-gt-sm="30" flex-sm="35">
+		<label>{{'Settore' | translate}}</label>
+		<input name="sector" ng-model="project.sector">
+	</md-input-container>
+
+	<md-input-container flex-gt-sm="30" flex-sm="35">
+		<label>{{'Sito' | translate}}</label>
+		<input name="site" ng-model="project.site">
+	</md-input-container>
+
+</div>
+
+<div layout-gt-xs="row" layout-xs="column" layout-align="center">
+	<md-input-container flex-gt-sm="30" flex-sm="35">
+		<label>{{'Sub Sito' | translate}}</label>
+		<input name="sub_site" ng-model="project.sub_site">
+	</md-input-container>
+
+
+	<md-input-container flex-gt-sm="30" flex-sm="35">
+		<label>{{'ID team valutazione' | translate}}</label>
+		<input name="id_team_value" ng-model="project.id_team_value">
+	</md-input-container>
+
+</div>
+
+
+<div layout-gt-xs="row" layout-xs="column" layout-align="center">
+	<md-input-container flex-gt-sm="60" flex-sm="70">
+		<h3>{{'INTERVISTATO' | translate}}</h3>
+	</md-input-container>
+</div>
+
+
+
+<div layout-gt-xs="row" layout-xs="column" layout-align="center" class="bv-prova-icone">
+	<!-- <i class="material-icons">person</i> -->
+	<md-input-container flex-gt-sm="30" flex-sm="35">
+		<label>{{'Cognome' | translate}}</label>
+		<md-icon md-font-library="material-icons">person</md-icon>
+		<input required name="last_name" ng-model="project.last_name">
+		<div ng-messages="projectForm.lastName.$error">
+			<div ng-message="required">Campo Obbligatorio.</div>
+		</div>
+	</md-input-container>
+
+
+	<md-input-container flex-gt-sm="30" flex-sm="35">
+		<label>{{'Nome' | translate}}</label>
+		<!-- <i class="material-icons">perm_identity</i> -->
+		<md-icon md-font-library="material-icons">perm_identity</md-icon>
+		<input required name="name" ng-model="project.name">
+		<div ng-messages="projectForm.name.$error">
+			<div ng-message="required">Campo Obbligatorio.</div>
+		</div>
+	</md-input-container>
+
+</div>
+
+
+<div layout-gt-xs="row" layout-xs="column" layout-align="center">
+	<md-input-container flex-gt-sm="30" flex-sm="35">
+		<label>{{'Telefono/Cell' | translate}}</label>
+		<!-- <i class="material-icons">phone</i> -->
+		<md-icon class="icon-phone" md-font-library="material-icons">phone</md-icon>
+		<input required name="telephone" type="number" min="0" ng-model="project.telephone">
+		<div ng-messages="projectForm.telephone.$error">
+			<div ng-message="required">Campo Obbligatorio numerico.</div>
+		</div>
+	</md-input-container>
+
+
+	<md-input-container flex-gt-sm="30" flex-sm="35">
+		<label>{{'Mail' | translate}}</label>
+		<!-- <i class="material-icons">mail</i> -->
+		<md-icon class="icon-mail" md-font-library="material-icons">mail</md-icon>
+		<input type="email" required maxlength="15" name="mail" ng-model="project.mail">
+	</md-input-container>
+
+</div>
+
+<div layout-gt-xs="row" layout-xs="column" layout-align="center">
+	<md-input-container flex-gt-sm="60" flex-sm="70">
+		<label>{{'Indirizzo' | translate}}</label>
+		<!-- <i class="material-icons icon-address">place</i> -->
+		<md-icon class="icon-address" md-font-library="material-icons">place</md-icon>
+		<input name="address" ng-model="project.address">
+	</md-input-container>
+
+</div>
+
+<md-content>
+	<div layout-gt-xs="row" layout-xs="column" layout-align="center">
+		<md-input-container flex-gt-sm="40" flex-sm="40">
+			<fieldset class="standard">
+				<legend>
+					<h5>{{'INTERVISTATO RISULTA' | translate}}</h5></legend>
+				<div layout="row" layout-align="left center">
+					<md-radio-group ng-model="vm.checked2">
+						<md-radio-button value="vittima" class="md-primary">{{'Vittima' | translate}}</md-radio-button>
+						<md-radio-button value="testimone Oculare">{{'Testimone Oculare' | translate}}</md-radio-button>
+						<md-radio-button value="persona del posto">{{'Persona del posto' | translate}}</md-radio-button>
+						<md-radio-button value="familiare">{{'Familiare' | translate}}</md-radio-button>
+						<md-radio-button value="proprietario/Amministratore">{{'Proprietario/Amministratore' | translate}}</md-radio-button>
+						<md-radio-button value="other">{{'Altro' | translate}}</md-radio-button>
+					</md-radio-group>
+				</div>
+				<div layout="coloumn" layout-align="flex-end" ng-show="vm.checked2 == 'other'">
+					<md-input-container md-no-float class="bv-input-container md-block">
+						<label>altro</label>
+						<input required name="other" ng-model="project.other ">
+					</md-input-container>
+				</div>
+		</md-input-container>
+	</div>
+</md-content>
+
+
+<div layout-gt-xs="row" layout-xs="column" layout-align="center">
+	<md-input-container flex-gt-sm="60" flex-sm="70">
+		<h5>{{'N° TOTALE PERSONE PRESUNTE SCOMPARSE' | translate}}</h5>
+		<input name="number1" type="number" min="0" ng-model="project.number1">
+		<div ng-messages="projectForm.number1.$error">
+			<div ng-message="">{{'Campo numerico.' | translate}}</div>
+		</div>
+	</md-input-container>
+</div>
+
+
+<div layout-gt-xs="row" layout-xs="column" layout-align="center">
+	<md-input-container flex-gt-sm="60" flex-sm="70">
+		<h5>{{'DI CUI CONFERMATE' | translate}}</h5>
+		<input name="number2" type="number" min="0" ng-model="project.number2">
+		<div ng-messages="projectForm.number2.$error">
+			<div ng-message="">{{'Campo numerico.' | translate}}</div>
+		</div>
+	</md-input-container>
+</div>
+
+
+<div layout-gt-xs="row" layout-xs="column" layout-align="center">
+	<md-input-container flex-gt-sm="60" flex-sm="70">
+		<fieldset class="standard">
+			<legend>
+				<h5>{{'COSA HAI VISTO O SENTITO' | translate}}</h5></legend>
+			<div>
+				<textarea ng-model="project.description" md-maxlength="500" rows="5" md-select-on-focus></textarea>
+			</div>
+	</md-input-container>
+</div>
+
+
+<div layout-gt-xs="row" layout-xs="column" layout-align="center left">
+	<md-container flex-gt-sm="42" flex-sm="60">
+		<fieldset class="standard">
+			<legend>
+				<h5>{{'È A CONOSCENZA CHE SIA GIÀ STATA EFFETTUATA UNA RICERCA SUL SITO?' | translate}}</h5></legend>
+
+			<md-radio-group ng-model="vm.checked">
+				<md-radio-button value="yes" class="md-primary">{{'SI' | translate}}</md-radio-button>
+				<md-radio-button value="no">{{'NO' | translate}}</md-radio-button>
+
+			</md-radio-group>
+	</md-container>
+</div>
+
+
+<div layout-gt-xs="row" layout-xs="column" layout-align="center left" ng-show="vm.checked == 'yes'">
+	<md-container flex-gt-sm="42" flex-sm="60">
+		<legend>
+			<h5>{{'LA RICERCA È STATA EFFETTUATA DA: ' | translate}}</h5></legend>
+		<md-radio-group ng-model="vm.checked3">
+			<md-radio-button value="persone del posto" class="md-primary">{{'Persone del posto' | translate}}</md-radio-button>
+			<md-radio-button value="volontari organizzati">{{'Volontari organizzati' | translate}}</md-radio-button>
+			<md-radio-button value="altro">{{'Altro' | translate}}</md-radio-button>
+		</md-radio-group>
+		<div layout="coloumn" layout-align="flex-end" ng-show="vm.checked3 == 'altro'">
+			<md-input-container>
+				<label>altro</label>
+				<input name="other" value="other" ng-model="project.other ">
+			</md-input-container>
+		</div>
+	</md-container>
+</div>
+
+
+<div layout-gt-xs="row" layout-xs="column" layout-align="center">
+	<md-input-container flex-gt-sm="60" flex-sm="70">
+		<fieldset class="standard">
+			<legend>
+				<h5>{{'POSSIBILI PERICOLI' | translate}}</h5></legend>
+			<div>
+				<textarea ng-model="project.dangerous" md-maxlength="500" rows="5" md-select-on-focus></textarea>
+			</div>
+	</md-input-container>
+</div>
+
+<div layout-gt-xs="row" layout-xs="column" layout-align="center">
+	<md-input-container flex-gt-sm="60" flex-sm="70">
+		<fieldset class="standard">
+			<legend>
+				<h5>{{'LOCAZIONE DELLE UTENZE (GAS/LUCE/ACQUA/ALTRO)' | translate}}</h5></legend>
+			<div>
+				<textarea ng-model="project.users" md-maxlength="500" rows="5" md-select-on-focus></textarea>
+			</div>
+	</md-input-container>
+</div>
+
+<div layout-gt-xs="row" layout-xs="column" layout-align="center">
+	<md-input-container flex-gt-sm="60" flex-sm="70">
+		<fieldset class="standard">
+			<legend>
+				<h5>{{'NOTE' | translate}}</h5></legend>
+			<div>
+				<textarea ng-model="project.note" md-maxlength="500" rows="5" md-select-on-focus></textarea>
+			</div>
+	</md-input-container>
+</div>
+
+<div layout-gt-xs="row" layout-xs="column" layout-align="center">
+	<md-input-container flex-gt-sm="60" flex-sm="70">
+		<h5>{{'COMPILATO DA' | translate}}</h5></legend>
+		<input name="compilato" type="text" ng-model="project.compilato">
+		<div ng-messages="projectForm.compilato.$error">
+			<div ng-message="">{{'Campo alfanumerico.' | translate}}</div>
+		</div>
+	</md-input-container>
+</div>
+
+
+<div layout-gt-xs="row" layout-xs="column" layout-align="center">
+	<md-input-container flex-gt-sm="30" flex-sm="40">
+		<!-- <div class="alert alert-error ng-scope" ng-show="webcamError" style="">
+			<span>Webcam could not be started. Did you give access to it?</span>
+		</div>
+		<webcam channel="vm.channel" on-stream="vm.onStream(stream)" on-access-denied="vm.onError(err)" on-streaming="vm.onSuccess()">
+		</webcam>
+		<md-button class="md-raised md-primary" layout="row" layout-align="center center" ng-click="vm.makeSnapshot()">Cattura immagine</md-button>
+		<canvas id="snapshot" width="300" height="300"></canvas>
+		<a id="download" ng-show="vm.captured">Download as image</a> -->
+		<webcam-capture-no-ios></webcam-capture-no-ios>
+	</md-input-container>
+</div>
+
+<!-- <div layout-gt-xs="row" layout-xs="column" layout-align="center">
+	<md-input-container flex-gt-sm="60" flex-sm="70"> -->
+
+<!-- </md-input-container>
+</div> -->
+
+<div layout-gt-xs="row" layout-xs="column" layout-align="center">
+	<md-input-container flex-gt-sm="70" flex-sm="80">
+		<h2>Seleziona immagini per upload</h2>
+		<input id="bv-input-upload" type="file" nv-file-select="" uploader="uploader" multiple>
+
+	</input>
+
+	</md-input-container>
+
+</div>
+
+<div layout-gt-xs="row" layout-xs="column" layout-align="center" ng-show="uploader.queue.length">
+	<md-input-container flex-gt-sm="50" flex-sm="60">
+		<table class="table">
+			<thead>
+				<tr>
+					<th width="50%">Nome</th>
+					<th ng-show="uploader.isHTML5" width="20%">Dimensione</th>
+					<!-- <th ng-show="uploader.isHTML5">Progress</th>
+					<th>Status</th> -->
+					<!-- <th width="25%">Actions</th>-->
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="item in uploader.queue">
+					<td> <strong>{{ item.file.name }}</strong>
+
+						<!-- Image preview -->
+						<!--auto height-->
+						<!--<div ng-thumb="{ file: item.file, width: 100 }"></div>-->
+						<!--auto width-->
+						<div ng-show="uploader.isHTML5" ng-thumb="{ file: item._file, height: 100 }"></div>
+						<!--fixed width and height -->
+						<!--<div ng-thumb="{ file: item.file, width: 100, height: 100 }"></div>-->
+					</td>
+					<td ng-show="uploader.isHTML5" nowrap>{{ item.file.size/1024/1024|number:2 }} MB</td>
+					<!-- <td ng-show="uploader.isHTML5">
+						<div class="progress" style="margin-bottom: 0;">
+							<div class="progress-bar" role="progressbar" ng-style="{ 'width': item.progress + '%' }"></div>
+						</div>
+					</td> -->
+					<td class="text-center" width="45%"> <span ng-show="item.isSuccess"><i class="glyphicon glyphicon-ok"></i></span>
+						<span ng-show="item.isCancel"><i class="glyphicon glyphicon-ban-circle"></i></span>
+						<span ng-show="item.isError"><i class="glyphicon glyphicon-remove"></i></span>
+
+					</td>
+					<td nowrap  width="25%">
+						<!-- <button type="button" class="btn btn-success btn-xs" ng-click="item.upload()" ng-disabled="item.isReady || item.isUploading || item.isSuccess"> <span class="glyphicon glyphicon-upload"></span> Upload</button>
+						<button type="button" class="btn btn-warning btn-xs" ng-click="item.cancel()" ng-disabled="!item.isUploading"> <span class="glyphicon glyphicon-ban-circle"></span> Cancel</button> -->
+						<button type="button" class="btn btn-danger btn-xs" ng-click="item.remove()"> <span class="glyphicon glyphicon-trash"></span> Remove</button>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<!-- <div>
+			<div>Queue progress:
+				<div class="progress" style="">
+					<div class="progress-bar" role="progressbar" ng-style="{ 'width': uploader.progress + '%' }"></div>
+				</div>
+			</div>
+			<button type="button" class="btn btn-success btn-s" ng-click="uploader.uploadAll()" ng-disabled="!uploader.getNotUploadedItems().length"> <span class="glyphicon glyphicon-upload"></span> Upload all</button>
+			<button type="button" class="btn btn-warning btn-s" ng-click="uploader.cancelAll()" ng-disabled="!uploader.isUploading"> <span class="glyphicon glyphicon-ban-circle"></span> Cancel all</button>
+			<button type="button" class="btn btn-danger btn-s" ng-click="uploader.clearQueue()" ng-disabled="!uploader.queue.length"> <span class="glyphicon glyphicon-trash"></span> Remove all</button>
+		</div> -->
+	</md-input-container>
+
+</div>
+
+
+<webcam-capture></webcam-capture>
+
+<div layout-gt-xs="row" layout-xs="column" layout-align="center left">
+	<md-container flex-gt-sm="42" flex-sm="60">
+		<md-button class="md-raised md-primary" layout="row" layout-align="center center"><i class="material-icons">save</i>Conferma</md-button>
+	</md-container>
+</div>

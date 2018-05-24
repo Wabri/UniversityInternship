@@ -1,0 +1,300 @@
+<!-- FONTS -->
+<md-content>
+
+  <md-toolbar class="md-whiteframe-1dp">
+    <div class="md-toolbar-tools">
+      <div class="md-title">FONTS</div>
+    </div>
+  </md-toolbar>
+  <br/>
+
+  <div>
+    <p>LESSO normale</p>
+    <p><b>LESSO bold</b></p>
+    <p><i>LESSO italic</i></p>
+  </div>
+
+</md-content>
+
+<!-- ICONS -->
+<md-content>
+  <md-toolbar class="md-whiteframe-1dp">
+    <div class="md-toolbar-tools">
+      <div class="md-title">ICONS</div>
+    </div>
+  </md-toolbar>
+  <br/>
+
+  <div>
+    <i class="material-icons">face</i>
+    <i class="material-icons">help</i>
+    <i class="material-icons md-48">&#xE551;</i>
+    <md-button class="md-raised md-primary" layout="row" layout-align="center center"><i class="material-icons">save</i>Save</md-button>
+  </div>
+
+</md-content>
+
+<!--Esempio center verticale ed orizzonatale-->
+<md-content>
+  <md-toolbar class="md-whiteframe-1dp">
+    <div class="md-toolbar-tools">
+      <div class="md-title">Esempio center verticale ed orizzonatale</div>
+    </div>
+  </md-toolbar>
+  <br/>
+
+  <div layout="row" layout-align="center center" style="height:30vh">
+    <div style="padding-left:10rem;padding-right:10rem;padding-top:2rem;padding-bottom:2rem;border:0.1rem solid red">LOGIN</div>
+  </div>
+
+</md-content>
+
+<!--Allineamento controlli diversi-->
+<md-toolbar class="md-whiteframe-1dp">
+  <div class="md-toolbar-tools">
+    <div class="md-title">Allineamento controlli diversi</div>
+  </div>
+</md-toolbar>
+<br/>
+
+<md-content>
+  <div class="main blue" layout="row" layout-align="start center">
+    <div class="container yellow" layout="row" layout-align="left center" flex-xs="30" flex-sm="15" flex="10">
+      <md-checkbox class="check">Pollo</md-checkbox>
+    </div>
+    <div layout="row" layout-align="left center" flex-xs="70" flex-sm="85" flex="90">
+      <md-input-container>
+        <label>Client Name</label>
+        <input required=" " name="clientName " ng-model="project.clientName ">
+        <div ng-messages="projectForm.clientName.$error ">
+          <div ng-message="required ">This is required.</div>
+        </div>
+      </md-input-container>
+    </div>
+  </div>
+</md-content>
+
+<!--Responsive Layout-->
+<md-content>
+  <br/>
+  <md-toolbar class="md-whiteframe-1dp ">
+    <div class="md-toolbar-tools ">
+      <div class="md-title ">Responsive Layout</div>
+    </div>
+  </md-toolbar>
+
+  <!-- SEZIONE -->
+  <br/>
+  <div layout="row " layout-xs="column ">
+    <div flex>
+      I'm above on mobile, and to the left on larger devices.
+    </div>
+    <div flex>
+      I'm below on mobile, and to the right on larger devices.
+    </div>
+  </div>
+
+  <!-- SEZIONE -->
+  <br/>
+  <md-toolbar class="md-whiteframe-1dp ">
+    <div class="md-toolbar-tools ">
+      <div class="md-title ">Show & Hide</div>
+    </div>
+  </md-toolbar>
+
+  <div layout="row ">
+    <div hide show-gt-sm flex>
+      Only show on gt-sm devices.
+    </div>
+    <div hide-gt-sm flex>
+      Shown on small and medium.
+      <br> Hidden on gt-sm devices.
+    </div>
+    <div show hide-gt-md flex>
+      Shown on small and medium size devices.
+      <br> Hidden on gt-md devices.
+    </div>
+    <div hide show-md flex>
+      Shown on medium size devices only.
+    </div>
+    <div hide show-gt-lg flex>
+      Shown on devices larger than 1200px wide only.
+    </div>
+  </div>
+
+  <!-- SEZIONE -->
+  <br/>
+  <md-toolbar class="md-whiteframe-1dp ">
+    <div class="md-toolbar-tools ">
+      <div class="md-title ">Flex</div>
+    </div>
+  </md-toolbar>
+
+  <div layout="row ">
+    <div flex>First item in row</div>
+    <div flex>Second item in row</div>
+  </div>
+  <div layout="column ">
+    <div flex>First item in column</div>
+    <div flex>Second item in column</div>
+  </div>
+
+  <!-- SEZIONE -->
+  <br/>
+  <md-toolbar class="md-whiteframe-1dp ">
+    <div class="md-toolbar-tools ">
+      <div class="md-title ">Flex</div>
+    </div>
+  </md-toolbar>
+  <div layout="row " layout-wrap>
+    <div flex="33 ">[flex=33]</div>
+    <div flex="66 ">[flex=66]</div>
+    <div flex="66 ">[flex=66]</div>
+    <div flex="33 ">[flex=33]</div>
+    <div flex="33 ">[flex=33]</div>
+    <div flex="33 ">[flex=33]</div>
+    <div flex="33 ">[flex=33]</div>
+  </div>
+
+  <br/>
+  <md-toolbar class="md-whiteframe-1dp ">
+    <div class="md-toolbar-tools ">
+      <div class="md-title ">Flex</div>
+    </div>
+  </md-toolbar>
+
+  <br/>
+  <div layout="row " layout-wrap>
+    <div id="c1 " flex="33 ">[flex=33]</div>
+    <div id="c2 " flex="33 ">[flex=33]</div>
+    <div id="c1 " flex="33 ">[flex=33]</div>
+
+    <div id="c2 " flex="33 ">[flex=33]</div>
+    <div id="c2 " flex="33 ">[flex=33]</div>
+    <div id="c2 " flex="33 ">[flex=33]</div>
+    <div id="c1 " flex="100 ">UUtimo 100%</div>
+  </div>
+
+  <br/>
+  <md-toolbar class="md-whiteframe-1dp ">
+    <div class="md-toolbar-tools ">
+      <div class="md-title ">Flex</div>
+    </div>
+  </md-toolbar>
+  <div layout="column ">
+    <div style="background-color: #3e8f3e " flex="10 ">First item in column</div>
+    <div style="background-color: #00b3ee " flex="20 ">Second item in column</div>
+    <div style="background-color: #00b3ee " flex="70 ">Terzo item in column</div>
+  </div>
+  <div layout="row ">
+    <div style="background-color: #eea236 " flex='40'>First item in row</div>
+    <div style="background-color: #ce8483 " flex='40'>Second item in row</div>
+    <div style="background-color: #83b6ce " flex='20'>Terrzo item in row</div>
+  </div>
+
+  <!-- SEZIONE -->
+  <br/>
+  <md-toolbar class="md-whiteframe-1dp ">
+    <div class="md-toolbar-tools ">
+      <div class="md-title ">DATATABLE</div>
+    </div>
+  </md-toolbar>
+
+</md-content>
+
+<md-content laout="column " flex>
+
+  <md-card>
+    <div layout="row " layout-wrap class="checkboxes ">
+      <md-checkbox ng-model="vm.options.rowSelection ">Row Selection</md-checkbox>
+      <md-checkbox ng-model="vm.options.multiSelect ">Multiple Selection</md-checkbox>
+      <md-checkbox ng-model="vm.options.autoSelect ">Auto Selection</md-checkbox>
+      <md-checkbox ng-model="vm.options.decapitate ">Decapitate</md-checkbox>
+      <md-checkbox ng-model="vm.options.largeEditDialog ">Lard Edit Dialogs</md-checkbox>
+      <md-checkbox ng-model="vm.options.boundaryLinks ">Pagination Boundary Links</md-checkbox>
+      <md-checkbox ng-model="vm.options.limitSelect " ng-click="toggleLimitOptions() ">Pagination Limit Select</md-checkbox>
+      <md-checkbox ng-model="vm.options.pageSelect ">Pagination Page Select</md-checkbox>
+    </div>
+  </md-card>
+
+  <md-card>
+
+    <md-toolbar class="md-table-toolbar md-default " ng-hide="vm.options.rowSelection && selected.length ">
+      <div class="md-toolbar-tools ">
+        <span>Nutrition</span>
+        <div flex></div>
+        <md-button class="md-icon-button " ng-click="vm.loadStuff() ">
+          <md-icon>refresh</md-icon>
+        </md-button>
+      </div>
+    </md-toolbar>
+
+    <md-toolbar class="md-table-toolbar alternate " ng-show="vm.options.rowSelection && selected.length ">
+      <div class="md-toolbar-tools ">
+        <span>{{selected.length}} {{selected.length > 1 ? 'items' : 'item'}} selected</span>
+      </div>
+    </md-toolbar>
+
+    <md-table-container>
+      <table md-table md-row-select="vm.options.rowSelection " multiple="{{options.multiSelect}} " ng-model="vm.selected " md-progress="promise ">
+        <thead ng-if="!vm.options.decapitate " md-head md-order="vm.query.order " md-on-reorder="vm.logOrder ">
+          <tr md-row>
+            <th md-column md-order-by="name ">
+              <span>Dessert (100g serving)</span>
+            </th>
+            <th md-column md-order-by="type ">
+              <span>Type</span>
+            </th>
+            <th md-column md-numeric md-order-by="calories.value " md-desc hide-xs>
+              <span>Calories</span>
+            </th>
+            <th md-column md-numeric md-order-by="fat.value " hide-xs>
+              <span>Fat (g)</span>
+            </th>
+            <th md-column md-numeric md-order-by="carbs.value " hide-xs>
+              <span>Carbs (g)</span>
+            </th>
+            <th md-column md-numeric md-order-by="protein.value " hide-xs>
+              <span>Protein (g)</span>
+            </th>
+            <th md-column md-numeric md-order-by="sodium.value " hide-xs>
+              <span>Sodium (mg)</span>
+            </th>
+            <th md-column md-numeric md-order-by="calcium.value " hide-xs>
+              <span>Calcium (%)</span>
+            </th>
+            <th md-column md-numeric md-order-by="iron.value " hide-xs>
+              <span>Iron (%)</span>
+            </th>
+            <th md-column md-order-by="comment " hide-xs>
+              <md-icon>comments</md-icon>
+              <span>Comments</span>
+            </th>
+          </tr>
+        </thead>
+        <tbody md-body>
+          <tr md-row md-select="dessert " md-on-select="vm.logItem " md-auto-select="vm.options.autoSelect " ng-disabled="vm.dessert.calories.value> 400" ng-repeat="dessert in vm.desserts.data | filter: filter.search | orderBy: vm.query.order | limitTo: vm.query.limit : (vm.query.page -1) * vm.query.limit">
+            <td md-cell>{{dessert.name}}</td>
+            <td md-cell>
+              <md-select ng-model="dessert.type" placeholder="Other">
+                <md-option ng-value="type" ng-repeat="type in vm.getTypes()">{{type}}</md-option>
+              </md-select>
+            </td>
+            <td md-cell hide-xs>{{dessert.calories.value}}</td>
+            <td md-cell hide-xs>{{dessert.fat.value | number: 2}}</td>
+            <td md-cell hide-xs>{{dessert.carbs.value}}</td>
+            <td md-cell hide-xs>{{dessert.protein.value | number: 2}}</td>
+            <td md-cell hide-xs>{{dessert.sodium.value}}</td>
+            <td md-cell hide-xs>{{dessert.calcium.value}}%</td>
+            <td md-cell hide-xs>{{dessert.iron.value}}%</td>
+            <td md-cell ng-dblclick="vm.editComment($event, dessert)" ng-class="{'md-placeholder': !dessert.comment}" hide-xs>
+              {{dessert.comment || 'Add a comment'}}
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </md-table-container>
+
+    <md-table-pagination md-limit="vm.query.limit" md-limit-options="vm.limitOptions" md-page="vm.query.page" md-total="{{vm.desserts.count}}" md-page-select="vm.options.pageSelect" md-boundary-links="vm.options.boundaryLinks" md-on-paginate="vm.logPagination"></md-table-pagination>
+  </md-card>
+</md-content>

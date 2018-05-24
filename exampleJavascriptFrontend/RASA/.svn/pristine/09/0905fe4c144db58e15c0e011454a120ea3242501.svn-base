@@ -1,0 +1,186 @@
+(function() {
+  'use strict';
+
+  angular.module('revux')
+    // Main form directive
+    .directive('paymentForm', paymentForm)
+    .directive('paymentFormStep', paymentFormStep)
+    .directive('affix', affix);
+
+
+  function paymentForm() {
+    return {
+      restrict: 'E',
+      transclude: true,
+      controllerAs: 'paymentFormCtrl',
+      templateUrl: 'common/directives/paymentForm/paymentform.directive.html',
+      replace: true,
+      controller: paymentFormController
+
+    };
+
+    function paymentFormController($scope, $element, $timeout, Events, $rootScope, UtilsService) {
+      var self = this;
+      var steps;
+      self.goToStep = goToStep;
+      self.select = select;
+      self.addStep = addStep;
+      self.parentElement = $element;
+      init();
+
+      function init() {
+        steps = $scope.steps = [];
+        UtilsService.onDirectiveLoad({
+          watch: function() {
+            var ready = steps[0] != undefined;
+            return [ready];
+          },
+          method: function() {
+            steps[0].selected = true;
+          }
+        })
+
+      };
+
+      function goToStep(stepId) {
+        $rootScope.$broadcast(Events.FOCUS_FIRST_FIELD, stepId);
+      };
+
+      function select(stepId) {
+        angular.forEach(steps, function(step, index) {
+          step.selected = (step.$id === stepId) ? true : false;
+        });
+      };
+
+      function addStep(step) {
+        if (steps.length == 0) self.select(step);
+        return steps.push(step);
+      };
+    }
+  };
+
+  // Single step directive
+  function paymentFormStep($timeout, Events, bvBreakpointsService) {
+    return {
+      require: '^paymentForm',
+      restrict: 'E',
+      transclude: true,
+      scope: {
+        name: '@'
+      },
+      link: paymentFormStepLink,
+      templateUrl: 'common/directives/paymentForm/paymentformstep.directive.html',
+      replace: true
+    };
+
+    function paymentFormStepLink(scope, element, attrs, paymentFormCtrl) {
+
+      paymentFormCtrl.addStep(scope);
+      //timeout necessario altrimenti il find manca gli eventuali elementi aggiunti in maniera asincrona es. ng-include
+
+      $timeout(init, 4000);
+
+      function init() {
+        var field = $(element);
+        var forcedFocusField = field.find($("*[paymentform-focus]"));
+        var fields = field.find('input, textarea, div.ui-select-container');
+
+        scope.$on(Events.FOCUS_FIRST_FIELD, function(event, stepId) {
+          if (scope.$id === stepId && !scope.selected) {
+            if (forcedFocusField.length == 1) {
+              forcedFocusField[0].focus();
+            } else {
+              if (angular.element(fields[0]).controller('uiSelect')) {
+                angular.element(fields[0]).controller('uiSelect').focusser[0].click();
+                angular.element(fields[0]).controller('uiSelect').focusser[0].focus();
+              } else {
+                fields[0].focus();
+              }
+            }
+          }
+        });
+
+        fields.focus(function(event) {
+          doScroll(event);
+        });
+
+        fields.click(function(event) {
+          doScroll(event);
+        })
+
+      }
+
+      function doScroll(event) {
+        var scrollTop;
+        var time;
+
+        if (bvBreakpointsService.isMobile()) {
+          scrollTop = $(event.target).offset().top - 113;
+          time = 500;
+        } else {
+          scrollTop = $(event.target).offset().top - 150;
+          time = 750;
+        }
+        $('html, body').stop().animate({
+          scrollTop: scrollTop
+        }, time);
+        $timeout(function() {
+          paymentFormCtrl.select(scope.$id);
+        });
+
+      }
+
+    }
+
+
+  };
+
+  function affix($window) {
+    return {
+      restrict: 'A',
+      scope: {
+        affix: '=',
+        bvDisableUnbind: '=?'
+      },
+      link: function($scope, $element) {
+        var topOffset;
+        var win;
+        init();
+
+        function init() {
+
+
+          win = $(angular.element($window));
+          topOffset = $element[0].offsetTop;
+
+          $scope.$on('$stateChangeStart', function() {
+            if (!$scope.bvDisableUnbind) {
+              win.unbind('scroll', affixElement);
+            }
+
+          });
+
+          win.bind('scroll', affixElement);
+          $scope.$watch('affix', function(newValue, oldValue) {
+            if (newValue != oldValue) {
+              affixElement();
+            }
+          }, true)
+
+        };
+
+        function affixElement() {
+          if ($window.pageYOffset > 10 && $scope.affix) {
+            $element.addClass('fixed');
+          } else {
+            $element.removeClass('fixed');
+          }
+        };
+
+
+      }
+    };
+  };
+
+
+}());

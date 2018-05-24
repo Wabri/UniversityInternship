@@ -1,0 +1,59 @@
+<!-- MODALE -->
+<div id="logout" class="modal fade bd-example-modal-lg" role="dialog"
+     aria-labelledby="myLargeModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+
+            <div class="row">
+                <div class="col-xs-12 col-md-offset-2 col-md-8 col-md-offset-2 col-lg-offset-3 col-lg-6 col-lg-offset-3">
+                    <div class="modal-header">
+
+                        <div class="row">
+                            <div class="col-sm-offset-3 col-sm-6 text-right">
+                                <i class="fa fa-times fa-2x" style="color: #ac2925;cursor: pointer; cursor: hand;" aria-hidden="true" ng-click="vm.logoutCancel()"></i>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-sm-offset-3 col-sm-6 text-left">
+                                <p>{{ 'logout.title' | translate}}</p>
+                                <hr/>
+                                <p>{{ 'logout.body' | translate}}</p>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="form-group">
+                                <div class="col-sm-offset-3 col-sm-6 text-center">
+                                    <button class="btn bps-btn-primary btn-lg btn-block text-center"
+                                            ng-click="vm.logout()">{{ 'logout.button.logout' | translate}}</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row" ng-show="vm.showButtonContracts">
+                            <div class="form-group">
+                                <div class="col-sm-offset-3 col-sm-6 text-center">
+                                    <button class="btn bps-btn-secondary btn-lg btn-block text-center"
+                                            ng-click="vm.chooseNewContract()">{{ 'logout.button.contract' | translate}}</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="form-group">
+                                <div class="col-sm-offset-3 col-sm-6 text-center">
+                                    <button class="btn bps-btn-secondary btn-lg btn-block text-center"
+                                            ng-click="vm.logoutUndo()">{{ 'logout.button.undoMod' | translate | uppercase}}</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

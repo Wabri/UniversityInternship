@@ -1,0 +1,19 @@
+(function() {
+  'use strict';
+
+  angular.module(APP_NAME)
+    .service('LibraryService', LibraryService)
+
+  /**
+   * bvAlertService
+   * @param {*}  
+   * @param {*}  
+   */
+  function LibraryService($http, bvApiService, bvStoreFactory, bvHttpPromisesFactory, bvBusyService) {
+
+    // methods
+    var self = this;
+
+  }
+
+})();

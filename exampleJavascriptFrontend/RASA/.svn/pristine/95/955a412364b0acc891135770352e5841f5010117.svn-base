@@ -1,0 +1,79 @@
+(function () {
+    'use strict';
+
+    angular.module('revux').directive('accountEmailPhone', accountEmailPhone);
+
+    function accountEmailPhone() {
+
+        var directive = {
+            templateUrl: 'common/directives/accountEmailPhone/accountEmailPhone.directive.html',
+            restrict: 'E',
+            controller: controller,
+            controllerAs: 'ctrl',
+            scope: {
+                api: '='
+            }
+
+        };
+
+        return directive;
+    }
+
+    /**
+     * controller
+     * @param $rootScope
+     * @param LanguageService
+     * @param LANGUAGES
+     * @param LANGUAGES_MAP
+     * @param Events
+     * @param UtilsService
+     */
+    function controller( $scope, accountsService) {
+
+        var vm = this;
+
+        vm.saveEmailPhone = saveEmailPhone;
+        vm.openNotifications = openNotifications;
+
+        vm.telephoneNumber = '';
+        vm.eMail = '';
+
+        init();
+
+        //////////////////////
+        function init() {
+
+            if ($scope.api) {
+                $scope.api.setMessage = setMessage;
+                $scope.api.isReady = function () {
+                    return true;
+                }
+            }
+        }
+
+        function setMessage(value) {
+            vm.message = value;
+        }
+
+
+        function openNotifications() {
+            $state.go("contract.settings.notifications");
+        }
+
+
+        /**
+         * saveEmailPhone : evento da HTML
+         */
+        function saveEmailPhone() {
+
+            alert("ci sono");
+
+            var param = {
+                'telephoneNumber': vm.telephoneNumber,
+                'email': vm.email
+            }
+            accountsService.saveEmailPhone(param);
+        }
+    };
+
+}());

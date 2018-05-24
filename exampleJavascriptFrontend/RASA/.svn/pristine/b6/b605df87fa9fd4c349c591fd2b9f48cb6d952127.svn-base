@@ -1,0 +1,8 @@
+<div class="alert alert-error ng-scope" ng-show="webcamError" style="">
+  <span>Webcam could not be started. Did you give access to it?</span>
+</div>
+<webcam channel="channel" on-stream="onStream(stream)" on-access-denied="onError(err)" on-streaming="onSuccess()">
+</webcam>
+<md-button class="md-raised md-primary" layout="row" layout-align="center center" ng-click="makeSnapshot()">Cattura immagine</md-button>
+<canvas id="snapshot" width="300" height="300"></canvas>
+<a id="download" ng-show="captured">Download as image</a>

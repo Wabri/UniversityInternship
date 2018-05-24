@@ -1,0 +1,45 @@
+(function() {
+  'use strict';
+
+  angular.module(APP_NAME)
+    .service('loginService', loginService)
+
+  /**
+   * bvAlertService
+   * @param {*}
+   * @param {*}
+   */
+  function loginService($http, bvApiService, bvStoreFactory, bvHttpPromisesFactory, bvBusyService) {
+
+    // methods
+    var self = this;
+
+    //metodi
+    self.loginUser = loginUser;
+
+
+    /**
+     *
+     */
+    function loginUser(username, password) {
+
+      debugger; //var dfd = bvHttpPromisesFactory.defer('Sto loggando...');
+      var url = bvApiService.getEndpoint() + '/login';
+      var payload = {
+        username: username,
+        password: password
+      }
+
+
+      return $http.post(url, payload).then(function successCallback(response) {
+        debugger;
+        return response.data;
+      });
+
+
+
+    }
+
+  }
+
+})();

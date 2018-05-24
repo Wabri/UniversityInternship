@@ -1,0 +1,83 @@
+(function () {
+    'use strict';
+
+    angular.module('revux').directive('movementsChart', movementsChart);
+
+    function movementsChart() {
+
+        var directive = {
+            templateUrl: 'common/directives/movementsChart/movementsChart.directive.html',
+            restrict: 'E',
+            controller: controller,
+            controllerAs: 'ctrl',
+            replace: true,
+            scope: {
+              datasource: '=',
+              bvTitleKey:'=?',
+              showZeroValues:'=?'
+            }
+        };
+
+        return directive;
+
+        function controller($scope){
+
+          var vm = this;
+          vm.percentageCredit = 0;
+          vm.percentageDebit = 0;
+          vm.percentageSaving = 0;
+          vm.data={};
+
+          $scope.$watch(function() {
+              return $scope.datasource;
+            },
+            function(newValue, oldValue) {
+                vm.data = newValue;
+                init();
+            }, true);
+          //////////////////////
+          function init() {
+            if(vm.data) {
+                vm.data.creditCompute = vm.data.credit ? Math.abs(vm.data.credit) : 0;
+                vm.data.debitCompute = vm.data.debit ? Math.abs(vm.data.debit) : 0;
+                vm.data.savingCompute = vm.data.saving ? Math.abs(vm.data.saving) : 0;
+
+                if (!vm.computeType){
+                  vm.totals = vm.data.creditCompute +
+                              vm.data.debitCompute +
+                              vm.data.savingCompute;
+                }
+
+                if (vm.computeType===1){
+                  if(vm.data.creditCompute>vm.data.debitCompute && vm.data.creditCompute>vm.data.savingCompute ){
+                    vm.totals=vm.data.creditCompute;
+                  }
+                  if(vm.data.debitCompute>vm.data.creditCompute && vm.data.debitCompute>vm.data.savingCompute ){
+                    vm.totals=vm.data.debitCompute;
+                  }
+                  if(vm.data.savingCompute>vm.data.creditCompute && vm.data.saving>vm.data.debitCompute ){
+                    vm.totals=vm.data.savingCompute;
+                  }
+                }
+
+                vm.percentageDebit=100*vm.data.debitCompute/vm.totals;
+                vm.percentageCredit=100*vm.data.creditCompute/vm.totals;
+                vm.percentageSaving=100*vm.data.savingCompute/vm.totals;
+
+                if(vm.data.creditCompute==0){
+                  vm.percentageCredit=0;
+                }
+                if(vm.data.debitCompute==0){
+                  vm.percentageDebit=0;
+                }
+                if(vm.data.savingCompute==0){
+                  vm.percentageSaving=0;
+                }
+
+            }
+
+          }
+
+        }
+    }
+}());

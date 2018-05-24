@@ -1,0 +1,105 @@
+(function () {
+    'use strict';
+
+
+/*
+  Applicare questa direttiva come wrapper di una input, una select o altro.
+  Questa direttiva in automatico aggiunge il bordo rosso a fieldset,input,select,textarea contenute.
+
+      bvInnerElement:'=?'         text-> permette di applicare il bordo rosso o arancione ad un elemento arbitrario: per selezionare un id precedere con # es: '#myId'
+      bvWarningText:'=?'          text-> se è presente un error non viene mostrata la warning
+      bvErrorText:'=?'            text
+
+    bvErrorText e bvWarningText sono aggiunte e rimosse solo dal parent.
+    Errors e Warnings sono mostrati solo se $pristine è false.
+
+    Per modificare il $pristine dal parentCtrl mettere sulla direttiva un name ed ng-form:
+      esempio: <bv-errors-wrapper ng-form name='THENAME'></>
+    dal parentCtrl invocare:
+      $scope.THENAME.bvErrorsWrapper.$setDirty();
+
+
+
+
+*/
+    angular.module('revux')
+    .directive('bvErrorsWrapper', bvErrorsWrapper);
+
+    function bvErrorsWrapper(LanguageService) {
+
+        var directive = {
+            templateUrl: 'common/directives/bvErrorsWrapper/bvErrorsWrapper.directive.html',
+            restrict: 'E',
+            transclude: true,
+            link: link,
+            scope: {
+                bvWarningText:'=?',
+                bvErrorText:'=?',
+                bvInnerElement:'=?',
+                bvHideErrors:'=?',
+                fieldName:'=?'
+            }
+        };
+
+        return directive;
+
+        function link(scope,element) {
+            init();
+
+            //////////////////////
+
+            function init() {
+
+                scope.$watch(function(){
+                  return !scope.bvHideErrors &&
+                        (
+                          scope.bvErrorText ||
+                          (scope.bvErrorsWrapper && scope.bvErrorsWrapper.$dirty && scope.bvErrorsWrapper.$invalid));},
+                  function(errorText){
+                    findInnerElement();
+                    if(errorText){
+                      angular.element(scope.innerElement).addClass('has-error');
+                    }
+                    else{
+                      angular.element(scope.innerElement).removeClass('has-error');
+                    }
+                },true);
+                scope.$watch(function(){
+                  return ((scope.bvErrorsWrapper && scope.bvErrorsWrapper.$valid) || (scope.bvErrorsWrapper && scope.bvErrorsWrapper.$pristine)) &&
+                      !scope.bvHideErrors && !scope.bvErrorText &&scope.bvWarningText;},
+                  function(warningText){
+                    findInnerElement();
+                    if(warningText){
+                      scope.bvErrorsWrapper.warnings={parentWarning:true};
+                      angular.element(scope.innerElement).addClass('has-warning');
+                    }
+                    else{
+                      scope.bvErrorsWrapper.warnings={};
+                      angular.element(scope.innerElement).removeClass('has-warning');
+                    }
+                },true);
+                function findInnerElement(){
+                  if(scope.bvInnerElement){
+                        scope.innerElement=element[0].querySelector(scope.bvInnerElement);
+                    }
+                  else{
+                        scope.innerElement=element.find('fieldset')[0];
+                      if(scope.innerElement==undefined){
+                        scope.innerElement=element.find('input')[0];
+                      }
+                      if(scope.innerElement==undefined){
+                        scope.innerElement=element.find('select')[0];
+                      }
+                      if(scope.innerElement==undefined){
+                        scope.innerElement=element.find('textarea')[0];
+                      }
+                    }
+                };
+          };
+      }
+    }
+
+
+
+
+}());

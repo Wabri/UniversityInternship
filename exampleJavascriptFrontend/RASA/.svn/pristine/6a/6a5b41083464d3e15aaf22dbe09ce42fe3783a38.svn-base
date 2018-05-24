@@ -1,0 +1,178 @@
+<div id="login_page">
+
+    <!-- STEP 1 -->
+    <div class="form-horizontal" ng-show="ctrl.step == 1" ng-form name="formStep1" novalidate angular-validator>
+
+        <!-- TITOLO -->
+        <div class="form-group">
+            <h2>{{ 'app.common.auth' | translate }}</span></h2>
+            <hr/>
+            <span ng-show="ctrl.step == 1">{{ 'app.common.newAutentic' | translate }}<br/>{{ 'app.common.insertPassword' | translate }}</span>
+        </div>
+
+        <!-- AUTENTICAZIONE FALLITA per USETRNAME not FOUND-->
+        <div class="form-group login_info_wrap panel-title" ng-show="ctrl.authBlocked==true">
+            <div class="login_info_immagine">
+                <i class="fa fa-times fa-3x" style="height:64px;line-height: 64px" aria-hidden="true"></i>
+            </div>
+            <div class="login_info_testo">
+                <p class="login_title_box" style="text-align: left">{{ 'app.warning.messagetitle' | translate}}</p>
+                <p>{{ 'login.total.bad.attempts.body' | translate}}</p>
+            </div>
+            <br/>
+        </div>
+
+        <!-- AUTENTICAZIONE FALLITA per BAD CREDENTIALS-->
+        <div class="form-group login_info_wrap panel-title" ng-show="ctrl.authFailed==true">
+            <div class="login_info_immagine">
+                <i class="fa fa-times fa-3x" style="height:64px;line-height: 64px" aria-hidden="true"></i>
+            </div>
+            <div class="login_info_testo">
+                <p class="login_title_box" style="text-align: left">{{ 'login.bad.credentials.title' | translate}}</p>
+                <p>{{ 'login.bad.credentials.body' | translate}}</p>
+            </div>
+            <br/>
+        </div>
+
+        <!-- SOLO SE NON TIMEOUT PAGE-->
+        <div class="form-group">
+            <div class="input-group">
+                <input type="text"
+                       name="user"
+                       id="username"
+                       focus-on="userName"
+                       class="form-control form-control-lg"
+                       ng-minlength="ctrl.userMinLength"
+                       ng-trim="false"
+                       ng-maxlength="ctrl.userMaxLength"
+                       ng-model="ctrl.input.username"
+                       input-maxlength="ctrl.userMaxLength"
+                       ng-pattern="ctrl.userValidator"
+                       placeholder="{{'login.credentials.username' | translate}}"
+                       autocapitalize="off" autocomplete="off" autocorrect="off"
+                       ng-disabled="ctrl.autoUser == true"
+                       ng-keyup="ctrl.clearUserInserted($event);formStep1.$valid && $event.keyCode == 13 && ctrl.externalAuthctrl && checkCredentials()"
+                       required
+                       aria-invalid="false">
+                <span
+                        ng-class="{'login-field--error' : formStep1.user.$error, 'login-field--good' : formStep1.user.$valid}"
+                        class="input-group-addon"><i
+                        class="fa fa-check fa-lg"
+                        aria-hidden="true"></i></span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="input-group">
+                <!--ng-pattern="ctrl.passwordValidator"-->
+                <input type="password"
+                       id="password"
+                       focus-on="passWord"
+                       name="password"
+                       ng-trim="false"
+                       class="form-control form-control-lg"
+                       ng-model="ctrl.input.password"
+                       ng-minlength="ctrl.pwdMinLength"
+                       ng-maxlength="ctrl.pwdMaxLength"
+                       input-maxlength="ctrl.pwdMaxLength"
+                       autocapitalize="off" autocomplete="off" autocorrect="off"
+                       placeholder="{{'login.credentials.password' | translate}}"
+                       ng-pattern="ctrl.passwordValidator"
+                       ng-keyup="ctrl.clearUserInserted($event);formStep1.$valid && $event.keyCode == 13 && ctrl.externalAuth && ctrl.checkCredentials()"
+                       required
+                       aria-invalid="false">
+                <span class="input-group-addon"
+                      ng-class="{'login-field--error' : formStep1.password.$error, 'login-field--good' : formStep1.password.$valid}"><i
+                        class="fa fa-check fa-lg"
+                        aria-hidden="true"></i></span>
+            </div>
+        </div>
+
+        <!-- BOTTONI -->
+        <div class="form-group">
+            <button class="btn bps-btn-primary btn-lg btn-block"
+                    ng-disabled="formStep1.$invalid || !ctrl.externalAuth"
+                    ng-click="ctrl.checkCredentials()">{{'login.button.login' | translate}}
+            </button>
+        </div>
+
+    </div> <!-- FINE STEP 1 -->
+
+    <!-- STEP 2 -->
+    <div class="form-horizontal" ng-show="ctrl.step == 2" ng-form name="formStep2" novalidate angular-validator>
+
+        <!-- SOLO SU FAILED -->
+        <div class="form-group panel-title" ng-show="ctrl.code.failed==true">
+
+            <div class="login_info_immagine" style="clear: both;">
+                <i class="fa fa-times fa-3x" style="height:64px;line-height: 64px" aria-hidden="true"></i>
+            </div>
+            <div class="login_info_testo">
+                <p class="login_title_box" style="text-align: left">{{ 'login.code.bad.credentials.title' |
+                    translate}}</p>
+                <p>{{ 'login.code.bad.credentials.body' | translate}}</p>
+            </div>
+
+        </div>
+
+        <!-- CODICE DI CONVALIDA -->
+        <div class="form-group" ng-if="ctrl.code.failed==false">
+
+            <label style="font-size: x-small">{{ 'login.code.enter.code.token' | translate}}</label>
+
+            <div class="input-group">
+                <!--placeholder="Sms di verifica"-->
+                <input type="tel"
+                       name="code"
+                       id="code"
+                       only-digits
+                       focus-on="code"
+                       class="form-control form-control-lg"
+                       ng-model="ctrl.code.value"
+                       ng-minlength="ctrl.tokenMinLength"
+                       ng-maxlength="ctrl.tokenMaxLength"
+                       input-maxlength="ctrl."
+                       ng-pattern="ctrl.smsValidator"
+                       ng-trim="false"
+                       ng-keyup="formStep2.$valid && $event.keyCode == 13 && ctrl.lastAuth()"
+                       autocapitalize="off" autocomplete="off" autocorrect="off"
+                       required
+                       aria-invalid="false">
+                <span class="input-group-addon"
+                      ng-class="{'login-field--error' : formStep2.code.$error, 'login-field--good' : formStep2.code.$valid}"><i
+                        class="fa fa-check fa-lg"
+                        aria-hidden="true"></i></span>
+            </div>
+
+        </div>
+
+        <div>
+            &nbsp;
+        </div>
+
+        <!-- BUTTONI in ATTESA DI INVIO CODICE-->
+        <div class="form-group"
+             ng-if="ctrl.code.failed==false">
+            <button class="btn bps-btn-primary btn-lg btn-block" ng-disabled="formStep2.$invalid"
+                    ng-click="ctrl.lastAuth()">{{ 'login.code.enter.code.button.verify' | translate}}
+            </button>
+        </div>
+
+        <div class="form-group"
+             ng-if="ctrl.code.failed==false && ctrl.showUndoButton==true">
+            <button class="btn bps-btn-secondary btn-lg btn-block" ng-click="ctrl.startup()">{{
+                'login.code.enter.code.button.undo' | translate}}
+            </button>
+        </div>
+
+        <!-- BOTTONI su EXPIRED / OTP ERRATO -->
+        <div class="form-group" style="padding-top:10px"
+             ng-if="ctrl.code.failed == true">
+
+            <button class="btn bps-btn-primary btn-lg btn-block" ng-click="ctrl.startup()">{{
+                'login.code.enter.code.button.redo' | translate}}
+            </button>
+        </div>
+
+    </div>
+</div>

@@ -1,0 +1,148 @@
+(function () {
+    'use strict';
+    /*
+     attributi:
+     ngModel:'=',                la data in ms
+     ngDisabled:'=?',            boolean -> disabilita il datepicker
+     ngRequired:'=?',            boolean -> lo rende required
+     bvMinDate:'=?',             la data minima in ms
+     bvMaxDate:'=?',             la data massima in ms
+     bvDisabledDates:'=?'        array di date non selezionabili in ms
+     bvErrorText:'=?',           text -> mostra errore definita dal parent (funziona solo se bvDisableErrorsWrapper!=true)
+     bvWarningText:'=?',         text -> mostra warning definita dal parent (funziona solo se bvDisableErrorsWrapper!=true)
+     bvDisableErrorsWrapper:'=?' <true|false> -> permette di disabilitare la gestione degli errori sul datepicker.
+     */
+    angular.module('revux').directive('datepickerMs', datepickerMs).directive('dateValidity', dateValidity);
+
+    function datepickerMs(LanguageService, UtilsService, $timeout) {
+        var directive = {
+            templateUrl: 'common/directives/datepickerMs/datepickerMs.directive.html',
+            restrict: 'E',
+            link: link,
+            scope: {
+                ngModel: '=',
+                ngDisabled: '=?',
+                ngRequired: '=?',
+                bvMinDate: '=?',
+                bvMaxDate: '=?',
+                bvDisabledDates: '=?',
+                bvErrorText: '=?',
+                bvWarningText: '=?',
+                bvDisableErrorsWrapper: '=?',
+                bvApi: '=?'
+            }
+        };
+        return directive;
+
+        function link(scope, element) {
+            scope.changedDate = changedDate;
+            scope.regex = LanguageService.date_regex.replace(/d/g, '9').replace(/\\/g, '');
+            init();
+            //////////////////////
+            function init() {
+
+                // $timeout(function(){scope.showDatepicker=true;},3000);
+                //set data
+                scope.$watch('ngModel', function (dateMs) {
+                    if (dateMs != undefined) {
+                        //workaround in quanto in alcune situazioni non viene aggiornato l'input
+                        UtilsService.onDirectiveLoad({
+                            watch: function () {
+                                scope.inputElement = angular.element($(angular.element(element)).find('input'));
+                                return [scope.inputElement.scope()];
+                            },
+                            method: function () {
+                                var newValue = dateMsToString(dateMs, LanguageService.date_format);
+                                $(scope.inputElement).val(newValue).change();
+                                var inputScope = scope.inputElement.scope();
+                                inputScope.dateString = newValue;
+                                scope.dateString = newValue;
+                            }
+                        });
+                    } else {
+                        scope.dateString = undefined;
+                        $(scope.inputElement).val(undefined);
+
+                    }
+                }, true);
+                // scope.$watch('bvMinDate', function (minDateMs) {
+                //     if (minDateMs != undefined) scope.minDateString = dateMsToString(minDateMs, 'YYYY/MM/DD');
+                //     else scope.minDateString = undefined;
+                // }, true);
+                // scope.$watch('bvMaxDate', function (maxDateMs) {
+                //     if (maxDateMs != undefined) scope.maxDateString = dateMsToString(maxDateMs, 'YYYY/MM/DD');
+                //     else scope.maxDateString = undefined;
+                // }, true);
+                // scope.$watch('bvDisabledDates', function (bvDisabledDatesMs) {
+                //     if (bvDisabledDatesMs != undefined) scope.disabledDatesString = bvDisabledDatesMs.map(function (el) {
+                //         return dateMsToString(el, 'YYYY/MM/DD')
+                //     });
+                //     else scope.disabledDatesString = [];
+                // }, true);
+
+                if (scope.bvApi) {
+                    scope.bvApi.setFocus = setFocus;
+                }
+
+            }
+
+            function setFocus() {
+                var inputElement = angular.element($(angular.element(element)).find('input'));
+                if (inputElement && inputElement[0])
+                    inputElement[0].focus();
+
+            }
+
+            function changedDate(dateString) {
+                scope.ngModel = stringDateToMs(dateString, LanguageService.date_format);
+            }
+        };
+    }
+
+    function dateValidity(LanguageService) {
+        return {
+            require: 'ngModel',
+            priority: 99,
+            scope: {
+                dateDisabledDates: '=?',
+                dateMinLimit: '=?',
+                dateMaxLimit: '=?',
+            },
+            link: function (scope, elem, attrs, model) {
+                model.$parsers.push(function (value) {
+                    if (value === undefined || value === '') {
+                        model.$setValidity('dateValidity', true);
+                        return value;
+                    }
+                    var momentDate = moment(value, LanguageService.date_format);
+                    var isValid = momentDate.isValid();
+                    model.$setValidity('dateValidity', isValid);
+                    return isValid ? value : undefined;
+                });
+                model.$parsers.push(function (value) {
+                    if (value === undefined || value === '') {
+                        model.$setValidity('dateAllowed', true);
+                        return value;
+                    }
+                    var valueFormatted = dateMsToString(stringDateToMs(value, LanguageService.date_format), 'YYYY/MM/DD');
+                    var isValid = (scope.dateDisabledDates == undefined || scope.dateDisabledDates.filter(function (el) {
+                            return dateMsToString(el, 'YYYY/MM/DD') == valueFormatted
+                        }).length < 1) && (scope.dateMinLimit == undefined || stringDateToMs(value, LanguageService.date_format) >= scope.dateMinLimit) && (scope.dateMaxLimit == undefined || stringDateToMs(value, LanguageService.date_format) <= scope.dateMaxLimit);
+                    model.$setValidity('dateAllowed', isValid);
+                    return isValid ? value : undefined;
+                });
+            }
+        };
+    }
+
+    function stringDateToMs(dateString, date_format) {
+        if (dateString != undefined) {
+            var momentDate = moment(dateString, date_format);
+            return momentDate.isValid() ? momentDate.valueOf() : undefined;
+        }
+    }
+
+    function dateMsToString(dateMs, format) {
+        if (dateMs != undefined) return moment(dateMs).format(format);
+    }
+}());

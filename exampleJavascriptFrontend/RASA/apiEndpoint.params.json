@@ -1,0 +1,6 @@
+{
+  "host": "http://192.168.170.112",
+  "port": "8080",
+  "path": "/BackTest",
+  "needsAuth": false
+}

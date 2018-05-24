@@ -1,0 +1,64 @@
+(function() {
+  'use strict';
+
+  angular.module('revux')
+    .service('PropertiesService', PropertiesService)
+
+  function PropertiesService($http, bvApiService) {
+    var self = this;
+    self.getProperties = getProperties;
+
+    //exposed data
+    self.properties = {};
+
+    // si parte da qui
+    init();
+
+    /**
+     *
+     */
+    function init() {
+      getProperties();
+    }
+
+    /**
+     * getProperties : legge da REST
+     */
+    function getProperties() {
+      var url = bvApiService.getEndpoint() + '/rest/config';
+      return $http.get(url)
+        .then(function successCallback(response) {
+
+          // per sicurezza e praticità
+          var config = angular.copy(response.data);
+
+          // STRENGTH PASSWORD : inizio
+          if (config.strengthEnabled.toLowerCase().trim() === 'false' || config.strengthEnabled.toLowerCase().trim() === 'true')
+            config.strengthEnabled = (config.strengthEnabled.toLowerCase().trim() === 'true');
+          else
+            config.strengthEnabled = false;
+
+          config.strengthMinValue = Math.abs(config.strengthMinValue);
+          if (!angular.isNumber(config.strengthMinValue) || isNaN(config.strengthMinValue))
+            config.strengthMinValue = 0;
+          // STRENGTH FINE
+
+          // LOGIN SMS TIMEOUT : inizio
+          config.loginSmsTimeout = Math.abs(config.loginSmsTimeout);
+          if (!angular.isNumber(config.loginSmsTimeout) || isNaN(config.loginSmsTimeout))
+            config.loginSmsTimeout = 60;
+          // LOGIN SMS TIMEOUT : fine
+
+          // SAVE MONEY TAG ID : inizio
+          config.saveMoneyTagId = Math.abs(config.saveMoneyTagId);
+          if (!angular.isNumber(config.saveMoneyTagId) || isNaN(config.saveMoneyTagId))
+            config.saveMoneyTagId = null;
+          // SAVE MONEY TAG ID : fine
+
+          // assegna la risposta
+          self.properties = config
+        });
+    };
+  };
+
+})();

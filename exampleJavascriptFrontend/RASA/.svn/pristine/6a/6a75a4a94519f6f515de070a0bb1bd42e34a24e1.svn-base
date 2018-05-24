@@ -1,0 +1,66 @@
+(function() {
+  'use strict';
+
+  angular.module(APP_NAME)
+    .service('ConnectionStateService', ConnectionStateService);
+
+  /**
+   * [ConnectionStateService description]
+   * @method      ConnectionStateService
+   * @param       {[type]}               $rootScope [description]
+   * @param       {[type]}               $translate [description]
+   * @param       {[type]}               $q         [description]
+   * @param       {[type]}               $timeout   [description]
+   * @constructor
+   */
+  function ConnectionStateService($rootScope, $translate, $q, $timeout) {
+    var self = this;
+
+    self.init = init;
+    self.serverConnectionIsDown = serverConnectionIsDown;
+    self.connectionState = {};
+
+    var msBeforeRedirectToLogin = 10000;
+    var maxAttemptsBeforeServerIsDown = 5;
+    var attemptsBeforeServerIsDown = 0;
+
+    function init() {
+
+      $rootScope.bvConnectionState = self.connectionState;
+
+      window.addEventListener('offline', function(e) {
+        console.log('offline');
+        attemptsBeforeServerIsDown = 0;
+        $rootScope.bvConnectionState.offline = true;
+        $rootScope.bvConnectionState.message = $translate.instant('app.common.service.offlineNetwork');
+        $rootScope.bvConnectionState.defer = $q.defer();
+      });
+
+      window.addEventListener('online', function(e) {
+        console.log('online');
+        $rootScope.bvConnectionState.offline = false;
+        $rootScope.bvConnectionState.defer.resolve();
+
+      });
+    }
+
+    function serverConnectionIsDown() {
+      if (!$rootScope.bvConnectionState.offline && !$rootScope.bvConnectionState.noServerConnection) {
+        attemptsBeforeServerIsDown++;
+        console.log('attemptsBeforeServerIsDown', attemptsBeforeServerIsDown + '/' + maxAttemptsBeforeServerIsDown);
+        if (attemptsBeforeServerIsDown == maxAttemptsBeforeServerIsDown) {
+          console.log('serverConnectionIsDown');
+          $rootScope.bvConnectionState.noServerConnection = true;
+          $rootScope.bvConnectionState.message = $translate.instant('app.common.service.offlineServer');
+          $rootScope.bvConnectionState.defer = $q.defer();
+          $timeout(function() {
+            $rootScope.bvConnectionState.defer.resolve();
+            attemptsBeforeServerIsDown = 0;
+            window.location.href = '/#/login';
+          }, msBeforeRedirectToLogin);
+        }
+      }
+    }
+  }
+
+})();

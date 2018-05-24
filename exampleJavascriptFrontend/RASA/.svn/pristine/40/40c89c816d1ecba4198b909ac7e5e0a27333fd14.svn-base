@@ -1,0 +1,26 @@
+(function() {
+  'use strict';
+
+  angular.module(APP_NAME)
+    .service('InterviewService', InterviewService)
+
+  /**
+   * bvAlertService
+   * @param {*}
+   * @param {*}
+   */
+  function InterviewService(bvStoreFactory) {
+
+    // methods
+    var self = this;
+
+    //metodi
+    self.method1 = method1;
+
+    function method1() {
+      bvStoreFactory.interview.param1 = 12;
+    }
+
+  }
+
+})();

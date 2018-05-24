@@ -1,0 +1,69 @@
+// Variables
+$legacy_support_for_ie: false !default; // Used also in Compass
+$normalize_headings: true !default;
+$normalized_font_family: 'OpenSans' !default;
+//
+// Copy settings from this file into the provided `_custom.scss` to override
+// the Bootstrap defaults without modifying key, versioned files.
+// Table of Contents
+//
+// Colors
+// Options
+// Spacing
+// Body
+// Links
+// Grid breakpoints
+// Grid containers
+// Grid columns
+// Fonts
+// Components
+// Sidebar
+// General variable structure
+//
+// Variable format should follow the `$component-modifier-state-property` order.
+// Colors
+//
+// Grayscale and brand colors for use across Bootstrap.
+//-- colors:start --//
+$color-red: #B7313D;
+$color-yellow: #FDC963;
+$color-green: #C6CCA2;
+$color-blue: #5EA6D4;
+$color-white: rgb(255, 255, 255);
+//-- colors:end --//
+$gray-dark: #373a3c !default;
+$gray: #55595c !default;
+$gray-light: #B6B6B6 !default;
+$gray-lighter: #E4E4E4 !default;
+$gray-lightest: #F6F6F6 !default;
+$brand-primary: $color-red !default;
+$brand-success: #5cb85c !default;
+$brand-info: #5bc0de !default;
+$brand-warning: #f0ad4e !default;
+$brand-danger: #d9534f !default;
+$brand-login: #f8b442 !default;
+// Options
+//
+//
+// Body
+//
+// Settings for the `<body>` element.
+$body-bg: $color-white;
+$body-color: $gray-dark;
+//zindex
+$zindex-navbar: 1000 !default;
+$zindex-dropdown: 1000 !default;
+$zindex-popover: 1060 !default;
+$zindex-tooltip: 1070 !default;
+$zindex-navbar-fixed: 1030 !default;
+$zindex-navbar-sticky: 1030 !default;
+$zindex-modal-bg: 1040 !default;
+$zindex-modal: 1050 !default;
+$zindex-sidebar-bg: 1060 !default;
+$zindex-sidebar: 1070 !default;
+//Breakpoints
+$xs-min-width: rem(0);
+$sm-min-width: rem(600);
+$md-min-width: rem(960);
+$lg-min-width: rem(1280);
+$xl-min-width: rem(1920);

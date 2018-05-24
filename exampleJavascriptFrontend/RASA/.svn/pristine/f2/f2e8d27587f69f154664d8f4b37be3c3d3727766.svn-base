@@ -1,0 +1,33 @@
+  (function() {
+  'use strict';
+
+  angular.module(APP_NAME)
+    .service('loginpageService', loginpageService)
+
+  /**
+   * bvAlertService
+   * @param {*}
+   * @param {*}
+   */
+  function loginpageService(bvStoreFactory) {
+
+    // methods
+    var self = this;
+
+    //metodi
+    self.method1 = method1;
+    self.recback = recback;
+
+    function method1() {
+      bvStoreFactory.loginpage.param1 = 12;
+    }
+
+    function recback(){
+      console.log("HERE");
+    }
+
+  }
+
+
+
+})();

@@ -1,0 +1,28 @@
+(function() {
+  'use strict';
+
+  angular.module('revux').directive('includeReplace', includeReplace);
+
+  function includeReplace($compile, $http, $templateCache, $parse) {
+    return {
+        restrict: 'A',
+        link: function(scope , element, attrs) {
+
+          scope.$watch(attrs.includeReplace, function (value) {
+            if (value) {
+              loadTemplate(value);
+            }
+          });
+
+          function loadTemplate(template) {
+              $http.get(template, { cache: $templateCache })
+                .success(function(templateContent) {
+                  element.replaceWith($compile(templateContent)(scope));
+                });
+          }
+        }
+      };
+    }
+
+
+})();
