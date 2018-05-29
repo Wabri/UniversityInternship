@@ -1,8 +1,0 @@
-<div class="filter-list">
-    <span ng-repeat="(fKey, fValue) in ctrl.datasource">
-       <p ng-if="value.selected" class="label bps-filter-label" ng-repeat="(key, value) in fValue"
-           style="margin-bottom:1rem;">
-           <span>{{value.description}} <i ng-click="ctrl.remove(value)" style="cursor:pointer" class="fa fa-close"></i></span>
-      </p>
-    </span>
-</div>

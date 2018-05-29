@@ -1,6 +1,0 @@
-<datepicker  date-format="{{'angular_date_format' | language_service}}" date-min-limit="bvMinDate" date-max-limit="bvMaxDate" date-disabled-dates="bvDisabledDates">
-		<input type="text" class="form-control shadow-1 form-control-lg" ng-model='dateString' ui-mask-placeholder="{{ 'date_format' | language_service | lowercase}}" ng-required="ngRequired" ng-disabled="ngDisabled" ui-mask="{{regex}}" model-view-value="true" date-validity date-disabled-dates="bvDisabledDates"
-		date-min-limit="bvMinDate" date-max-limit="bvMaxDate"
-					 ng-change='changedDate(dateString)'
-/>
-</datepicker>

@@ -1,6 +1,0 @@
-<select
-        class="c-select"
-        ng-change="ctrl.changeLanguage()"
-        ng-model="ctrl.language.selected"
-        ng-options="language.code as language.name | translate for language in ctrl.languages">
-</select>
