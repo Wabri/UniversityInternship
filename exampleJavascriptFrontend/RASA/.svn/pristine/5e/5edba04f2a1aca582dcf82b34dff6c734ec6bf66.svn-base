@@ -1,0 +1,67 @@
+(function() {
+  'use strict';
+
+  angular.module('revux').directive('openableList', openableList);
+
+  function openableList() {
+
+    var directive = {
+      templateUrl: 'common/directives/openableList/openableList.directive.html',
+      restrict: 'E',
+      link: link,
+      scope: {
+        bvActivateInfiniteScroll: "=?",
+        bvGroupShowedElements: "=?", //elementi mostrati all'avvio e numero di elementi aggiunti a seguito dello scroll
+        api: "=",
+        bvPromiseReady: "=",
+        bvPreviewInclude:"=",
+        bvDetailInclude:"=",
+        bvHeaderInclude:"=",
+        bvMethods:"="
+
+      }
+    };
+
+    return directive;
+
+
+
+    function link(scope) {
+
+      init();
+
+      //////////////////////
+
+      function init() {
+        initApi();
+      }
+
+      function initApi() {
+        scope.api.setList = setList;
+        scope.api.setHeader = setHeader;
+
+        // la direttiva è edesso 'pronta'
+        scope.bvPromiseReady.resolve();
+      }
+
+
+      function setList(data) {
+        scope.datasourceList = data;
+        scope.numShowedElements = scope.bvGroupShowedElements ? scope.bvGroupShowedElements : scope.datasource.length;
+      }
+
+      function setHeader(data) {
+        scope.datasourceHeader = data;
+      }
+
+      function showMoreElements() {
+        scope.numShowedElements += scope.bvGroupShowedElements;
+      }
+
+    }
+  }
+
+
+
+
+}());

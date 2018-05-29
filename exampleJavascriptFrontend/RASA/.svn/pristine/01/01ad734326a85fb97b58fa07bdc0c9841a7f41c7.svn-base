@@ -1,0 +1,79 @@
+(function () {
+    'use strict';
+
+    angular.module('revux').directive('selectLanguage', selectLanguage);
+
+    function selectLanguage() {
+
+        var directive = {
+            templateUrl: 'common/directives/selectLanguage/selectLanguage.directive.html',
+            restrict: 'E',
+            controller: controller,
+            controllerAs: 'ctrl'
+
+        };
+
+        return directive;
+    }
+
+    /**
+     * controller
+     * @param $rootScope
+     * @param LanguageService
+     * @param LANGUAGES
+     * @param LANGUAGES_MAP
+     * @param Events
+     * @param UtilsService
+     */
+    function controller($rootScope, $scope, LanguageService, Events, DirectiveHandler) {
+
+        var vm = this;
+        vm.changeLanguage = changeLanguage;
+
+        init();
+
+        //////////////////////
+        function init() {
+
+            // non sono pronto
+            $rootScope.waitingForSelectLanguage = false;
+
+            vm.languages = null;
+            vm.language = {};
+            vm.language.selected = null;
+
+            /**
+             *
+             * @param ds
+             */
+            vm.setDataSource = function (ds) {
+                vm.languages = ds;
+            };
+
+            /**
+             *
+             * @param selected
+             */
+            vm.setSelected = function (selected) {
+                vm.language.selected = selected;
+            };
+
+            // registra la direttiva
+            DirectiveHandler.registerDirective("selectedLanguage", vm);
+
+            // su destroy, distruggi
+            $rootScope.$on('destroy', function () {
+                DirectiveHandler.deregisterDirective("selectedLanguage");
+            });
+
+        }
+
+        /**
+         * changeLanguage : evento da HTML
+         */
+        function changeLanguage() {
+            LanguageService.setLanguageOnFrontendAndServer(vm.language.selected);
+        }
+    };
+
+}());

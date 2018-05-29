@@ -1,0 +1,215 @@
+(function() {
+        'use strict';
+        angular.module('revux').directive('zxcvbnPassword', zxcvbnPassword);
+        /**
+         * zxcvbn
+         */
+        function zxcvbnPassword($translate, $sce, $templateRequest, $compile) {
+            var directive = {
+                restrict: 'E',
+                require: "ngModel",
+                templateUrl: 'common/directives/zxcvbnPassword/zxcvbnPassword.directive.html',
+                link: link,
+                scope: {
+                    api: "=",
+                    isVisible: '=',
+                    minStrength: '=',
+                    widthBarClass: '@',
+                    widthBoxesClass: '@'
+                }
+            };
+            return directive;
+            /**
+             * link : il cuore della direttiva
+             * @param scope
+             */
+            function link(scope, element, attr, ngModel) {
+                var warningAndSuggestions = [];
+                var strength = {};
+                var color = {};
+                var score = null;
+                // esposto anche per HTML
+                scope.getId = function() {
+                    return scope.$id;
+                };
+                // PARTE
+                init();
+                /**
+                 *
+                 */
+                function init() {
+                    initApi();
+                    initEnvironment();
+                    initEngine();
+                }
+                /**
+                 *
+                 */
+                function initApi() {
+                    if (scope && scope.api) {
+                        scope.api.isReady = function() {
+                            return true;
+                        };
+                        scope.api.getStrength = function() {
+                            return score;
+                        };
+                    }
+                }
+                /**
+                 * initEnvironment
+                 */
+                function initEnvironment() {
+                    // testi
+                    warningAndSuggestions['zxcvbn.useFewWords'] = $translate.instant("zxcvbn.useFewWords");
+                    warningAndSuggestions['zxcvbn.addAnother'] = $translate.instant("zxcvbn.addAnother");
+                    warningAndSuggestions['zxcvbn.straightRows'] = $translate.instant("zxcvbn.straightRows");
+                    warningAndSuggestions['zxcvbn.short'] = $translate.instant("zxcvbn.short");
+                    warningAndSuggestions['zxcvbn.longer'] = $translate.instant("zxcvbn.longer");
+                    warningAndSuggestions['zxcvbn.repeatsAA'] = $translate.instant("zxcvbn.repeatsAA");
+                    warningAndSuggestions['zxcvbn.repeatsAB'] = $translate.instant("zxcvbn.repeatsAB");
+                    warningAndSuggestions['zxcvbn.avoidRepeat'] = $translate.instant("zxcvbn.avoidRepeat");
+                    warningAndSuggestions['zxcvbn.sequence'] = $translate.instant("zxcvbn.sequence");
+                    warningAndSuggestions['zxcvbn.avoidSequence'] = $translate.instant("zxcvbn.avoidSequence");
+                    warningAndSuggestions['zxcvbn.recentYear'] = $translate.instant("zxcvbn.recentYear");
+                    warningAndSuggestions['zxcvbn.avoidRecentYear'] = $translate.instant("zxcvbn.avoidRecentYear");
+                    warningAndSuggestions['zxcvbn.dates'] = $translate.instant("zxcvbn.dates");
+                    warningAndSuggestions['zxcvbn.avoidDates'] = $translate.instant("zxcvbn.avoidDates");
+                    warningAndSuggestions['zxcvbn.top10'] = $translate.instant("zxcvbn.top10");
+                    warningAndSuggestions['zxcvbn.top100'] = $translate.instant("zxcvbn.top100");
+                    warningAndSuggestions['zxcvbn.veryCommon'] = $translate.instant("zxcvbn.veryCommon");
+                    warningAndSuggestions['zxcvbn.similar'] = $translate.instant("zxcvbn.similar");
+                    warningAndSuggestions['zxcvbn.wordItself'] = $translate.instant("zxcvbn.wordItself");
+                    warningAndSuggestions['zxcvbn.names'] = $translate.instant("zxcvbn.names");
+                    warningAndSuggestions['zxcvbn.commonNames'] = $translate.instant("zxcvbn.commonNames");
+                    warningAndSuggestions['zxcvbn.capitalize'] = $translate.instant("zxcvbn.capitalize");
+                    warningAndSuggestions['zxcvbn.allUpper'] = $translate.instant("zxcvbn.allUpper");
+                    warningAndSuggestions['zxcvbn.reverse'] = $translate.instant("zxcvbn.reverse");
+                    warningAndSuggestions['zxcvbn.predictable'] = $translate.instant("zxcvbn.predictable");
+                    // classi di testo
+                    strength = {
+                        0: $translate.instant("zxcvbn.strength.level0").toUpperCase(),
+                        1: $translate.instant("zxcvbn.strength.level1").toUpperCase(),
+                        2: $translate.instant("zxcvbn.strength.level2").toUpperCase(),
+                        3: $translate.instant("zxcvbn.strength.level3").toUpperCase(),
+                        4: $translate.instant("zxcvbn.strength.level4").toUpperCase()
+                    };
+                    // classi di colore
+                    color = {
+                        0: '',
+                        1: 'WHITE',
+                        2: 'BLACK',
+                        3: 'BLACK',
+                        4: 'WHITE'
+                    };
+                    // traduzioni title
+                    scope.warning_title = $translate.instant("zxcvbn.warning.title");
+                    scope.suggestions_title = $translate.instant("zxcvbn.suggestions.title");
+                }
+                /**
+                 * initEngine
+                 */
+                function initEngine() {
+                    // se non visibile, sempre valido !!!
+                    if (!scope.isVisible) {
+                        ngModel.$setValidity('strength', true);
+                        return true;
+                    }
+                    // hook
+                    scope.$watch(function() {
+                        return ngModel.$modelValue;
+                    }, function(newValue) {
+
+                        if (newValue === '' || newValue === null || newValue === undefined) {
+                            resetBar();
+                            resetExtraInfo();
+                        } else {
+                            // calcola
+                            var analysis = zxcvbn(newValue);
+                            setBar(analysis);
+                            setExtraInfo(analysis);
+                        }
+                    });
+                }
+                // trap del campo
+                /**
+                 * resetBar
+                 */
+                function resetBar() {
+                    var i = 0;
+                    var fld = null;
+                    // scorre
+                    for (i = 1; i <= 4; i++) {
+                        fld = $('#level' + i + "-" + scope.getId());
+                        fld.removeClass();
+                        fld.addClass("itemZxcvbn");
+                        fld.text('');
+                    }
+                    ngModel.$setValidity('strength', false);
+                }
+                /**
+                 * setBar
+                 */
+                function setBar(analysis) {
+                    var i = 0;
+                    // reset sempre di tutto
+                    resetBar();
+                    // per il popolo che chiede
+                    score = analysis.score;
+                    var fld = null;
+                    // scorre i livelli
+                    for (i = 1; i <= parseInt(analysis.score); i++) {
+                        fld = $('#level' + i + "-" + scope.getId());
+                        fld.addClass("itemZxcvbn level" + analysis.score);
+                    }
+                    // classi di colore
+                    fld = $('#level' + analysis.score + "-" + scope.getId());
+                    fld.css("color", color[analysis.score]);
+                    // testo
+                    fld.text(strength[analysis.score]);
+
+                    // validity
+                    var valid = false;
+                    if (parseInt(analysis.score) >= parseInt(scope.minStrength))
+                        valid = true;
+                    else
+                        valid = false;
+
+                    ngModel.$setValidity('strength', valid);
+                }
+                /**
+                 * resetExtraInfo
+                 */
+                function resetExtraInfo() {
+                    scope.warning_body = null;
+                    scope.suggestions_body = null;
+                }
+                /**
+                 * setExtraInfo
+                 */
+                function setExtraInfo(analysis) {
+                    var warningHTML = "";
+                    if (!$.isArray(analysis.feedback.warning)) {
+                        if (analysis.feedback.warning !== '') warningHTML = warningHTML + warningAndSuggestions[analysis.feedback.warning];
+                    } else {
+                        $.each(analysis.feedback.warning, function(key, value) {
+                            if (warningHTML !== '') warningHTML = warningHTML + "<br/>";
+                            warningHTML = warningHTML + warningAndSuggestions[value];
+                        });
+                    }
+                    var suggestionsHTML = "";
+                    if (!$.isArray(analysis.feedback.suggestions)) {
+                        if (analysis.feedback.suggestions !== '') suggestionsHTML = suggestionsHTML + " - " + warningAndSuggestions[analysis.feedback.suggestions];
+                    } else {
+                        $.each(analysis.feedback.suggestions, function(key, value) {
+                            if (suggestionsHTML !== '') suggestionsHTML = suggestionsHTML + "<br/>";
+                            suggestionsHTML = suggestionsHTML + " - " + warningAndSuggestions[value];
+                        });
+                    }
+                    // spara a video se consistenti
+                    scope.warning_body = warningHTML;
+                    scope.suggestions_body = suggestionsHTML;
+                }
+            }
+        }
+    }
+    ());

@@ -1,0 +1,39 @@
+
+
+.interview__header{
+  font-size: rem(30);
+  text-align: center;
+}
+
+// .mat-radio-button ~ .mat-radio-button {
+//   padding-right: 16px;
+// }
+
+div fieldset.standard {
+  border-radius: rem(1);
+}
+
+.icon-mail {
+  color: green;
+  }
+
+.icon-phone {
+  color: dodgerblue;
+  }
+
+.icon-address{
+  color: red;
+}
+
+
+.bv-input-container{
+  width: 100%;
+}
+
+
+.bv-bv-prova-icone{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+
+}

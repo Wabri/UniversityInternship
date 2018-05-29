@@ -1,0 +1,109 @@
+(function () {
+    'use strict';
+
+    angular.module('revux')
+        .directive('confirmOnLeave', confirmOnLeave);
+
+    /**
+     *
+     * @param exDialog
+     * @returns {{scope: {confirmOnLeaveCheckFunction: string, confirmOnLeaveFunctionOnConfirmed: string, confirmOnLeaveFunctionOnNotConfirmed: string, confirmOnLeaveModalId: string, confirmOnLeaveMessageTitle: string, confirmOnLeaveMessage: string, confirmOnLeaveMessageButtonConfirm: string, confirmOnLeaveMessageButtonUndo: string}, link: link}}
+     */
+    function confirmOnLeave(exDialog, UtilsService) {
+        return {
+            scope: {
+                confirmOnLeave: '&',
+                confirmOnLeaveFunctionOnConfirmed: '&',
+                confirmOnLeaveFunctionOnNotConfirmed: '&',
+                confirmOnLeaveModalId: '@',
+                confirmOnLeaveMessageTitle: '@',
+                confirmOnLeaveMessage: '@',
+                confirmOnLeaveMessageButtonConfirm: '@',
+                confirmOnLeaveMessageButtonUndo: '@'
+            },
+            link: function ($scope, elem, attrs) {
+
+                // adesso non confermato
+                var confirmed = false;
+
+                // trappa comunque l'uscita dal browser
+                window.onbeforeunload = function () {
+                    if ($scope.confirmOnLeave()) {
+                        return $scope.confirmMessageWindow || $scope.confirmOnLeaveMessage;
+                    }
+                };
+
+                var $locationChangeStartUnbind = $scope.$on('$locationChangeStart', function (event, toState, toParams, fromState, fromParams) {
+                    if (UtilsService.getIdOpenModal() === $scope.confirmOnLeaveModalId && !confirmed) { // modal is active
+                        userUnbind(event, toState, toParams, fromState, fromParams);
+                    }
+                });
+
+                var $stateChangeStartUnbind = $scope.$on('$stateChangeStart', function (event, toState, toParams, fromState, fromParams) {
+                    if (UtilsService.getIdOpenModal() === $scope.confirmOnLeaveModalId && !confirmed) { // modal is active
+                        userUnbind(event, toState, toParams, fromState, fromParams);
+                    }
+                });
+
+
+                /**
+                 * userUnbind : il cuore di tutto
+                 * @param event
+                 * @param toState
+                 * @param toParams
+                 * @param fromState
+                 * @param fromParams
+                 */
+                function userUnbind(event, toState, toParams, fromState, fromParams) {
+
+
+                    // si, devo confermare l'uscita...
+                    if ($scope.confirmOnLeave() && !confirmed) {
+
+                        // blocca subito la chiusura della modale
+                        if (event.preventDefault)
+                            event.preventDefault();
+
+                        if (event.stopImmediatePropagation)
+                            event.stopImmediatePropagation();
+
+                        // chiede
+                        exDialog.openConfirm({
+                            scope: $scope,
+                            template: 'common/libs/ngExDialog/_confirm.html', //from file',
+                            title: $scope.confirmOnLeaveMessageTitle,
+                            icon: "warning",
+                            actionButtonLabel: $scope.confirmOnLeaveMessageButtonConfirm,
+                            closeButtonLabel: $scope.confirmOnLeaveMessageButtonUndo,
+                            message: $scope.confirmOnLeaveMessage,
+                            width: '400px'
+                        }).then(function (value) {
+
+                            // va dove gli si è detto di andare
+                            if ($scope.confirmOnLeaveFunctionOnConfirmed)
+                                $scope.confirmOnLeaveFunctionOnConfirmed();
+
+                            // ho confermato l'uscita
+                            confirmed = true;
+
+                        }, function (reason) {
+
+                            // va dove gli si è detto di andare
+                            if ($scope.confirmOnLeaveFunctionOnNotConfirmed)
+                                $scope.confirmOnLeaveFunctionOnNotConfirmed();
+
+                        });
+                    }
+
+                }
+
+                $scope.$on('$destroy', function () {
+                    window.onbeforeunload = null;
+                    $locationChangeStartUnbind();
+                    $stateChangeStartUnbind();
+                });
+            }
+        };
+    }
+
+})();

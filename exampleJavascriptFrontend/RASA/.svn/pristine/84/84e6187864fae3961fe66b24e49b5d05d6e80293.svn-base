@@ -1,0 +1,82 @@
+<div layout-gt-xs="row" layout-xs="column" layout-align="center">
+  <md-container class="bv-table-item" flex-gt-sm="60" flex-sm="70">
+    <div layout="row" layout-align="center">
+      <md-input-container flex="90">
+        <label>{{'Indirizzo' | translate}}</label>
+        <input name="address" ng-model="input.address">
+        <div ng-messages="inputForm.address.$error">
+        </div>
+      </md-input-container>
+    </div>
+    <div layout="row" layout-align="center">
+      <md-input-container flex="40">
+        <label>{{'Località' | translate}}</label>
+        <input name="place" ng-model="input.place">
+        <div ng-messages="inputForm.place.$error">
+        </div>
+      </md-input-container>
+      <md-input-container flex="40">
+        <label>{{'Comune' | translate}}</label>
+        <input name="city" ng-model="input.city">
+        <div ng-messages="inputForm.city.$error">
+        </div>
+      </md-input-container>
+      <md-input-container flex="10">
+        <label>{{'Provincia' | translate}}</label>
+        <input name="province" ng-model="input.province">
+        <div ng-messages="inputForm.province.$error">
+        </div>
+      </md-input-container>
+    </div>
+
+    <div layout="row" layout-align="center">
+      <!-- <md-container flex="5">
+      </md-container>
+      <md-container flex="95">
+        <md-button class="md-raised md-primary bv-button-gps bv-custom-button">{{"Trova coordinate GPS" | translate}}</md-button>
+      </md-container> -->
+      <md-button class="md-raised md-primary bv-button-gps bv-custom-button" ng-click="getLocation()">{{"Trova coordinate GPS mia posizione" | translate}}</md-button>
+      <md-button class="md-raised md-primary bv-button-gps bv-custom-button" ng-click="geocode()" ng-disabled="geocodingTracker.isPending()||!input.address||!input.place">{{"Trova coordinate GPS Indirizzo inserito" | translate}}</md-button>
+    </div>
+
+    <div layout="row" layout-align="center">
+      <md-container flex="5">
+      </md-container>
+      <md-container flex="95">
+        <h3>{{'Coordinate GPS per indirizzo seguente:' | translate}}</h3>
+      </md-container>
+    </div>
+
+    <div layout="row" layout-align="center">
+      <md-input-container flex="90">
+        <label>{{'Indirizzo completo' | translate}}</label>
+        <input name="addressComplete" ng-model="input.addressComplete" ng-disabled="true">
+        <div ng-messages="inputForm.addressComplete.$error">
+        </div>
+      </md-input-container>
+    </div>
+
+    <div layout="row" layout-align="center">
+      <md-container flex="5">
+      </md-container>
+      <md-container flex="95">
+        <h3>GD (gradi decimali)*</h3>
+      </md-container>
+    </div>
+    <div layout="row" layout-align="center">
+      <md-input-container flex="45">
+        <label>{{'Latitudine' | translate}}</label>
+        <input name="latitude" ng-model="input.latitude" ng-disabled="true">
+        <div ng-messages="inputForm.latitude.$error">
+        </div>
+      </md-input-container>
+      <md-input-container flex="45">
+        <label>{{'Longitudine' | translate}}</label>
+        <input name="longitude" ng-model="input.longitude" ng-disabled="true">
+        <div ng-messages="inputForm.longitude.$error">
+        </div>
+      </md-input-container>
+
+    </div>
+  </md-container>
+</div>

@@ -1,0 +1,53 @@
+(function() {
+  'use strict';
+
+  angular.module(APP_NAME)
+    .service('HomePageService', HomePageService)
+
+  /**
+   * bvAlertService
+   * @param {*}  
+   * @param {*}  
+   */
+  function HomePageService($http, bvApiService, bvStoreFactory, bvHttpPromisesFactory, bvBusyService) {
+
+    // methods
+    var self = this;
+
+    //metodi
+    self.login = login;
+    self.method1 = method1;
+
+    /**
+     * 
+     */
+    function method1() {
+      bvStoreFactory.homepage.param1 = 12;
+    }
+
+    /**
+     * 
+     */
+    function login(payload) {
+
+      var dfd = bvHttpPromisesFactory.defer('Sto loggando...');
+      var url = bvApiService.getEndpoint() + '/login';
+
+      // la chiamata
+      $http
+        .post(url, payload)
+        .then(function(res) {
+          return dfd.resolve(res);
+        }, function(err) {
+          return dfd.reject(err);
+        });
+
+      // attesa
+      //      bvBusyService.addPromise(dfd.promise);
+
+      return dfd.promise;
+    }
+
+  }
+
+})();

@@ -1,0 +1,290 @@
+(function () {
+    'use strict';
+
+    /**
+     *
+     */
+    angular.module('revux').directive('changePassword', changePassword);
+
+    /**
+     *
+     * @returns {{templateUrl: string, restrict: string, controller: controller, priority: number, controllerAs: string, bindToController: boolean, scope: {api: string, autoUser: string, showUndoButton: string, canAuth: string, showExtraInfos: string}}}
+     */
+    function changePassword() {
+
+        var directive = {
+            templateUrl: 'common/directives/login/changePassword/changePassword.directive.html',
+            restrict: 'E',
+            controller: controller,
+            controllerAs: 'ctrl',
+            bindToController: true,
+            scope: {
+                api: "=",
+                autoInit: '=?'
+            }
+        };
+
+        return directive;
+    }
+
+    /**
+     *
+     * @param $scope
+     * @param $timeout
+     * @param focus
+     * @param LoginService
+     * @param PUBLIC_KEY
+     */
+    function controller($scope, $timeout, $translate, focus, LoginService, PUBLIC_KEY) {
+
+        // espone per interno
+        var vm = this;
+
+        vm.undo = undo;
+        vm.confirm = confirm;
+        vm.setFormNewPassword = setFormNewPassword;
+        vm.confirmed = confirmed;
+
+        // altre
+        var regExps = null;
+
+        // inizia il tutto...
+        preStep();
+
+        // solo se espressamente richiesto
+        if (vm.autoInit) {
+            init()
+        }
+
+        /**
+         * init : si parte da qui
+         */
+        /**
+         * preStep : pulizie varie
+         */
+        function preStep() {
+
+            // specifico
+            vm.auth = {
+                newPassword: {
+                    required: false,
+                    samePassword: false,
+                    confirmed: false,
+                    showForm: true,
+                    tryChange: false,
+                    messageError: null,
+                    form: {
+                        oldPassword: null,
+                        newPassword: null,
+                        repeatNewPassword: null,
+                        strength: null
+                    }
+                },
+                failed: false,
+                authorized: false
+            };
+
+            // api
+            if (vm.api) {
+                vm.api.isReady = function () {
+                    return true;
+                };
+
+                vm.api.init = function () {
+                    init();
+                }
+            }
+
+            // correzione
+            if (vm.autoInit === null || vm.autoInit === undefined)
+                vm.autoInit = true;
+        }
+
+        // cosa comunque deve sempre chiamare
+        function init() {
+
+            LoginService.loginPatterns().then(function (response) {
+                regExps = {};
+                angular.forEach(response, function (val, key) {
+                    regExps[key] = val;
+                });
+
+                // ----------------------------------------------------
+                // definisce solo adesso le interfacce per i validatori
+                // ----------------------------------------------------
+                vm.pwdMinLength = regExps["pwdMinLength"];
+                vm.pwdMaxLength = regExps["pwdMaxLength"];
+                vm.codeMinLength = 6; // per ADESSO FISSO
+                vm.userMaxLength = 8; // per ADESSO FISSO
+                vm.userValidator = (function () {
+                    var regexp = new RegExp(regExps["userName"])
+                    return {
+                        test: function (value) {
+                            return regexp.test(value);
+                        }
+                    };
+                })();
+                vm.passwordValidator = (function () {
+                    var regexp = new RegExp(regExps["password"]); ///^[a-zA-Z0-9]{0,20}$/
+                    return {
+                        test: function (value) {
+                            return regexp.test(value);
+                        }
+                    };
+                })();
+                vm.newPasswordValidator = (function () {
+                    var regexp = new RegExp(regExps["newPassword"]); ///^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,20}$/
+
+                    return {
+                        test: function (value) {
+
+                            return regexp.test(value);
+                        }
+                    };
+                })();
+                vm.smsValidator = (function () {
+                    var regexp = new RegExp(regExps["smsCode"]); ///^[0-9]{1,6}$/
+                    return {
+                        test: function (value) {
+                            return regexp.test(value);
+                        }
+                    };
+                })();
+                vm.tokenValidator = (function () {
+                    var regexp = new RegExp(regExps["tokenCode"]); ///^[0-9]{1,8}$/
+                    return {
+                        test: function (value) {
+                            return regexp.test(value);
+                        }
+                    };
+                })();
+            });
+
+            focus('oldPassword');
+
+        }
+
+        /**
+         *
+         * @returns {boolean}
+         */
+        function confirm() {
+
+            // alza i required
+            angular.forEach(vm.formChangePassword.$error.required, function (field) {
+                field.$setDirty();
+            });
+
+            // in caso di errore della validazione della form, non fare niente
+            if (!vm.formChangePassword.$valid) {
+                // primo campo di focus
+                $timeout(function () {
+                    focus('oldPassword');
+                }, 500);
+
+                return false;
+            }
+
+            // vai avanti...
+            // indico che ho provato a cambiare la email
+            vm.auth.newPassword.tryChange = true;
+            /**
+             * decodeStep4Response : commoin response
+             * @param response
+             */
+            function decodeResponse(response) {
+
+                // autorizzati ???
+                if (response.success) {
+
+                    // ho confermato la password
+                    vm.auth.newPassword.confirmed = true;
+                    vm.auth.newPassword.showError = false;
+
+                } else {
+
+                    // errore c'è...
+                    vm.auth.newPassword.showError = true;
+                    vm.auth.newPassword.confirmed = false;
+                    vm.auth.newPassword.messageError = response.message;// $translate.instant(response.message);
+
+                    // reset della maschera
+                    vm.formChangePassword.$setPristine();
+                    vm.formChangePassword.$setUntouched();
+                    vm.formChangePassword.$submitted = false;
+
+                    $timeout(function () {
+                        $scope.$apply(function () {
+                            focus('oldPassword');
+                        });
+                    }, 100);
+
+                }
+            }
+
+            // crypt della password
+            var crypt = new JSEncrypt();
+            crypt.setKey(PUBLIC_KEY);
+
+            // crypt della pwd
+            var auth = null;
+            auth = angular.copy(vm.auth.newPassword.form);
+
+            // encrypt password
+            auth.oldPassword = crypt.encrypt(auth.oldPassword);
+            auth.newPassword = crypt.encrypt(auth.newPassword);
+            auth.repeatNewPassword = crypt.encrypt(auth.repeatNewPassword);
+
+            // sceglie cosa lanciare
+            LoginService.changePassword(auth).then(function (response) {
+                decodeResponse(response);
+            })
+        }
+
+        /*******************************************************************************************************************/
+        /*                                                     GENERICHE                                                   */
+        /*******************************************************************************************************************/
+
+        /**
+         * filterValue
+         * @param $event
+         */
+        vm.filterValue = function ($event) {
+            if (isNaN(String.fromCharCode($event.keyCode))) {
+                $event.preventDefault();
+            }
+        };
+        /**
+         * clearPasswordInserted
+         */
+        vm.clearPasswordInserted = function (name) {
+            vm.auth.newPassword.showError = false;
+        };
+
+
+        /**
+         * setFormNewPassword
+         * @param form
+         */
+        function setFormNewPassword(form) {
+            vm.formChangePassword = form;
+        };
+
+        /**
+         *
+         */
+        function undo() {
+
+            if (vm.api.undo)
+                vm.api.undo();
+        }
+
+        function confirmed() {
+
+            if (vm.api.confirmed)
+                vm.api.confirmed();
+        }
+
+
+    }
+})();

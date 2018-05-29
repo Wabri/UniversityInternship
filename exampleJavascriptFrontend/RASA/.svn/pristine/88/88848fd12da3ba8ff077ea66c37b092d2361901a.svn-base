@@ -1,0 +1,343 @@
+<h1 class="header">{{ 'SCHEDA INFORMATIVA VITTIMA DISPERSA' | translate }}</h1>
+
+
+<div layout-gt-xs="row" layout-xs="column" layout-align="center">
+  <md-input-container flex-gt-sm="40" flex-sm="40">
+    <fieldset class="standard">
+      <legend>
+        <h3>{{'Fase del lavoro' | translate}}</h3></legend>
+      <md-radio-group ng-model="vm.checked0">
+        <md-radio-button value="Triage">{{'Triage' | translate}}</md-radio-button>
+        <md-radio-button value="Squadra">{{'Squadra' | translate}}</md-radio-button>
+        <md-radio-button value="CCU">{{'CCU' | translate}}</md-radio-button>
+      </md-radio-group>
+  </md-input-container>
+</div>
+
+
+<div layout-gt-xs="row" layout-xs="column" layout-align="center">
+  <md-input-container flex-gt-sm="60" flex-sm="70">
+    <label>{{'Cognome e Nome intervistato' | translate}}</label>
+    <input name="interviewed" ng-model="vm.project.interviewed">
+    <div ng-messages="projectForm.interviewed.$error">
+    </div>
+  </md-input-container>
+</div>
+
+<div layout-gt-xs="row" layout-xs="column" layout-align="center">
+  <md-input-container flex-gt-sm="40" flex-sm="40">
+    <fieldset class="standard">
+      <legend>
+        <h3>{{'Presenza vittima' | translate}}</h3></legend>
+      <md-radio-group ng-model="vm.checked1">
+        <md-radio-button value="Non confermata">{{'Non confermata' | translate}}</md-radio-button>
+        <md-radio-button value="Confermata">{{'Confermata' | translate}}</md-radio-button>
+      </md-radio-group>
+  </md-input-container>
+</div>
+
+<div layout-gt-xs="row" layout-xs="column" layout-align="center">
+  <md-input-container flex-gt-sm="60" flex-sm="70">
+    <label>{{'Cognome e Nome vittima' | translate}}</label>
+    <input name="victim" ng-model="vm.project.victim">
+    <div ng-messages="projectForm.victim.$error">
+    </div>
+  </md-input-container>
+</div>
+
+<div layout-gt-xs="row" layout-xs="column" layout-align="center">
+  <md-input-container flex-gt-sm="40" flex-sm="40">
+    <fieldset class="standard">
+      <legend>
+        <h3>{{'Sesso' | translate}}</h3></legend>
+      <md-radio-group ng-model="vm.checked2">
+        <md-radio-button value="Maschio" class="bv-inline-block">{{'Maschio' | translate}}</md-radio-button>
+        <md-radio-button value="Femmina" class="bv-inline-block">{{'Femmina' | translate}}</md-radio-button>
+      </md-radio-group>
+  </md-input-container>
+</div>
+
+
+<div layout-gt-xs="row" layout-xs="column" layout-align="center">
+  <md-container flex-gt-sm="60" flex-sm="70">
+    <h3>Ubicazione vittima</h3>
+  </md-container>
+</div>
+
+<gps-coords></gps-coords>
+
+<!-- <div layout-gt-xs="row" layout-xs="column" layout-align="center">
+  <md-container class="bv-table-item" flex-gt-sm="60" flex-sm="70">
+    <div layout="row" layout-align="center">
+      <md-input-container flex="90">
+        <label>{{'Indirizzo' | translate}}</label>
+        <input name="address" ng-model="vm.project.address">
+        <div ng-messages="projectForm.address.$error">
+        </div>
+      </md-input-container>
+    </div>
+    <div layout="row" layout-align="center">
+      <md-input-container flex="40">
+        <label>{{'Località' | translate}}</label>
+        <input name="place" ng-model="vm.project.place">
+        <div ng-messages="projectForm.place.$error">
+        </div>
+      </md-input-container>
+      <md-input-container flex="40">
+        <label>{{'Comune' | translate}}</label>
+        <input name="city" ng-model="vm.project.city">
+        <div ng-messages="projectForm.city.$error">
+        </div>
+      </md-input-container>
+      <md-input-container flex="10">
+        <label>{{'Provincia' | translate}}</label>
+        <input name="province" ng-model="vm.project.province">
+        <div ng-messages="projectForm.province.$error">
+        </div>
+      </md-input-container>
+    </div>
+
+    <div layout="row" layout-align="center">
+                 <!- <md-container flex="5">
+                  </md-container>
+                  <md-container flex="95">
+                <md-button class="md-raised md-primary bv-button-gps bv-custom-button">{{"Trova coordinate GPS" | translate}}</md-button>
+                </md-container> -->
+      <!-- <md-button class="md-raised md-primary bv-button-gps bv-custom-button">{{"Trova coordinate GPS mia posizione" | translate}}</md-button>
+      <md-button class="md-raised md-primary bv-button-gps bv-custom-button">{{"Trova coordinate GPS Indirizzo inserito" | translate}}</md-button>
+    </div>
+    <div layout="row" layout-align="center">
+      <md-container flex="5">
+      </md-container>
+      <md-container flex="95">
+        <h3>GD (gradi decimali)*</h3>
+      </md-container>
+    </div>
+    <div layout="row" layout-align="center">
+      <md-input-container flex="45">
+        <label>{{'Latitudine' | translate}}</label>
+        <input name="latitude" ng-model="vm.project.latitude" ng-disabled="true">
+        <div ng-messages="projectForm.latitude.$error">
+        </div>
+      </md-input-container>
+      <md-input-container flex="45">
+        <label>{{'Longitudine' | translate}}</label>
+        <input name="longitude" ng-model="vm.project.longitude" ng-disabled="true">
+        <div ng-messages="projectForm.longitude.$error">
+        </div>
+      </md-input-container>
+
+    </div>
+  </md-container>
+</div> -->
+
+<div layout-gt-xs="row" layout-xs="column" layout-align="center">
+  <md-input-container flex-gt-sm="30" flex-sm="35">
+    <label>{{'Colore pelle' | translate}}</label>
+    <input name="skinColor" ng-model="vm.project.skinColor">
+    <div ng-messages="projectForm.skinColor.$error">
+    </div>
+  </md-input-container>
+  <md-input-container flex-gt-sm="30" flex-sm="35">
+    <label>{{'Capelli' | translate}}</label>
+    <input name="hair" ng-model="vm.project.hair">
+    <div ng-messages="projectForm.hair.$error">
+    </div>
+  </md-input-container>
+</div>
+
+<div layout-gt-xs="row" layout-xs="column" layout-align="center">
+  <md-input-container flex-gt-sm="20" flex-sm="20">
+    <label>{{'Età' | translate}}</label>
+    <input name="age" type="number" min="0" step="1" ng-model="vm.project.age">
+    <div ng-messages="projectForm.age.$error">
+      <div ng-message="">{{'Campo numerico intero.' | translate}}</div>
+    </div>
+  </md-input-container>
+  <md-input-container flex-gt-sm="20" flex-sm="25">
+    <label>{{'Peso' | translate}}</label>
+    <input name="weight" type="number" min="0" step="1" ng-model="vm.project.weight">
+    <div ng-messages="projectForm.weight.$error">
+      <div ng-message="">{{'Campo numerico intero.' | translate}}</div>
+    </div>
+  </md-input-container>
+  <md-input-container flex-gt-sm="20" flex-sm="25">
+    <label>{{'Altezza' | translate}}</label>
+    <input name="height" type="number" min="0" step="1" ng-model="vm.project.height">
+    <div ng-messages="projectForm.height.$error">
+      <div ng-message="">{{'Campo numerico intero.' | translate}}</div>
+    </div>
+  </md-input-container>
+</div>
+
+<div layout-gt-xs="row" layout-xs="column" layout-align="center">
+  <md-input-container flex-gt-sm="60" flex-sm="70">
+    <label>{{'Segni particolari riconducibili (Tatuaggi,Pearcing,...)' | translate}}</label>
+    <input name="signs" ng-model="vm.project.signs">
+    <div ng-messages="projectForm.signs.$error">
+    </div>
+  </md-input-container>
+</div>
+
+<div layout-gt-xs="row" layout-xs="column" layout-align="center">
+  <md-input-container flex-gt-sm="60" flex-sm="70">
+    <label>{{'Stato di salute' | translate}}</label>
+    <input name="health" ng-model="vm.project.health">
+    <div ng-messages="projectForm.health.$error">
+    </div>
+  </md-input-container>
+</div>
+
+<div layout-gt-xs="row" layout-xs="column" layout-align="center">
+  <md-input-container flex-gt-sm="60" flex-sm="70">
+    <label>{{'Lingua/e parlata/e' | translate}}</label>
+    <input name="language" ng-model="vm.project.language">
+    <div ng-messages="projectForm.language.$error">
+    </div>
+  </md-input-container>
+</div>
+
+<div layout-gt-xs="row" layout-xs="column" layout-align="center">
+  <md-input-container flex-gt-sm="60" flex-sm="70">
+    <label>{{'Occupazione' | translate}}</label>
+    <input name="occupation" ng-model="vm.project.occupation">
+    <div ng-messages="projectForm.occupation.$error">
+    </div>
+  </md-input-container>
+</div>
+
+<div layout-gt-xs="row" layout-xs="column" layout-align="center">
+  <md-input-container flex-gt-sm="60" flex-sm="70">
+    <label>{{'N° cellulare della vittima' | translate}}</label>
+    <input name="phoneNr" ng-model="vm.project.phoneNr">
+    <div ng-messages="projectForm.phoneNr.$error">
+    </div>
+  </md-input-container>
+</div>
+
+<div layout-gt-xs="row" layout-xs="column" layout-align="center">
+  <md-input-container flex-gt-sm="60" flex-sm="70">
+    <label>{{'Social networks della vittima' | translate}}</label>
+    <input name="socialNet" ng-model="vm.project.socialNet">
+    <div ng-messages="projectForm.socialNet.$error">
+    </div>
+  </md-input-container>
+</div>
+
+<div layout-gt-xs="row" layout-xs="column" layout-align="center">
+  <md-input-container flex-gt-sm="60" flex-sm="70">
+    <label>{{'Eventuali riferimenti/contatti per ulteriori informazioni (Genitori, parenti, amici, altri da specificare)' | translate}}</label>
+    <textarea class="bv-max-height" ng-model="vm.project.contacts" md-maxlength="500" rows="5" md-select-on-focus></textarea>
+  </md-input-container>
+</div>
+
+<div layout-gt-xs="row" layout-xs="column" layout-align="center">
+  <md-input-container flex-gt-sm="60" flex-sm="70">
+    <fieldset class="standard">
+      <legend>
+        <h3>{{'Possibile posizione' | translate}}</h3></legend>
+      <md-radio-group ng-model="vm.checked3">
+        <md-radio-button value="PianoFt" class="bv-inline-block">{{'Piano F.T.' | translate}}</md-radio-button>
+        <md-radio-button value="PianoInt" class="bv-inline-block">{{'Piano int.' | translate}}</md-radio-button>
+      </md-radio-group>
+      <div layout-gt-xs="row" layout-xs="column" layout-align="center">
+        <md-input-container flex-gt-sm="45" flex-sm="90">
+          <label>{{'Zona' | translate}}</label>
+          <input name="zone" ng-model="vm.project.zone">
+          <div ng-messages="projectForm.zone.$error">
+          </div>
+        </md-input-container>
+        <md-input-container flex-gt-sm="45" flex-sm="90">
+          <label>{{"Destinazione d'uso" | translate}}</label>
+          <input name="use" ng-model="vm.project.use">
+          <div ng-messages="projectForm.use.$error">
+          </div>
+        </md-input-container>
+      </div>
+      <div layout-gt-xs="row" layout-xs="column" layout-align="center">
+        <md-input-container flex="90">
+          <label>{{'Colore della stanza/locale, Pavimento/Muri/Soffitto' | translate}}</label>
+          <input name="zone" ng-model="vm.project.zone">
+          <div ng-messages="projectForm.zone.$error">
+          </div>
+        </md-input-container>
+      </div>
+      <div layout-gt-xs="row" layout-xs="column" layout-align="center">
+        <md-input-container flex="90">
+          <label>{{'Tipo di mobilia/Contenuto' | translate}}</label>
+          <input name="furniture" ng-model="vm.project.furniture">
+          <div ng-messages="projectForm.furniture.$error">
+          </div>
+        </md-input-container>
+      </div>
+      <div layout-gt-xs="row" layout-xs="column" layout-align="center">
+        <md-input-container flex="90">
+          <label>{{'Altre informazioni utili' | translate}}</label>
+          <input name="otherInfo" ng-model="vm.project.otherInfo">
+          <div ng-messages="projectForm.otherInfo.$error">
+          </div>
+        </md-input-container>
+      </div>
+  </md-input-container>
+</div>
+
+
+<div layout-gt-xs="row" layout-xs="column" layout-align="center">
+  <md-input-container flex-gt-sm="60" flex-sm="70">
+
+
+    <h3>{{'Disponibilità planimetrie' | translate}}</h3>
+    <md-radio-group ng-model="vm.checked4">
+      <md-radio-button value="yes">{{'SI' | translate}}</md-radio-button>
+      <md-radio-button value="no">{{'NO' | translate}}</md-radio-button>
+      <md-radio-button value="other">{{'Altro' | translate}}</md-radio-button>
+    </md-radio-group>
+  </md-input-container>
+</div>
+<div layout-gt-xs="row" layout-xs="column" layout-align="center">
+  <md-input-container flex-gt-sm="60" flex-sm="70" ng-show="vm.checked4=='other'">
+    <label>{{'Altro' | translate}}</label>
+    <input name="otherDoc" ng-model="vm.project.otherDoc">
+    <div ng-messages="projectForm.otherDoc.$error">
+    </div>
+  </md-input-container>
+</div>
+
+<div layout-gt-xs="row" layout-xs="column" layout-align="center">
+  <md-input-container flex-gt-sm="60" flex-sm="70">
+    <label>{{'Modulo compilato da' | translate}}</label>
+    <input name="compiledBy" ng-model="vm.project.compiledBy">
+    <div ng-messages="projectForm.compiledBy.$error">
+    </div>
+  </md-input-container>
+</div>
+<div layout-gt-xs="row" layout-xs="column" layout-align="center">
+  <md-input-container flex-gt-sm="60" flex-sm="70">
+    <label>{{'Telefono' | translate}}</label>
+    <input name="phone" ng-model="vm.project.phone">
+    <div ng-messages="projectForm.phone.$error">
+    </div>
+  </md-input-container>
+</div>
+
+<webcam-capture></webcam-capture>
+
+
+<div layout-gt-xs="row" layout-xs="column" layout-align="center">
+  <md-button class="md-raised md-primary bv-button-confirm">{{"INVIA" | translate}}</md-button>
+</div>
+
+
+<!-- <md-content class="md-no-momentum"> -->
+<!-- <md-input-container class="md-icon-float md-block"> -->
+
+<!-- <md-icon md-svg-src="img/icons/ic_person_24px.svg" class="name"></md-icon> -->
+<!-- <i class="material-icons">alarm_on</i>
+    <i class="material-icons">person</i> -->
+<!-- <i class="material-icons">place</i>
+    <i class="mi mi-24 mi-directions-bike"></i>
+    <i class="mi mi-24 mi-person"></i>
+    <i class="mi mi-24 mi-phone"></i> -->
+<!-- <input ng-model="user.name" type="text"> -->
+<!-- </md-input-container> -->
+<!-- </md-content> -->

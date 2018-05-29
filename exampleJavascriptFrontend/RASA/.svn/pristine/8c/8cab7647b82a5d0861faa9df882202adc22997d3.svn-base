@@ -1,0 +1,31 @@
+(function () {
+  'use strict';
+  /**
+   * config
+   * @type {[type]}
+   */
+  angular
+    .module(APP_NAME)
+    .config(config);
+
+  /**
+   * [config description]
+   * @method config
+   * @param  {[type]} $provide [description]
+   * @return {[type]}          [description]
+   */
+  function config($stateProvider) {
+
+    // gli stati
+    $stateProvider
+      .state('operativeSites', {
+        url: '/operativeSites',
+        templateUrl: "operativeSites/operativeSites.html",
+        controller: "operativeSitesCtrl",
+        controllerAs: "vm",
+        resolve: {},
+        params: {}
+      });
+  }
+
+}());

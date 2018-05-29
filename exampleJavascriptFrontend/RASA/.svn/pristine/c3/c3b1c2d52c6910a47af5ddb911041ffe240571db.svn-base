@@ -1,0 +1,101 @@
+(function () {
+    'use strict';
+
+    angular.module('revux').directive('paymentDetail', paymentDetail);
+
+    function paymentDetail($filter, DebitCustomerService, MovementsService, PaymentsService, LanguageService, EFatturaPaymentService) {
+
+        var directive = {
+            templateUrl: 'common/directives/paymentDetail/paymentDetail.directive.html',
+            restrict: 'E',
+            link: link,
+            replace: true,
+            scope: {
+                element: '=',
+                list: "=",
+                bvDetailButtonsInclude: "=",
+                bvMethods: "=?",
+                api: "=?"
+            }
+        };
+        return directive;
+
+
+        function link(scope) {
+
+            // determina se etichetta è visibile o meno e se editabile o meno;
+            scope.tagVisible = $filter('PaymentUtilityFilterTag')({'section': 'visible'});
+            scope.tagEditable = $filter('PaymentUtilityFilterTag')({'section': 'editable', 'payment': scope.element});
+            scope.tagInsertable = $filter('PaymentUtilityFilterTag')({'section': 'insertable'});
+            scope.tagId = scope.element.execution.tagId;
+
+            //api dell'etichetta
+            scope.tagsListApi = {
+                beforeRemove: function (item) {
+
+                    // chiama servizio REST e se ok, azzera il componente
+                    PaymentsService.unAssociateTag(scope.element.id, item.tagId).then(function (response) {
+                        scope.tagsListApi.remove(item);
+                    });
+
+                },
+                selected: function (item) {
+                    // chiama servizio REST e se ok, azzera il componente
+                    PaymentsService.associateTag(scope.element.id, item.tagId).then(function (response) {
+
+                    });
+
+                }
+            };
+
+            scope.copyPayment = MovementsService.copyPayment;
+
+            if (scope.element.paynetNumber && scope.element.billId) {
+                scope.modifyPayment = EFatturaPaymentService.modifyPayment.bind(this, scope.element.paynetNumber, scope.element.billId);
+            } else {
+                scope.modifyPayment = MovementsService.modifyPayment;
+            }
+            scope.deletePayment = deletePayment;
+
+            init();
+
+
+            //////////////////////
+
+            function init() {
+
+                scope.$watch(function () {
+                    return scope.element;
+                }, function (payment, oldValue) {
+                    if (payment) {
+                        scope.endDateFormatted = payment.execution.code != 'UNIQUE' && payment.execution.endOfPaymentOption == 'DEFINED_DATE' ? moment(payment.execution.endDate).format(LanguageService.date_format) : null;
+                        DebitCustomerService.getPromiseReady().then(
+                            function () {
+                                scope.debitCustomer = DebitCustomerService.getDebitCustomerById(payment.debitAccount.customerId);
+                            }
+                        );
+                        scope.paymentPdfDownloadUrl = MovementsService.getPaymentPdfDownloadUrl(payment.id);
+                    }
+                    else {
+                        scope.debitCustomer = undefined;
+                        scope.paymentPdfDownloadUrl = undefined;
+                    }
+                }, true);
+            }
+
+            function deletePayment() {
+                PaymentsService.deletePayment(scope, scope.element.id).then(function (response) {
+                    if (response == 'success') {
+                        var index = scope.list.indexOf(scope.element);
+                        scope.list.splice(index, 1);
+                        if (scope.api && scope.api.onDelete) {
+                            scope.api.onDelete(scope.element, index);
+                        }
+                    }
+                });
+            }
+
+
+        }
+    }
+}());

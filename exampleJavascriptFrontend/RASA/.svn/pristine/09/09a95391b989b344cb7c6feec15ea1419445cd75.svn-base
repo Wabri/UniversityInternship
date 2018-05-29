@@ -1,0 +1,29 @@
+angular.module('revux').directive('inputMaxlength', function () {
+    return {
+        require: 'ngModel',
+        link: function (scope, el, attrs, model) {
+
+            scope.$watch(function () {
+                return scope.$eval(attrs.inputMaxlength);
+            }, function (value) {
+                max_length = value;
+            });
+
+            var max_length = parseInt(attrs.inputMaxlength, 10);
+            if (isNaN(max_length) || !$.isNumeric(max_length))
+                max_length = 10;
+
+            var input_value_parser = function (value) {
+                if (value && value.length > max_length) {
+                    value = value.substring(0, max_length);
+                    model.$setViewValue(value);
+                    model.$render();
+                }
+
+                return value;
+            };
+
+            model.$parsers.push(input_value_parser);
+        }
+    };
+});

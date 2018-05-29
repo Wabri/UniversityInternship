@@ -1,0 +1,121 @@
+(function () {
+    'use strict';
+
+    angular.module('revux')
+        .directive('logout', logout);
+
+    /**
+     *
+     * @param $rootScope
+     * @param $state
+     * @param $translate
+     * @param LoginService
+     * @param Events
+     * @returns {{templateUrl: string, restrict: string, replace: boolean, link: link}}
+     */
+    function logout() {
+
+        /**
+         * logout : il config
+         * @type {{templateUrl: string, restrict: string, replace: boolean, link: link, bindToController: boolean}}
+         */
+        var directive = {
+            templateUrl: 'common/directives/logout.html',
+            restrict: 'A',
+            replace: true,
+            controller: controller,
+            controllerAs: 'vm',
+            bindToController: true,
+            cache: false
+        };
+
+        return directive;
+    }
+
+    /**
+     * controller ; il controller
+     * @param $scope
+     */
+    function controller($rootScope, $state, Events, $window, PropertiesService, LoginService, StorageService, ContractsService) {
+
+        var self = this;
+
+        // esposte
+        self.showButtonContracts = true;
+
+        // locali
+        var from = null;
+
+        /**
+         * LOGOUT_TASBAR : listen 1
+         */
+
+        $rootScope.$on(Events.LOGOUT_TASBAR, function () {
+
+            // visalizza o meno il bottone di cambio contratti
+            self.showButtonContracts = (ContractsService.getList().length) > 1;
+
+            from = Events.LOGOUT_TASBAR;
+
+            $("#logout").modal('show');
+        });
+
+        /***
+         * LOGOUT_TOPBAR : listen 2
+         */
+        $rootScope.$on(Events.LOGOUT_TOPBAR, function () {
+
+            // visalizza o meno il bottone di cambio contratti
+            self.showButtonContracts = (ContractsService.getList().length) > 1;
+
+            from = Events.LOGOUT_TOPBAR;
+
+            $("#logout").modal('show');
+        });
+
+        /**
+         * logoutCancel : cancel
+         */
+        self.logoutCancel = function () {
+            $("#logout").modal('hide');
+        };
+        /**
+         * logoutCancel : cancel
+         */
+        self.logoutUndo = function () {
+            $("#logout").modal('hide');
+        };
+
+        /**
+         * chooseNewContract : nuovo contratto
+         */
+        self.chooseNewContract = function () {
+
+            // pagina scelya contratti
+            $state.go('contracts.list', {}, {reload: true});
+
+            // via la maschera di modal
+            $("#logout").modal('hide');
+        }
+
+        /**
+         * logout
+         */
+        self.logout = function () {
+
+            return LoginService.logoff().then(function () {
+
+                    LoginService.logout().then(function () {
+
+                        // subito la cancellazione
+                        StorageService.clearAll();
+
+                        // vai alla pagina giusta
+                        $window.location.href = PropertiesService.properties.logoutRedirectUrl;
+                    })
+                }
+            );
+        }
+    };
+
+})();

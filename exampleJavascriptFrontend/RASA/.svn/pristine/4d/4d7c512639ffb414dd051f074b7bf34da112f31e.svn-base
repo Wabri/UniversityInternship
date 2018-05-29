@@ -1,0 +1,94 @@
+//
+// Variables
+//
+// You can override the default values by setting the variables in your Sass
+// before importing the normalize-scss library.
+// The font size set on the root html element.
+$base-font-size: 88px !default;
+// The base line height determines the basic unit of vertical rhythm.
+$base-line-height: 24px !default;
+// The length unit in which to output vertical rhythm values.
+// Supported values: px, em, rem.
+$base-unit: 'rem' !default;
+// The default font family.
+$base-font-family: 'OpenSans' !default;
+// The font sizes for h1-h6.
+$h1-font-size: 2 * $base-font-size !default;
+$h2-font-size: 1.5 * $base-font-size !default;
+$h3-font-size: 1.17 * $base-font-size !default;
+$h4-font-size: 1 * $base-font-size !default;
+$h5-font-size: 0.83 * $base-font-size !default;
+$h6-font-size: 0.67 * $base-font-size !default;
+// The amount lists and blockquotes are indented.
+$indent-amount: 40px !default;
+// The following variable controls whether normalize-scss will output
+// font-sizes, line-heights and block-level top/bottom margins that form a basic
+// vertical rhythm on the page, which differs from the original Normalize.css.
+// However, changing any of the variables above will cause
+// $normalize-vertical-rhythm to be automatically set to true.
+$normalize-vertical-rhythm: true !default;
+//
+// Copy settings from this file into the provided `_custom.scss` to override
+// the Bootstrap defaults without modifying key, versioned files.
+// Table of Contents
+//
+// Colors
+// Options
+// Spacing
+// Body
+// Links
+// Grid breakpoints
+// Grid containers
+// Grid columns
+// Fonts
+// Components
+// Sidebar
+// General variable structure
+//
+// Variable format should follow the `$component-modifier-state-property` order.
+// Colors
+//
+// Grayscale and brand colors for use across Bootstrap.
+//-- colors:start --//
+$color-red: #B7313D;
+$color-yellow: #FDC963;
+$color-green: #C6CCA2;
+$color-blue: #5EA6D4;
+$color-white: rgb(255, 255, 255);
+//-- colors:end --//
+$gray-dark: #373a3c !default;
+$gray: #55595c !default;
+$gray-light: #B6B6B6 !default;
+$gray-lighter: #E4E4E4 !default;
+$gray-lightest: #F6F6F6 !default;
+$brand-primary: $color-red !default;
+$brand-success: #5cb85c !default;
+$brand-info: #5bc0de !default;
+$brand-warning: #f0ad4e !default;
+$brand-danger: #d9534f !default;
+$brand-login: #f8b442 !default;
+// Options
+//
+//
+// Body
+//
+// Settings for the `<body>` element.
+$body-bg: $color-white;
+$body-color: $gray-dark;
+//zindex
+$zindex-navbar: 1000 !default;
+$zindex-dropdown: 1000 !default;
+$zindex-popover: 1060 !default;
+$zindex-tooltip: 1070 !default;
+$zindex-navbar-fixed: 1030 !default;
+$zindex-navbar-sticky: 1030 !default;
+$zindex-modal-bg: 1040 !default;
+$zindex-modal: 1050 !default;
+$zindex-sidebar-bg: 1060 !default;
+$zindex-sidebar: 1070 !default;
+//Breakpoints
+$xs-min-width: rem(0);
+$sm-min-width: rem(600);
+$md-min-width: rem(960);
+$lg-min-width: rem(1280);
+$xl-min-width: rem(1920);

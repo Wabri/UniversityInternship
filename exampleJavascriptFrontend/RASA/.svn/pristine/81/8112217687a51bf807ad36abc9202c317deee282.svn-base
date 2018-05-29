@@ -1,0 +1,166 @@
+(function () {
+    'use strict';
+
+    angular.module('revux').directive('extPlaceholder', extPlaceholder);
+
+    function extPlaceholder($timeout, $compile) {
+        return {
+            scope: {
+                extPlaceholderApi: '='
+            },
+            link: function (scope, element, attrs, controller) {
+
+                // pubblico all'interno
+                var $span = null;
+
+                // api per REFRESH
+                if (scope.extPlaceholderApi) {
+                    scope.extPlaceholderApi.refresh = function () {
+                        remove_placeholder();
+                        add_placeholder();
+                    }
+                }
+
+                /**
+                 * detect IE
+                 * returns version of IE or false, if browser is not Internet Explorer
+                 */
+                function detectIE() {
+                    var ua = window.navigator.userAgent;
+
+                    // Test values; Uncomment to check result …
+
+                    // IE 10
+                    // ua = 'Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.2; Trident/6.0)';
+
+                    // IE 11
+                    // ua = 'Mozilla/5.0 (Windows NT 6.3; Trident/7.0; rv:11.0) like Gecko';
+
+                    // Edge 12 (Spartan)
+                    // ua = 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.71 Safari/537.36 Edge/12.0';
+
+                    // Edge 13
+                    // ua = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2486.0 Safari/537.36 Edge/13.10586';
+
+                    var msie = ua.indexOf('MSIE ');
+                    if (msie > 0) {
+                        // IE 10 or older => return version number
+                        return parseInt(ua.substring(msie + 5, ua.indexOf('.', msie)), 10);
+                    }
+
+                    var trident = ua.indexOf('Trident/');
+                    if (trident > 0) {
+                        // IE 11 => return version number
+                        var rv = ua.indexOf('rv:');
+                        return parseInt(ua.substring(rv + 3, ua.indexOf('.', rv)), 10);
+                    }
+
+                    var edge = ua.indexOf('Edge/');
+                    if (edge > 0) {
+                        // Edge (IE 12+) => return version number
+                        return parseInt(ua.substring(edge + 5, ua.indexOf('.', edge)), 10);
+                    }
+
+                    // other browser
+                    return false;
+                }
+
+                /**
+                 *
+                 */
+                function remove_placeholder() {
+                    $span.remove();
+                }
+
+                /**
+                 * add_placeholder
+                 */
+                function add_placeholder() {
+
+                    // se stesso
+                    var $input = $(element);
+                    var attr = attrs.extPlaceholder;
+
+                    // ok, siamo su Explorer o EDGE ???
+                    var version = detectIE();
+                    if (version === false) {
+                        $input.attr('placeholder', attr);
+                        return true;
+                    }
+
+                    // gli oggetti
+                    var $this = element;
+                    $span = $(document.createElement("span"));
+
+                    // caratteristiche del padre
+                    var elemRect = $input[0].getBoundingClientRect();
+
+                    // classi del padre
+                    var classes = $input.prop("classList");
+                    var classesToString = '';
+                    angular.forEach(classes, function (value) {
+                        classesToString = classesToString + value + " "
+                    });
+                    classesToString = classesToString + "text-left";
+
+                    // piccolo ritocco input
+                    if ($input.val() === '')
+                        $input.css('background', "transparent");
+                    else
+                        $input.css('background', "white");
+
+                    // posizioni e dimensioni
+                    var left = "0px";
+                    var top = "0px";
+                    var width = elemRect.width + "px";
+
+                    // applica il tutto sullo span ( placeholder )
+                    $span.css(
+                        {
+                            "zIndex": "-1",
+                            "position": "absolute",
+                            "left": left,
+                            "top": top,
+                            "border": "none",
+                            "width": width
+                        }
+                    )
+                        .text(attr)
+                        .addClass(classesToString)
+                        .css("color", "#999");
+
+                    // inserisce nella direttiva
+//                    $compile($span)(scope);
+                    element.after($span);
+
+                    // onFOCUS
+                    element.bind('focus', function () {
+                        $input.css('background', "white");
+                    });
+
+                    // onBLUR
+                    element.bind('blur', function () {
+                        if ($input.val() === "")
+                            $input.css('background', "transparent");
+                        else
+                            $input.css('background', "white");
+                    });
+
+                    // onKEYUP
+                    element.bind('keyup', function () {
+                        if ($input.val() === "")
+                            $input.css('background', "transparent");
+                        else
+                            $input.css('background', "white");
+                    });
+                }
+
+                // concretizza il finto placeholder
+                $timeout(function () {
+                    add_placeholder();
+                }, 0);
+            }
+        }
+    }
+})();
+

@@ -1,0 +1,26 @@
+(function() {
+  'use strict';
+
+  angular.module(APP_NAME)
+    .service('OperativeSitesService', OperativeSitesService)
+
+  /**
+   * bvAlertService
+   * @param {*}
+   * @param {*}
+   */
+  function OperativeSitesService(bvStoreFactory) {
+
+    // methods
+    var self = this;
+
+    //metodi
+    self.method1 = method1;
+
+    function method1() {
+      bvStoreFactory.operativeSites.param1 = 12;
+    }
+
+  }
+
+})();

@@ -1,0 +1,11 @@
+(function () {
+    'use strict';
+		angular.module('revux')
+		  .filter('length', function() {
+		    return function(data) {
+		      return data.length;
+		    };
+		  }
+		);
+
+}());

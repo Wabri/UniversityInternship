@@ -1,0 +1,17 @@
+<ui-select
+        name="repeatSelectMonth"
+        ng-required="true"
+        ng-model="ctrl.monthSelected"
+        search-enabled="false"
+        skip-focusser="true">
+    <ui-select-match>
+        <span ng-bind="$select.selected.description"></span>
+    </ui-select-match>
+    <ui-select-choices  position="down" repeat="option in ctrl.monthYear | filter: $select.search">
+        <div>
+            <div>
+                <span ng-bind="option.description" class="text-short"></span>
+            </div>
+        </div>
+    </ui-select-choices>
+</ui-select>

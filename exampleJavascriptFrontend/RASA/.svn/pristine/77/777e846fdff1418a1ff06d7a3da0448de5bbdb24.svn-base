@@ -1,0 +1,102 @@
+(function () {
+    'use strict';
+
+    angular
+        .module('revux')
+        .service('BrowserService', BrowserService);
+
+    /* @ngInject */
+    function BrowserService($http) {
+
+        // se stesso
+        var self = this;
+
+        // pubbliche
+        self.url = null;
+
+        // private
+        var results = [];
+        results[0] = "unsupportedBrowser";
+        results[1] = "ok";
+        results[2] = "outdatedBrowser";
+        results[3] = "ok";
+
+        // metodi pubblici
+        self.getBrowserInfo = getBrowserInfo;
+        self.check = check;
+
+        /**
+         * init : parte da qui
+         */
+        function init() {
+
+            if (self.url === undefined)
+                throw "BrowserService : set url parameter";
+        }
+
+        // start
+        init();
+
+        /**
+         * test
+         * @returns {*}
+         */
+        function check() {
+
+            // alcuni check
+            var browserInfo = getBrowserInfo();
+
+            // ora puo richiamare il servizio
+            var url = self.url + '?browserName=' + browserInfo.name + '&' + 'browserVersion=' + browserInfo.version;
+
+            return $http.get(url)
+                .then(function successCallback(response) {
+
+                        var result = parseInt(response.data);
+                        return results[result];
+                    }
+                )
+        }
+
+        /**
+         * getBrowserInfo
+         * @returns {*}
+         */
+        function getBrowserInfo() {
+
+            //console.log('getBrowserInfo...');
+        	//alert(navigator.userAgent);
+            var ua = navigator.userAgent, tem,
+                M = ua.match(/(opera|chrome|safari|firefox|msie|trident(?=\/))\/?\s*(\d+)/i) || [];
+            //alert(M[1]);
+            if (/trident/i.test(M[1])) {
+                tem = /\brv[ :]+(\d+)/g.exec(ua) || [];
+                return {name: "IE", version: tem[1]}
+            }
+            if (M[1] === 'Chrome') {
+                tem = ua.match(/\b(OPR|Edge)\/(\d+)/);
+                
+                if (tem != null)
+                    if (/edge/i.test(tem[1])) {
+                        return {name: tem[1], version: tem[2]};
+                    }
+                    else {
+                    	
+                    	var opera = tem.slice(1).join(' ').replace('OPR', 'Opera');
+                    	var operaSplit = opera.split(' ');
+                        return {name: operaSplit[0], version: operaSplit[1]};
+                    }
+            }
+            M = M[2] ? [M[1], M[2]] : [navigator.appName, navigator.appVersion, '-?'];
+            if ((tem = ua.match(/version\/(\d+)/i)) != null)
+                M.splice(1, 1, tem[1]);
+
+
+            var data = M.join(' ');
+            var bInfo = data.split(' ');
+
+            // mette a disposizione per interno
+            return {name: bInfo[0], version: bInfo[1]};
+        }
+    }
+})();

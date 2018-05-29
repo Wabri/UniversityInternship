@@ -1,0 +1,41 @@
+/**
+ * loginpageCtrl : controller login page
+ * @type {[type]}
+ */
+angular.module(APP_NAME)
+  .controller('loginpageCtrl', loginpageCtrl);
+
+/**
+ * [loginpageCtrl description]
+ * @method loginpageCtrl
+ * @param  {[type]}     EVENTS [description]
+ * @return {[type]}            [description]
+ */
+function loginpageCtrl($scope, $rootScope, $q, $timeout, $http, $translate, $mdDialog, bvApiService, bvAlertService, bvBusyService, EVENTS, loginpageService, loginService) {
+  // bp
+  var vm = this;
+  vm.recKey = "6Lf-dUIUAAAAAPu2RUJB_HOscSPyll8hvy4o0hXs";
+  vm.onloadCallback = loginpageService.recback;
+  vm.setResponse = setResponse;
+  vm.SendData = SendData;
+  vm.human = false;
+
+  console.log(vm.recback);
+  vm.showHints = true;
+  vm.user = {};
+
+  function setResponse(response) {
+    vm.human = true;
+  };
+
+  function SendData() {
+      loginService.loginUser(vm.user.name, vm.user.password).then(
+      function(loginResult) {
+        console.log(loginResult);
+      },
+      function(err) {
+        console.error(err);
+      }
+    )
+  };
+}

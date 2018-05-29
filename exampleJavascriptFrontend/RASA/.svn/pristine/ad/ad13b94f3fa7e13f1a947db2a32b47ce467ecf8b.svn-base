@@ -1,0 +1,6 @@
+.md-title {
+    font-size: $base-font-size;
+    font-family: $base-font-family;
+    font-weight: 500;
+    letter-spacing: 0.005em;
+}

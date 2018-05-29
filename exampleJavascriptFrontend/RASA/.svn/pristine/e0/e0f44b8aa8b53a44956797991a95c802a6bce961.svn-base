@@ -1,0 +1,45 @@
+(function () {
+    'use strict';
+
+    angular.module('revux.directives.movements').directive('bookingRecordDetail', bookingRecordDetail);
+
+    function bookingRecordDetail() {
+
+        var directive = {
+            templateUrl: 'common/directives/bookingRecordDetail/bookingRecordDetail.directive.html',
+            restrict: 'E',
+            controller: controller,
+            replace: true,
+            scope: {
+              payments: '=',
+              paymentid: '=',
+              debitCustomers:'='
+            }
+        };
+
+        return directive;
+
+        function controller($scope){
+
+            if(typeof $scope.payments !== 'undefined' && $scope.payments.length > 0){
+                $scope.beneficiary = $scope.payments.find(function(element){
+                    if(element.id === $scope.paymentid){
+                        return true;
+                    }
+                    return false;
+                });
+            if($scope.debitCustomers && $scope.beneficiary ){
+                $scope.debitCustomer=$scope.debitCustomers.find(function(element){
+
+                    if(element.id===$scope.beneficiary.debitAccount.customerId){
+                        return true;
+                    }
+                    return false;
+                });
+            }
+
+        }
+
+        }
+    }
+}());

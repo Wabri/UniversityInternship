@@ -1,0 +1,22 @@
+(function() {
+  'use strict';
+
+  angular.module('revux').service('PaymentTemplateListService', PaymentTemplateListService);
+
+  function PaymentTemplateListService($http, bvApiService, $rootScope, CgBusyService) {
+    var self = this;
+    self.getMostUsedTemplateList = getMostUsedTemplateList;
+
+    ////////////////////////////
+
+    function getMostUsedTemplateList(payload) {
+      var url = bvApiService.getEndpoint() + '/rest/templateList/mostused';
+      var promise = $http.post(url, payload).then(function successCallback(response) {
+        return response.data;
+      });
+      CgBusyService.addPromise(promise);
+      return promise;
+    }
+
+  }
+}());

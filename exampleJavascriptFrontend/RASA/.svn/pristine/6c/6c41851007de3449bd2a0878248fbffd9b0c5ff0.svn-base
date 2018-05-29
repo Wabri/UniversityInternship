@@ -1,0 +1,18 @@
+(function () {
+    'use strict';
+		angular.module('revux')
+		  .filter('hasproperties', function() {
+		    return function(obj,notAllowUndefined) {
+          var keys=[];
+          keys=Object.keys(obj||{}).filter(function(key){
+              if(notAllowUndefined){
+                return obj[key];
+              }
+              return true;
+            });
+		      return keys.length;
+		    };
+		  }
+		);
+
+}());

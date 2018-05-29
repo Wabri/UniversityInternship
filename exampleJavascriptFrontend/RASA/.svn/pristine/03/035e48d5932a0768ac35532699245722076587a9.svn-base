@@ -1,0 +1,47 @@
+#bvProgressbar{
+
+  .progress {
+    background-color: #eee;
+    @include box-shadow(inset 0 .1rem .1rem rgba(0, 0, 0, .1));
+    color:black;
+  }
+  .background-trasparent{
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+  .progress-bar {
+    display: inline-block;
+    height: $spacer-y;
+    background-color: #0074d9;
+    border-top-left-radius: $border-radius;
+    border-bottom-left-radius: $border-radius;
+  }
+  .progress-bar-complete {
+    border-top-right-radius: $border-radius;
+    border-bottom-right-radius: $border-radius;
+  }
+  .progress-success {
+    background-color:$brand-success;
+  }
+  .progress-warning {
+    background-color:$brand-warning;
+  }
+  .progress-danger {
+    background-color:$brand-danger;
+  }
+  .bps-green {
+    background-color:$bps_green;
+  }
+  .bps-blue {
+    background-color:$bps_blue;
+  }
+  .bps-yellow {
+    background-color:$bps_yellow;
+  }
+
+
+  .background-lightgray {
+    background-color:light-gray;
+  }
+
+
+}

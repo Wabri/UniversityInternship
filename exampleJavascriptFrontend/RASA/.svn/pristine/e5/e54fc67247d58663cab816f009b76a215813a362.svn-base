@@ -1,0 +1,98 @@
+(function () {
+    'use strict';
+
+    angular.module('revux')
+        .directive('confirmOnExit', confirmOnExit);
+
+    function confirmOnExit($state, exDialog) {
+        return {
+            scope: {
+                confirmOnExit: '&',
+                confirmMessageWindow: '@',
+                confirmMessageRoute: '@',
+                confirmMessage: '@',
+                confirmBaseState: '@',
+                confirmStateOnExit: '@',
+                confirmMessageTitle: '@',
+                confirmMessageButtonConfirm: '@',
+                confirmMessageButtonUndo: '@',
+                confirmPassedState:"=?",
+                confirmFunctionOnExit:"=?",
+                confirmFunctionOnAbort:'=?'
+
+
+            },
+            link: function ($scope, elem, attrs) {
+
+                var confirmed = false;
+
+                window.onbeforeunload = function () {
+
+                    if ($scope.confirmOnExit()) {
+                        return $scope.confirmMessageWindow || $scope.confirmMessage;
+                    }
+                };
+
+                var $locationChangeStartUnbind = $scope.$on('$locationChangeStart', function (event, toState, toParams, fromState, fromParams) {
+                    userUnbind(event, toState, toParams, fromState, fromParams);
+                });
+
+                var $stateChangeStartUnbind = $scope.$on('$stateChangeStart', function (event, toState, toParams, fromState, fromParams) {
+                    userUnbind(event, toState, toParams, fromState, fromParams);
+                });
+
+                $scope.$on('$destroy', function () {
+                    window.onbeforeunload = null;
+                    $locationChangeStartUnbind();
+                    $stateChangeStartUnbind();
+                });
+
+                /**
+                 * userUnbind : trap uscita dell'utente
+                 * @returns {boolean}
+                 */
+                function userUnbind(event, toState, toParams, fromState, fromParams) {
+                    // se navigo nell'ambito dichiarato, ok
+                    if (toState.name && $scope.confirmBaseState)
+                        if (toState.name.indexOf($scope.confirmBaseState) >= 0) return true;
+
+                    if ($scope.confirmOnExit() && !confirmed) {
+
+                        // stoppa comunque
+                        event.preventDefault();
+
+                        // chiede
+                        exDialog.openConfirm({
+                            scope: $scope,
+                            template: 'common/libs/ngExDialog/_confirm.html', //from file',
+                            title: $scope.confirmMessageTitle,
+                            icon: "warning",
+                            actionButtonLabel: $scope.confirmMessageButtonConfirm,
+                            closeButtonLabel: $scope.confirmMessageButtonUndo,
+                            message: $scope.confirmMessageRoute || $scope.confirmMessage,
+                            width: '400px'
+                        }).then(function (value) {
+
+                            // confermata uscita
+                            confirmed = true;
+
+                            // va dove gli si è detto di andare
+                            if($scope.confirmFunctionOnExit){
+                              $scope.confirmFunctionOnExit(toState, toParams, fromState);
+                            }
+                            else{
+                              $state.go($scope.confirmStateOnExit,$scope.confirmPassedState?$scope.confirmPassedState:{});
+                            }
+
+                        }, function (reason) {
+                            if($scope.confirmFunctionOnAbort){
+                              $scope.confirmFunctionOnAbort();
+                            }
+                        });
+                    }
+                }
+            }
+        };
+    }
+
+})();

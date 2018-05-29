@@ -5,6 +5,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -33,6 +34,7 @@ public class DataRestController {
 	@ApiResponse(code = 403, message = "Forbidden"),
 	@ApiResponse(code = 404, message = "Not Found"), 
 	@ApiResponse(code = 500, message = "Failure") })
+	//@CrossOrigin(origins= {"http://localhost:9001","http://192.168.170.127:9001"}, maxAge=3600 )
 	@GetMapping("/v1/api/dataById")
 	public ResponseEntity<DataBeanDTO> getData(@ApiParam("id") @RequestParam(required = true, name = "id") Integer id) throws Exception {
 		log.info("Get data for id:" + id);

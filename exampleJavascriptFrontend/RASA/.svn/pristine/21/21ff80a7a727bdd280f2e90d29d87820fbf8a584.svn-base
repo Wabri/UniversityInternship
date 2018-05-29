@@ -1,0 +1,76 @@
+<div ng-switch="source.length==0" class="padding-mobile col-md-12 col-xs-12">
+
+
+    <div ng-switch-when="true">
+      <div class="card shadow-1">
+
+          <div class="list-group-item-payment-abstract" style="cursor:default;">
+              <div class="icon-info" style=" margin-right: 0.5rem;">
+                  <i aria-hidden="true" class="fa fa-info">
+                  </i>
+              </div>
+              <div class="list-group-payment-beneficiary">
+                  <p class="text-base">
+                      {{'payment.emptylist' | translate}}
+                  </p>
+              </div>
+          </div>
+
+      </div>
+    </div>
+
+
+
+    <div class="card shadow-1" ng-switch-when="false">
+        <ul class="list-group list-group-flush list-group-payments">
+            <li  class="list-group-item list-group-item-payment" ng-class="{'list-group-item-payment-expanded':br.showDetails}" ng-repeat="br in source | limitTo:pagesize" scroll-up-on-event>
+                <div class="list-group-item-payment-abstract" ng-click="br.showDetails = showDetails(br, br.showDetails)">
+                    <div class="list-group-payment-icon">
+                        <span class="date text-xs-center">
+                            <div class="month">
+                                {{ br.execution.executionDate | amDateFormat:'MMM' }}
+                            </div>
+                            <div class="day">
+                                {{ br.execution.executionDate | amDateFormat:'DD' }}
+                            </div>
+                            <div class="year" ng-show="br.execution.executionDate| dateInDifferentYear">
+                                {{ br.execution.executionDate | amDateFormat:'YYYY' }}
+                            </div>
+                        </span>
+                    </div>
+                    <div class="list-group-payment-beneficiary" style="margin-right: 0px">
+                      <customer-payment-description customerid="br.debitAccount.customerId" paymenttype="br.type"
+                                                    paynet-number="br.paynetNumber" bill-id="br.billId"></customer-payment-description>
+                        <div>
+                            {{br.beneficiary}}
+                        </div>
+                    </div>
+                    <div class="list-group-payment-amount">
+                        <p class="card-text">
+                            {{br.totalConvertedValueFormatted}}
+                            <br>
+                            <span class="currency">
+                                    {{br.totalConvertedCcyFormatted}}
+                                </span>
+                            </br>
+                        </p>
+                    </div>
+                </div>
+                <div class="list-group-item-payment-detail-wrapper">
+                    <div class="list-group-item-payment-detail">
+
+                      <payment-detail element="br" list="source" enable-actions="true"
+                                      bv-detail-buttons-include="'common/directives/paymentList/nextPayments.detail.buttons.include.html'"></payment-detail>
+
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <a class="bps-btn-link pull-right"
+       href=""
+       ng-show="source.length > 0"
+       ui-sref="contract.activities.paymentsNext"
+       style="padding-top: 10px;">{{'crono.show.all' | translate}}</a>
+</div>

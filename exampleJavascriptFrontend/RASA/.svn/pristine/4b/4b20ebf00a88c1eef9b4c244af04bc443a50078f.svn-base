@@ -1,0 +1,109 @@
+<div>
+    <span ng-show="element.id">
+       <div ng-repeat="slip in element.slips">
+           <slip-type type="{{slip.type}}">
+           </slip-type>
+           <hr/>
+       </div>
+   </span>
+    <div class="list-group-item-movement-abstract">
+        <div style="width:100%; float:left" class="ellipsis">
+            <h5 class="bps-h5">
+                {{'payment.customer' | translate}}
+            </h5>
+            <p class="text-s">
+                {{debitCustomer.shortDesc}}
+            </p>
+            <h5 class="bps-h5">
+                {{'payment.creditaccount' | translate}}
+            </h5>
+            <p class="text-s">
+                {{element.debitAccount.code}}
+            </p>
+        </div>
+    </div>
+    <hr>
+    <div class="list-group-item-movement-abstract">
+        <div class="list-group-movement-beneficiary">
+            <div class="list-group-movement-beneficiary" ng-switch="element.execution.code=='UNIQUE'">
+                <h5 class="bps-h5">
+                    {{'payment.infoexecution' | translate}}
+                </h5>
+                <p ng-switch-when="true" class="text-s" translate="payment.execution.executionDate.summary.description"
+                   translate-value-date="{{element.execution.executionDate | amParse:'YYYY-MM-DD' | amDateFormat:('date_format'|language_service) }}">
+                </p>
+                <div ng-switch-when="false">
+                    <div ng-switch="element.execution.dayOfPaymentOption">
+                        <p ng-switch-when="SPECIFIC_DAY">
+                            {{'permanent.execution.specific.frequency.'+element.execution.frequency+'.summary.description'|translate:{msg_0:element.execution.paymentDay,msg_1:element.execution.postponeRuleOption}
+                            }}
+                        </p>
+                        <p ng-switch-when="LAST_WORKING_DAY">
+                            {{'permanent.execution.lastWorkingDay.frequency.'+element.execution.frequency+'.summary.description'|translate
+                            }}
+                        </p>
+                    </div>
+
+                    <div ng-switch="element.execution.endOfPaymentOption">
+                        <p ng-switch-when="NOT_DEFINED">
+                            {{'permanent.execution.endOfPaymentOption.'+element.execution.endOfPaymentOption+'.summary.description'|translate}}
+                        </p>
+                        <p ng-switch-when="DEFINED_DATE">
+                            {{'permanent.execution.endOfPaymentOption.'+element.execution.endOfPaymentOption+'.summary.description'|translate:{msg_0:endDateFormatted
+                            } }}
+                        </p>
+                        <p ng-switch-when="NUMBER_OF_REPETITION">
+                            {{'permanent.execution.endOfPaymentOption.'+element.execution.endOfPaymentOption+'.summary.description'|translate:{msg_0:element.execution.repetitions}
+                            }}
+                        </p>
+                    </div>
+
+
+                </div>
+                <p class="text-s">
+                    {{ ("payment.execution.adviceType." + element.execution.adviceType + ".summary.description") |
+                    translate}}
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="list-group-item-movement-abstract">
+        <div class="list-group-movement-beneficiary">
+            <h5 class="bps-h5">
+                {{'payment.actualcontribution' | translate}}
+            </h5>
+            <p class="text-s">
+                {{element.totalContributions}}/60
+            </p>
+            <p class="text-s" ng-repeat="cb in element.contributors track by $index">
+                {{$index+1}}) {{cb.contribution}}/60 ( {{cb.name}} - {{cb.date |
+                amDateFormat:('date_format'|language_service)}} )
+            </p>
+        </div>
+    </div>
+    <div ng-show="element.id>=0">
+        <h5 class="bps-h5">
+            {{'payment.status' | translate}}
+        </h5>
+        <p class="text-s">
+            {{ ("payment.status." + element.status) | translate}}
+        </p>
+    </div>
+
+    <!-- mb : etichette -->
+    <div class="list-group-item-movement-abstract">
+        <!-- mb : span delle etichette -->
+        <div>
+            <tags-list api="tagsListApi" title="{{ 'payment.tag' | translate}}"
+                       editable="tagEditable"
+                       get-details="true"
+                       tag-visible="tagVisible"
+                       is-special-tag="false"
+                       insertable= "tagInsertable"
+                       tag-id="tagId"></tags-list>
+        </div>
+    </div>
+
+    <div include-replace="bvDetailButtonsInclude"></div>
+
+</div>

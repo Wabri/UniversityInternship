@@ -1,0 +1,25 @@
+// globals
+//
+var APP_NAME = "skeleton";
+var HEADER_NAME = "Skeleton-Handle-Errors-Generically";
+var specificallyHandleInProgress = false;
+
+(function() {
+    "use strict";
+
+    angular.module(APP_NAME, [
+        "ui.router", // Routing
+        "tmh.dynamicLocale",
+        "ngSanitize", // Sanitize translations (security)
+        "ngResource", // angular-resource
+        "ngAnimate",
+        "ngStorage",
+        "pascalprecht.translate", // Angular Translate
+        "LocalStorageModule", // Angular local storage
+        "angularMoment",
+        "ngMaterial",
+        "md.data.table",
+        "vcRecaptcha",
+        "angularReverseGeocode"
+    ]);
+})();

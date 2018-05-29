@@ -1,0 +1,13 @@
+//@import "../../../bower_components/font-awesome/scss/font-awesome.scss";
+//@import "../../../bower_components/bootstrap/scss/bootstrap.scss";
+//@import "partials/variables";
+@import "utils/_functions.scss";
+@import "utils/_mixins.scss";
+@import "base/_variables.scss";
+@import "base/_reset.scss";
+@import "base/_base.scss";
+// specifiche dell'applicazione
+@import "../../homepage/homepage.scss";
+@import "../../interview/interview.scss";
+@import "../../operativeSites/operativeSites.scss";
+@import "../../loginpage/loginpage.scss";

@@ -1,0 +1,18 @@
+(function() {
+    'use strict';
+
+    angular.module('revux')
+      .filter('uppercaseFirstLetter', function() {
+        var uppercaseFirstLetter = function(input) {
+          var words = input.split(' ');
+          words=words.map(function(word){
+            return word.toLowerCase();
+          });
+          for (var i = 0, len = 1; i < len; i++)
+            words[i] = words[i].charAt(0).toUpperCase() + words[i].slice(1);
+          return words.join(' ');
+        };
+        return uppercaseFirstLetter;
+      });
+
+}());

@@ -1,0 +1,10 @@
+<div class="payment-step" id="payment-step-{{ index }}" ng-class="{active: selected}">
+    <div class="payment-step-container">
+        <div class="payment-step-head">
+            <h2 class="payment-step-head-title">{{ name }}</h2>
+            <!-- <span class="payment-step-head-counter">{{ index }}/{{ $parent.steps.length }}</span> -->
+        </div>
+        <div class="payment-step-form" ng-transclude>
+        </div>
+    </div>
+</div>

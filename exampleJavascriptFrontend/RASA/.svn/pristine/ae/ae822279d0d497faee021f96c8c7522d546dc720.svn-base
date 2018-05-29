@@ -1,0 +1,82 @@
+<div class="" ng-show="showCheckBox || showCheckBox === undefined">
+    <div class="card-container row row-mobile">
+        <div class="col-xs-12 padding-mobile payments-list-actions">
+            <div style="margin-bottom: 5px" class="btn-combo btn-group">
+                <button type="button" class="btn btn-listactions btn-sm dropdown-toggle dropdown-modell button-modell"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <input type="checkbox" class="c-input c-checkbox c-indicator input-modell" ng-checked="allSelected">
+                </button>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" ng-click="selectAll()">{{ 'document.request.selectallcustomers' | translate
+                        }}</a>
+                    <a class="dropdown-item" ng-click="deselectAll()">{{ 'payment.deselectAll' | translate }}</a>
+                </div>
+            </div>
+            <div class="" include-replace="bvButtonsInclude"></div>
+        </div>
+    </div>
+</div>
+
+<div class="" include-replace="bvHeaderInclude"></div>
+<div class="row row-mobile" ng-style="(bvActivateInfiniteScroll||bvPagination=='scroll') && {'min-height': selectableListMinHeight }">
+ <div class="col-xs-12 col-md-12 padding-mobile">
+    <div class="card shadow-1">
+        <div ng-show="datasource && datasource.length === 0 && messageNoRecords">
+            <div class="list-group-item-payment-abstract" style="cursor:default;">
+                <div class="icon-info" style=" margin-right: 0.5rem;">
+                    <i aria-hidden="true" class="fa fa-info">
+                    </i>
+                </div>
+                <div class="list-group-payment-beneficiary">
+                    <p class="text-base">
+                        {{messageNoRecords}}
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <ul infinite-scroll="(bvActivateInfiniteScroll||bvPagination=='scroll')&&showMoreElements()"
+            class="list-group list-group-flush list-group-payments" infinite-scroll-listen-for-event="start"
+            infinite-scroll-immediate-check="true"
+            >
+            <li style="padding: 0" class="list-group-item list-group-item-payment"  ng-repeat="element in (datasource | limitTo:numShowedElements)  "
+                ng-class="{'list-group-item-payment-expanded':element.showDetails}" ng-class-even="'even'">
+                <div style="margin-bottom:0px;" class="top-filters" ng-show="element.topFilterString">
+                    <div class="filter-wrapper">
+                        <div class="filter-item">
+                            {{element.topFilterString}}
+                        </div>
+                    </div>
+                </div>
+                <div scroll-up-on-event="ctrl.scrollUpOnEventOptions" class="list-group-item-payment-abstract" ng-style="(element.disableClickOnPreview  || disableDetail) && {'cursor':'default'}" ng-click="(!element.disableClickOnPreview)&&clickOnPreview(element)">
+                    <div class="check" ng-show="showCheckBox || showCheckBox === undefined">
+                        <label class="c-input c-checkbox" ng-click="$event.stopPropagation()"
+                               ng-class="{'visibleHidden':element.noSelectable}">
+                            <input type="checkbox" ng-model="element.selected"
+                                   ng-click="checkSelectAll();checkSelectAll();api.onElementToggle&&api.onElementToggle(element)"/>
+                            <span class="c-indicator"></span>
+                        </label>
+                    </div>
+
+                    <!-- INCLUDE PREVIEW -->
+                    <div class="" include-replace="bvPreviewInclude"></div>
+
+                </div>
+                <div class="list-group-item-payment-detail-wrapper">
+                    <div class="list-group-item-payment-detail">
+
+                        <!-- INCLUDE DETAIL -->
+                        <div class="" include-replace="bvDetailInclude"></div>
+
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <a class="bps-btn-link pull-right"
+       href=""
+       ng-click="showMoreElements()"
+       ng-hide="bvPagination!='button' || !datasource || datasource.length == 0 || numShowedElements >= datasource.length"
+       style="padding-top: 10px;">{{showMoreElementsButtonText|| 'Mostra altri elementi'}}</a>
+ </div>
+</div>
