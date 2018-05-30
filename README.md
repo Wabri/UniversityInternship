@@ -49,3 +49,6 @@
 
 ## Day 11 [29/05/18] : 5,5
 * Revisione del codice [exampleJavascriptFrontend](https://github.com/Wabri/UniversityInternship/tree/master/exampleJavascriptFrontend/front) per integrare il codice della chat precedentemente creata [BVChatBot](https://github.com/Wabri/BVChatBot))
+
+## Day 12 [30/05/18] : 
+* Continuato la stesura e l'aggiornamento del [BVChatBot](https://github.com/Wabri/BVChatBot)
