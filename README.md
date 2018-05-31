@@ -58,3 +58,4 @@
 
 ## Day 13 [31/05/18] :
 * Risolto un bug nel codice [BVChatBot](https://github.com/Wabri/BVChatBot) e successivo miglioramento del codice
+* Pubblicato il bot su [heroku](https://trainingchatbotbv.herokuapp.com/) all'indirizzo: [https://trainingchatbotbv.herokuapp.com/](trainingchatbotbv.herokuapp.com/). in questo modo posso fare training su più dispositivi (per ora funziona solo su chrome)
