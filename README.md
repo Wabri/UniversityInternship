@@ -52,10 +52,10 @@
 * Revisione del codice [exampleJavascriptFrontend](https://github.com/Wabri/UniversityInternship/tree/master/exampleJavascriptFrontend/front) per integrare il codice della chat precedentemente creata [BVChatBot](https://github.com/Wabri/BVChatBot)
 * Il codice [exampleJavascriptFrontend](https://github.com/Wabri/UniversityInternship/tree/master/exampleJavascriptFrontend/front) ha dato problemi quindi mi sono concentrato sulla modifica del [BVChatBot](https://github.com/Wabri/BVChatBot) per fare in modo che esegua una chiamata rest generica per una comunicazione base con [exampleSpringRest](https://github.com/Wabri/UniversityInternship/tree/master/exampleSpringRest/BV-SERVICES-TEST)
 
-## Day 12 [30/05/18] : 
+## Day 12 [30/05/18] : 6
 * Continuato la stesura e l'aggiornamento del [BVChatBot](https://github.com/Wabri/BVChatBot)
 * Ho completato il cerchio di comunicazione tra il chatbot, dialogflow e backend (ancora nella fase base [exampleSpringRest](https://github.com/Wabri/UniversityInternship/tree/master/exampleSpringRest/BV-SERVICES-TEST))
 
 ## Day 13 [31/05/18] :
-* Risolto un bug nel codice [BVChatBot](https://github.com/Wabri/BVChatBot) e successivo miglioramento del codice
+* Risolto un bug nel codice [BVChatBot](https://github.com/Wabri/BVChatBot) e successivo miglioramento del codice, il risultato attualmente è: ![Chatbot](https://github.com/Wabri/UniversityInternship/blob/master/resources/prototype.PNG)
 * Pubblicato il bot su [heroku](https://trainingchatbotbv.herokuapp.com/) all'indirizzo: [https://trainingchatbotbv.herokuapp.com/](trainingchatbotbv.herokuapp.com/). in questo modo posso fare training su più dispositivi (per ora funziona solo su chrome)
