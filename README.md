@@ -40,7 +40,7 @@
 ## Day 9 [23/05/18] : 6,5 ore
 * Studio di Rasa NLU nei docs della pagina ufficiale [rasa](https://rasa.com/)
 * Studio dell'architettura MVC con servizi Rest e [spring boot](https://spring.io/guides)
-* Studio di un esempio spring e vari test usando swagger (vedi directory: [exampleSpringRest](https://github.com/Wabri/UniversityInternship/tree/master/exampleSpringRest/BV-SERVICES-TEST))
+* Studio di un esempio spring e vari test usando swagger (vedi directory: [exampleSpringRest](exampleSpringRest/BV-SERVICES-TEST))
 
 ## Day 10 [24/05/18] : 6,5 ore
 * Ricerca di un esempio di chat bot testuale
@@ -63,4 +63,5 @@
 * Creato un esempio di modello di training per l'intelligenza artificiale della chat, creato un server locale e eseguita una semplice chiamata ![rasaCall](https://github.com/Wabri/UniversityInternship/blob/master/resources/rasaCall.PNG)
 
 ## Day 14 [12/06/18] : 
-* Vari tentativi di connessione di [rasa_nlu](https://nlu.rasa.com/) con emulazione configurazione Dialogflow
+* Vari tentativi di connessione di [rasa_nlu](https://nlu.rasa.com/) con emulazione configurazione Dialogflow.
+* Nella repository [LearningRasaNLU](https://github.com/Wabri/LearningRasaNLU)) sono riuscito a creare un modello a partire da file di configurazione di [dialogflow](https://dialogflow.com), all'interno di quella repository ho scritto anche degli appunti riassuntivi del processo di emulazione rasa dialogflow
