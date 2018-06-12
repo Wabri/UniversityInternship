@@ -61,3 +61,6 @@
 * Pubblicato il bot su [heroku](https://www.heroku.com/) all'indirizzo: [https://trainingchatbotbv.herokuapp.com/](https://trainingchatbotbv.herokuapp.com/). in questo modo posso fare training su più dispositivi (per ora funziona solo su chrome)
 * Studiato un modo per utilizzare [rasa_nlu](https://nlu.rasa.com/) per processare i messaggi del bot (vedi repository: [LearningRasaNLU](https://github.com/Wabri/LearningRasaNLU))
 * Creato un esempio di modello di training per l'intelligenza artificiale della chat, creato un server locale e eseguita una semplice chiamata ![rasaCall](https://github.com/Wabri/UniversityInternship/blob/master/resources/rasaCall.PNG)
+
+## Day 14 [12/06/18] : 
+* Vari tentativi di connessione di [rasa_nlu](https://nlu.rasa.com/) con emulazione configurazione Dialogflow
