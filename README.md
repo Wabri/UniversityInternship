@@ -63,4 +63,4 @@
 
 ## Day 14 [12/06/18] : 
 * Vari tentativi di connessione di [rasa_nlu](https://nlu.rasa.com/) con emulazione configurazione Dialogflow.
-* Nella repository [LearningRasaNLU](https://github.com/Wabri/LearningRasaNLU)) sono riuscito a creare un modello a partire da file di configurazione di [dialogflow](https://dialogflow.com), all'interno di quella repository ho scritto anche degli appunti riassuntivi del processo di emulazione rasa dialogflow
+* Nella repository [LearningRasaNLU](https://github.com/Wabri/LearningRasaNLU) sono riuscito a creare un modello a partire da file di configurazione di [dialogflow](https://dialogflow.com), all'interno di quella repository ho scritto anche degli appunti riassuntivi del processo di emulazione rasa dialogflow
