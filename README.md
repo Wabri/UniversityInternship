@@ -3,7 +3,7 @@
 ## Day 1 [02/05/18] : 5,5 ore
 * Spiegazione architettura software
 * Individato un percorso indicativo da seguire: AngularJS, Spring, ChatBot
-* Inizio studio di AngularJS sul libro: AngularJS Up & Running Book for O'Reilly (vedi repository: [AngularJs](https://github.com/Wabri/UniversityInternship/tree/master/AngularJs))
+* Inizio studio di AngularJS sul libro: AngularJS Up & Running Book for O'Reilly (vedi repository: [AngularJs](https://github.com/Wabri/angularJS-Up-And-Running))
 * Arrivato fino al capitolo 2 del libro (vedi repository: [AngularJs](https://github.com/Wabri/angularJS-Up-And-Running))
 
 ## Day 2 [03/05/18] : 6,5 ore
@@ -40,27 +40,26 @@
 ## Day 9 [23/05/18] : 6,5 ore
 * Studio di Rasa NLU nei docs della pagina ufficiale [rasa](https://rasa.com/)
 * Studio dell'architettura MVC con servizi Rest e [spring boot](https://spring.io/guides)
-* Studio di un esempio spring e vari test usando swagger (vedi directory: [exampleSpringRest](exampleSpringRest/BV-SERVICES-TEST))
+* Studio di un esempio spring e vari test usando swagger (vedi directory:  [exampleSpringRest](exampleSpringRest/BV-SERVICES-TEST))
 
 ## Day 10 [24/05/18] : 6,5 ore
-* Ricerca di un esempio di chat bot testuale
-* Generazione del front-end base [exampleJavascriptFrontend](https://github.com/Wabri/UniversityInternship/tree/master/exampleJavascriptFrontend/front)
-* Tentativi di esecuzione di una comunicazione locale tra back-end [exampleSpringRest](https://github.com/Wabri/UniversityInternship/tree/master/exampleSpringRest/BV-SERVICES-TEST) e front-end [exampleJavascriptFrontend](https://github.com/Wabri/UniversityInternship/tree/master/exampleJavascriptFrontend/front)
+* Ricerca di un esempio di chat [exampleJavascriptFrontend](exampleJavascriptFrontend/front)
+* Tentativi di esecuzione di una comunicazione locale tra back-end [exampleSpringRest](exampleSpringRest/BV-SERVICES-TEST) e front-end [exampleJavascriptFrontend](exampleJavascriptFrontend/front)
 * Problemi con la comunicazione spring boot e grunt, la richiesta inviata tramite front-end non veniva accettata dal back-end in localhost quindi è stato necessario inserire una configurazione globale che potesse consentire lo scambio di dati, vedi [configurazione qui](https://github.com/Wabri/UniversityInternship/blob/9f6834eef8cebb01c19f8a1ecb02c40055c31d40/exampleSpringRest/BV-SERVICES-TEST/src/main/java/ch/bestvision/serv/config/WebConfig.java#L11)
 
 ## Day 11 [29/05/18] : 5,5 ore
-* Revisione del codice [exampleJavascriptFrontend](https://github.com/Wabri/UniversityInternship/tree/master/exampleJavascriptFrontend/front) per integrare il codice della chat precedentemente creata [BVChatBot](https://github.com/Wabri/BVChatBot)
-* Il codice [exampleJavascriptFrontend](https://github.com/Wabri/UniversityInternship/tree/master/exampleJavascriptFrontend/front) ha dato problemi quindi mi sono concentrato sulla modifica del [BVChatBot](https://github.com/Wabri/BVChatBot) per fare in modo che esegua una chiamata rest generica per una comunicazione base con [exampleSpringRest](https://github.com/Wabri/UniversityInternship/tree/master/exampleSpringRest/BV-SERVICES-TEST)
+* Revisione del codice [exampleJavascriptFrontend](exampleJavascriptFrontend/front) per integrare il codice della chat precedentemente creata [BVChatBot](https://github.com/Wabri/BVChatBot)
+* Il codice [exampleJavascriptFrontend](exampleJavascriptFrontend/front) ha dato problemi quindi mi sono concentrato sulla modifica del [BVChatBot](https://github.com/Wabri/BVChatBot) per fare in modo che esegua una chiamata rest generica per una comunicazione base con [exampleSpringRest](exampleSpringRest/BV-SERVICES-TEST)
 
 ## Day 12 [30/05/18] : 6 ore
 * Continuato la stesura e l'aggiornamento del [BVChatBot](https://github.com/Wabri/BVChatBot)
-* Ho completato il cerchio di comunicazione tra il chatbot, dialogflow e backend (ancora nella fase base [exampleSpringRest](https://github.com/Wabri/UniversityInternship/tree/master/exampleSpringRest/BV-SERVICES-TEST))
+* Ho completato il cerchio di comunicazione tra il chatbot, dialogflow e backend (ancora nella fase base [exampleSpringRest](exampleSpringRest/BV-SERVICES-TEST))
 
 ## Day 13 [31/05/18] :
-* Risolto un bug nel codice [BVChatBot](https://github.com/Wabri/BVChatBot) e successivo miglioramento del codice, il risultato attualmente è: ![Chatbot](https://github.com/Wabri/UniversityInternship/blob/master/resources/prototype.PNG)
+* Risolto un bug nel codice [BVChatBot](https://github.com/Wabri/BVChatBot) e successivo miglioramento del codice, il risultato attualmente è: ![Chatbot](resources/prototype.PNG)
 * Pubblicato il bot su [heroku](https://www.heroku.com/) all'indirizzo: [https://trainingchatbotbv.herokuapp.com/](https://trainingchatbotbv.herokuapp.com/). in questo modo posso fare training su più dispositivi (per ora funziona solo su chrome)
 * Studiato un modo per utilizzare [rasa_nlu](https://nlu.rasa.com/) per processare i messaggi del bot (vedi repository: [LearningRasaNLU](https://github.com/Wabri/LearningRasaNLU))
-* Creato un esempio di modello di training per l'intelligenza artificiale della chat, creato un server locale e eseguita una semplice chiamata ![rasaCall](https://github.com/Wabri/UniversityInternship/blob/master/resources/rasaCall.PNG)
+* Creato un esempio di modello di training per l'intelligenza artificiale della chat, creato un server locale e eseguita una semplice chiamata ![rasaCall](resources/rasaCall.PNG)
 
 ## Day 14 [12/06/18] : 
 * Vari tentativi di connessione di [rasa_nlu](https://nlu.rasa.com/) con emulazione configurazione Dialogflow.
