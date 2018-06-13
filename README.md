@@ -66,7 +66,7 @@
 * Nella repository [LearningRasaNLU](https://github.com/Wabri/LearningRasaNLU) sono riuscito a creare un modello a partire da file di configurazione di [dialogflow](https://dialogflow.com), all'interno di quella repository ho scritto anche degli appunti riassuntivi del processo di emulazione rasa dialogflow
 
 ## Day 15 [13/06/18] : 
-* Ripreso il lavoro di ieri, usando i dati di training fatto con dialogflow in precedenza ho completato il modello e finito i [primi appunti sull'uso di rasa](https://github.com/Wabri/LearningRasaNLU/notes)
+* Ripreso il lavoro di ieri, usando i dati di training fatto con dialogflow in precedenza ho completato il modello e finito i [primi appunti sull'uso di rasa](https://github.com/Wabri/LearningRasaNLU/README.md)
 * Ho testato il funzionamento del backend rasa con formattazione dialogflow con un semplice testo "paga nomeCasuale 100 euro":
 
 ![jsonDialogflowFormatWithRasaServer.png](resources/jsonDialogflowFormatWithRasaServer.png)
@@ -78,4 +78,3 @@
 * Per curiosità ho eseguito una valutazione del prototipo del modello che sto usando e nonostante i pochi dati la matrice "intent confusion matrix" ha prodotto questo risultato:
 
 ![intentConfusionMatrix.png](resources/intentConfusionMatrix.png)
-
