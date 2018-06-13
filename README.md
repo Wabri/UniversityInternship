@@ -68,4 +68,4 @@
 ## Day 15 [13/06/18] : 
 * Ripreso il lavoro di ieri, usando i dati di training fatto con dialogflow in precedenza ho completato il modello e finito i [primi appunti sull'uso di rasa](https://github.com/Wabri/LearningRasaNLU/tree/newExampleAndNotes/notes)
 * Ho testato il funzionamento del backend rasa con dati dialogflow:
-![rasaDialogflowData.PNG](resources/rasaDialogflowData.PNG)
+![jsonDialogflowFromatGetFromRasa.PNG](resources/jsonDialogflowFromatGetFromRasa.PNG)
