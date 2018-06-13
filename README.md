@@ -73,7 +73,7 @@
 
 * Ho poi confrontato con backend rasa con formattazione rasa con il solito testo:
 
-![jsonRasaFormatWithRasaServer.png](resources/jsonRasaFormatWithRasaServer.png)
+![jsonRasaFormatGetFromRasa.png](resources/jsonRasaFormatGetFromRasa.png)
 
 * Per curiosità ho eseguito una valutazione del prototipo del modello che sto usando e nonostante i pochi dati la matrice "intent confusion matrix" ha prodotto questo risultato:
 
