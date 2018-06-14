@@ -107,3 +107,4 @@ Express server listening on port 9001 in development mode
   model: 'model_20180613-095225' }
  ```
 (il bot risponde 2 volte perchè il socket emette un segnale per entrambe le richieste)
+* Sotto consiglio del tutor universitario ho deciso di imparare il [TypeScript](https://www.typescriptlang.org/index.html) per sostituirlo al JavaScript (vedi repopsitory: [LearningTypeScript](https://github.com/Wabri/LearningTypescript))
