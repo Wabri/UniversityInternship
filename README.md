@@ -65,7 +65,7 @@
 * Vari tentativi di connessione di [rasa_nlu](https://nlu.rasa.com/) con emulazione configurazione Dialogflow.
 * Nella repository [LearningRasaNLU](https://github.com/Wabri/LearningRasaNLU) sono riuscito a creare un modello a partire da file di configurazione di [dialogflow](https://dialogflow.com), all'interno di quella repository ho scritto anche degli appunti riassuntivi del processo di emulazione rasa dialogflow
 
-## Day 15 [13/06/18] : 
+## Day 15 [13/06/18] : 6,5 ore
 * Ripreso il lavoro di ieri, usando i dati di training fatto con dialogflow in precedenza ho completato il modello e finito i [primi appunti sull'uso di rasa](https://github.com/Wabri/LearningRasaNLU/blob/master/README.md)
 * Ho testato il funzionamento del backend rasa con formattazione dialogflow con un semplice testo "paga nomeCasuale 100 euro":
 
