@@ -78,3 +78,32 @@
 * Per curiosità ho eseguito una valutazione del prototipo del modello che sto usando e nonostante i pochi dati la matrice "intent confusion matrix" ha prodotto questo risultato:
 
 ![intentConfusionMatrix.png](resources/intentConfusionMatrix.png)
+
+
+## Day 16 [14/06/18] : -- ore
+* Ho modificato il codice del frontend [BVChatBot](https://github.com/Wabri/BVChatBot) per fare in modo che invii richieste a entrambi i backend.
+* In locale ho eseguito i 2 server creati: rasa_nlu sulla porta 5000 e spring sulla porta 8080; lanciando il frontend sulla porta 9001  ho eseguito 2 richieste: una a rasa e una a spring, entrambe con risultato positivo.
+```
+>node index.js
+Express server listening on port 9001 in development mode
+**** Processing: salve ****
+**** Bot response: Buongiorno! ****
+**** Bot response: Buongiorno! ****
+{ id: 12,
+  data: 'b31ad6a1-798f-41de-8859-9efde359478d',
+  description: 'Description random 6eb05513-b27c-4d21-8691-3b14934450a3' }
+{ intent:
+   { name: 'Default Welcome Intent',
+     confidence: 0.5236232713335918 },
+  entities: [],
+  intent_ranking:
+   [ { name: 'Default Welcome Intent',
+       confidence: 0.5236232713335918 },
+     { name: 'payRequest - yes', confidence: 0.3068254747049495 },
+     { name: 'payRequest', confidence: 0.1420009627442583 },
+     { name: 'payRequest - no', confidence: 0.027550291217200124 } ],
+  text: 'ciao',
+  project: 'default',
+  model: 'model_20180613-095225' }
+ ```
+(il bot risponde 2 volte perchè il socket emette un segnale per entrambe le richieste)
