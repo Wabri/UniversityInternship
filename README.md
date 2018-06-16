@@ -107,4 +107,7 @@ Express server listening on port 9001 in development mode
   model: 'model_20180613-095225' }
  ```
 (il bot risponde 2 volte perchè il socket emette un segnale per entrambe le richieste)
+
+(per un errore ho lasciato anche la richiesta diretta a dialogflow tramite api.ai. Casualmente questo mi ha portato a notare che rasa migliora la qualità di riconoscimento degli intenti e delle entità rispetto a dialogflow, con lo stesso set di dati, infatti non è riuscito ad eseguire un parser della frase con la stessa precisione di rasa)
+
 * Sotto consiglio del tutor universitario ho deciso di imparare il [TypeScript](https://www.typescriptlang.org/index.html) per sostituirlo al JavaScript (vedi repopsitory: [LearningTypeScript](https://github.com/Wabri/LearningTypescript))
