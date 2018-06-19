@@ -80,7 +80,7 @@
 ![intentConfusionMatrix.png](resources/intentConfusionMatrix.png)
 
 
-## Day 16 [14/06/18] : -- ore
+## Day 16 [14/06/18] : 3,5 ore
 * Ho modificato il codice del frontend [BVChatBot](https://github.com/Wabri/BVChatBot) per fare in modo che invii richieste a entrambi i backend.
 * In locale ho eseguito i 2 server creati: rasa_nlu sulla porta 5000 e spring sulla porta 8080; lanciando il frontend sulla porta 9001  ho eseguito 2 richieste: una a rasa e una a spring, entrambe con risultato positivo.
 ```
@@ -111,3 +111,9 @@ Express server listening on port 9001 in development mode
 (per un errore ho lasciato anche la richiesta diretta a dialogflow tramite api.ai. Casualmente questo mi ha portato a notare che rasa migliora la qualità di riconoscimento degli intenti e delle entità rispetto a dialogflow, con lo stesso set di dati, infatti non è riuscito ad eseguire un parser della frase con la stessa precisione di rasa)
 
 * Sotto consiglio del tutor universitario ho deciso di imparare il [TypeScript](https://www.typescriptlang.org/index.html) per sostituirlo al JavaScript (vedi repopsitory: [LearningTypeScript](https://github.com/Wabri/LearningTypescript))
+
+## Day 16 [19/06/18] : 4,5 ore
+* Continuato a studiare [TypeScript](https://www.typescriptlang.org/index.html) seguendo la guida di [html.it](http://www.html.it/guide/guida-typescript/) e aggiornata la repository [LearningTypescript](https://github.com/Wabri/LearningTypescript)
+* Comprensione della struttura interna effettiva per l'azione del pagamento
+* Alcuni esempi di pagamento nell'applicazione web reale e studio dei vari json da dover modificare nella parte di chatbot, necessario per comprendere un modo per intraprendere una conversazione con il bot (quindi per la creazione effettiva delle abilità dell'intelligenza)
+* Creati quindi gli issue: [pagamento a conosciuto](https://github.com/Wabri/BVChatBot/issues/5), [richieste all'intelligenza](https://github.com/Wabri/BVChatBot/issues/6), [pagamento a iban](https://github.com/Wabri/BVChatBot/issues/7)
