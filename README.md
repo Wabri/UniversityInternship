@@ -119,5 +119,6 @@ Express server listening on port 9001 in development mode
 * Creati quindi gli issue: [pagamento a conosciuto](https://github.com/Wabri/BVChatBot/issues/5), [richieste all'intelligenza](https://github.com/Wabri/BVChatBot/issues/6), [pagamento a iban](https://github.com/Wabri/BVChatBot/issues/7)
 
 ## Day 17 [20/06/18] : ore
-* Riscritto il codice  del bot precedente in TypeScript
-* Create classi di rappresentazione effettiva del front-end
+* Continuato a imparare TypeScript (vedi repo: [TypeScript](https://www.typescriptlang.org/index.html))
+* Riscritto il codice di [BVChatBot](https://github.com/Wabri/BVChatBot) in TypeScript
+* Create le prime classi per la comunicazione effettiva dei socket
