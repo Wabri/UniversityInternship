@@ -118,7 +118,11 @@ Express server listening on port 9001 in development mode
 * Alcuni esempi di pagamento nell'applicazione web reale e studio dei vari json da dover modificare nella parte di chatbot, necessario per comprendere un modo per intraprendere una conversazione con il bot (quindi per la creazione effettiva delle abilità dell'intelligenza)
 * Creati quindi gli issue: [pagamento a conosciuto](https://github.com/Wabri/BVChatBot/issues/5), [richieste all'intelligenza](https://github.com/Wabri/BVChatBot/issues/6), [pagamento a iban](https://github.com/Wabri/BVChatBot/issues/7)
 
-## Day 17 [20/06/18] : ore
+## Day 17 [20/06/18] : 5,5 ore
 * Continuato a imparare TypeScript (vedi repo: [TypeScript](https://www.typescriptlang.org/index.html))
 * Riscritto il codice di [BVChatBot](https://github.com/Wabri/BVChatBot) in TypeScript
 * Create le prime classi per la comunicazione effettiva dei socket
+
+## Day 18 [21/06/18] : ore
+* Refactor del codice scritto ieri nella repo [BVChatBot](https://github.com/Wabri/BVChatBot)
+* tentativo di utilizzo della chiamata rest per estrapolare l'account e l'effettiva richiesta di pagamento
