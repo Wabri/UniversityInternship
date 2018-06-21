@@ -125,4 +125,6 @@ Express server listening on port 9001 in development mode
 
 ## Day 18 [21/06/18] : ore
 * Refactor del codice scritto ieri nella repo [BVChatBot](https://github.com/Wabri/BVChatBot)
-* tentativo di utilizzo della chiamata rest per estrapolare l'account e l'effettiva richiesta di pagamento
+* Tentativo di utilizzo della chiamata rest per estrapolare l'account e l'effettiva richiesta di pagamento
+* Generati i primi [data set dell'intelligenza artificiale](https://github.com/Wabri/BVChatBot/tree/rasanlu/RASA_IA)
+* Fatti alcuni test sui modelli creati utilizzando il prototipo del chatbot
