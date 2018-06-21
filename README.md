@@ -123,8 +123,9 @@ Express server listening on port 9001 in development mode
 * Riscritto il codice di [BVChatBot](https://github.com/Wabri/BVChatBot) in TypeScript
 * Create le prime classi per la comunicazione effettiva dei socket
 
-## Day 18 [21/06/18] : ore
+## Day 18 [21/06/18] : 7,5 ore
 * Refactor del codice scritto ieri nella repo [BVChatBot](https://github.com/Wabri/BVChatBot)
 * Tentativo di utilizzo della chiamata rest per estrapolare l'account e l'effettiva richiesta di pagamento
 * Generati i primi [data set dell'intelligenza artificiale](https://github.com/Wabri/BVChatBot/tree/rasanlu/RASA_IA)
 * Fatti alcuni test sui modelli creati utilizzando il prototipo del chatbot
+* Spiegazione dell'architettura da usare per l'integrazione nell'applicativo web
