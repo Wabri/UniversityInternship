@@ -45,7 +45,7 @@ public class HoursCalculator {
 
 		try {
 			FileWriter writer = new FileWriter("totalDayHours.md", false);
-			writer.write("## Totale ore e giorni calcolati");
+			writer.write("## Totale ore e giorni di tirocinio");
 			writer.write("\r\n");
 			writer.write("#### Totale ore: " + totalHours);
 			writer.write("\r\n");
