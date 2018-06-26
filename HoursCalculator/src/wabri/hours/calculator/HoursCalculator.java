@@ -45,7 +45,7 @@ public class HoursCalculator {
 
 		try {
 			FileWriter writer = new FileWriter("totalDayHours.md", false);
-			writer.write("## Totale ore e giorni calcolati con HoursCalculator");
+			writer.write("## Totale ore e giorni calcolati");
 			writer.write("\r\n");
 			writer.write("#### Totale ore: " + totalHours);
 			writer.write("\r\n");
@@ -55,7 +55,7 @@ public class HoursCalculator {
 			writer.write("\r\n");
 			writer.write("<!-- Per aggiornare eseguire il jar HoursCalculator.jar -->");
 			writer.write("\r\n");
-			writer.write("***Questo file è autogenerato dallo script ./runHoursCalculator.sh***");
+			writer.write("*Questo file è autogenerato da HoursCalculator*");
 			writer.write("\r\n");
 			writer.close();
 		} catch (IOException e) {
