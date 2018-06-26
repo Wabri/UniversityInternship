@@ -112,23 +112,23 @@ Express server listening on port 9001 in development mode
 
 * Sotto consiglio del tutor universitario ho deciso di imparare il [TypeScript](https://www.typescriptlang.org/index.html) per sostituirlo al JavaScript (vedi repopsitory: [LearningTypeScript](https://github.com/Wabri/LearningTypescript))
 
-## Day 16 [19/06/18] : 4,5 ore
+## Day 17 [19/06/18] : 4,5 ore
 * Continuato a studiare [TypeScript](https://www.typescriptlang.org/index.html) seguendo la guida di [html.it](http://www.html.it/guide/guida-typescript/) e aggiornata la repository [LearningTypescript](https://github.com/Wabri/LearningTypescript)
 * Comprensione della struttura interna effettiva per l'azione del pagamento
 * Alcuni esempi di pagamento nell'applicazione web reale e studio dei vari json da dover modificare nella parte di chatbot, necessario per comprendere un modo per intraprendere una conversazione con il bot (quindi per la creazione effettiva delle abilità dell'intelligenza)
 * Creati quindi gli issue: [pagamento a conosciuto](https://github.com/Wabri/BVChatBot/issues/5), [richieste all'intelligenza](https://github.com/Wabri/BVChatBot/issues/6), [pagamento a iban](https://github.com/Wabri/BVChatBot/issues/7)
 
-## Day 17 [20/06/18] : 5,5 ore
+## Day 18 [20/06/18] : 5,5 ore
 * Continuato a imparare TypeScript (vedi repo: [TypeScript](https://www.typescriptlang.org/index.html))
 * Riscritto il codice di [BVChatBot](https://github.com/Wabri/BVChatBot) in TypeScript
 * Create le prime classi per la comunicazione effettiva dei socket
 
-## Day 18 [21/06/18] : 7,5 ore
+## Day 19 [21/06/18] : 7,5 ore
 * Refactor del codice scritto ieri nella repo [BVChatBot](https://github.com/Wabri/BVChatBot)
 * Tentativo di utilizzo della chiamata rest per estrapolare l'account e l'effettiva richiesta di pagamento
 * Generati i primi [data set dell'intelligenza artificiale](https://github.com/Wabri/BVChatBot/tree/rasanlu/RASA_IA)
 * Fatti alcuni test sui modelli creati utilizzando il prototipo del chatbot
 * Spiegazione dell'architettura da usare per l'integrazione nell'applicativo web
 
-## Day 19 [26/06/18] : ore
+## Day 20 [26/06/18] : ore
 * Cominciato a studiare [rasa core](https://core.rasa.com/) utile per far comunicare il bot con il backend spring e rispondere alle richieste dell'utente
