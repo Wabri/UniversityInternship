@@ -34,7 +34,7 @@
 
 ## Day 8 [22/05/18] : 6,5 ore
 * Studio della documentazione dello strumento open source [rasa](https://rasa.com/) che permette di usare strumenti di machine learning. Dovrebbe sostituire dialogflow permettendo di trattenere dati sensibili all'interno del server dedicato al software sviluppato evitando l'intermediario google.
-* Creazione di alcuni esempi per l'utilizzo di [rasa](https://rasa.com/) (vedi repository: [LearningRasaNLU](https://github.com/Wabri/LearningRasaNLU/))
+* Creazione di alcuni esempi per l'utilizzo di [rasa](https://rasa.com/) (vedi repository: [LearningRasaNLU](https://github.com/Wabri/LearningRasa/))
 * Installazione componenti necessari per sviluppo [rasa](https://rasa.com/) su sistema operativo windows: python, pip, [spacy](https://spacy.io/), rasa_nlu, rasa_core
 
 ## Day 9 [23/05/18] : 6,5 ore
@@ -58,15 +58,15 @@
 ## Day 13 [31/05/18] : 6 ore (forse)
 * Risolto un bug nel codice [BVChatBot](https://github.com/Wabri/BVChatBot) e successivo miglioramento del codice, il risultato attualmente è: ![Chatbot](resources/prototype.PNG)
 * Pubblicato il bot su [heroku](https://www.heroku.com/) all'indirizzo: [https://trainingchatbotbv.herokuapp.com/](https://trainingchatbotbv.herokuapp.com/). in questo modo posso fare training su più dispositivi (per ora funziona solo su chrome)
-* Studiato un modo per utilizzare [rasa_nlu](https://nlu.rasa.com/) per processare i messaggi del bot (vedi repository: [LearningRasaNLU](https://github.com/Wabri/LearningRasaNLU))
+* Studiato un modo per utilizzare [rasa_nlu](https://nlu.rasa.com/) per processare i messaggi del bot (vedi repository: [LearningRasaNLU](https://github.com/Wabri/LearningRasa))
 * Creato un esempio di modello di training per l'intelligenza artificiale della chat, creato un server locale e eseguita una semplice chiamata ![rasaCall](resources/rasaCall.PNG)
 
 ## Day 14 [12/06/18] : 7,5 ore
 * Vari tentativi di connessione di [rasa_nlu](https://nlu.rasa.com/) con emulazione configurazione Dialogflow.
-* Nella repository [LearningRasaNLU](https://github.com/Wabri/LearningRasaNLU) sono riuscito a creare un modello a partire da file di configurazione di [dialogflow](https://dialogflow.com), all'interno di quella repository ho scritto anche degli appunti riassuntivi del processo di emulazione rasa dialogflow
+* Nella repository [LearningRasaNLU](https://github.com/Wabri/LearningRasa) sono riuscito a creare un modello a partire da file di configurazione di [dialogflow](https://dialogflow.com), all'interno di quella repository ho scritto anche degli appunti riassuntivi del processo di emulazione rasa dialogflow
 
 ## Day 15 [13/06/18] : 6,5 ore
-* Ripreso il lavoro di ieri, usando i dati di training fatto con dialogflow in precedenza ho completato il modello e finito i [primi appunti sull'uso di rasa](https://github.com/Wabri/LearningRasaNLU/blob/master/README.md)
+* Ripreso il lavoro di ieri, usando i dati di training fatto con dialogflow in precedenza ho completato il modello e finito i [primi appunti sull'uso di rasa](https://github.com/Wabri/LearningRasa/blob/master/README.md)
 * Ho testato il funzionamento del backend rasa con formattazione dialogflow con un semplice testo "paga nomeCasuale 100 euro":
 
 ![jsonDialogflowFormatWithRasaServer.png](resources/jsonDialogflowFormatWithRasaServer.png)
@@ -131,4 +131,5 @@ Express server listening on port 9001 in development mode
 * Spiegazione dell'architettura da usare per l'integrazione nell'applicativo web
 
 ## Day 20 [26/06/18] : ore
-* Cominciato a studiare [rasa core](https://core.rasa.com/) utile per far comunicare il bot con il backend spring e rispondere alle richieste dell'utente
+* Cominciato a studiare [rasa core](https://core.rasa.com/) utile per far comunicare il bot con il backend spring e rispondere alle richieste dell'utente, ho rinominato la repository LearningRasaNLU in [LearningRasa](https://github.com/Wabri/LearningRasa)
+
