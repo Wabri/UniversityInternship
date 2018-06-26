@@ -1,6 +1,6 @@
 # UniversityInternship
 
-Per sapere il resoconto del tirocinio andare: [totalDayHours.md](totalDayHours.md)
+Per sapere il resoconto del tirocinio andare: [totalDaysHours.md](totalDaysHours.md)
 (se risulta outdate eseguire lo script runHC.sh)
 
 ## Day 01 [02/05/18] : 5,5 ore
