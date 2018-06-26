@@ -1,5 +1,9 @@
 # UniversityInternship
 
+## Ore totali calcolate da HoursCalcolator
+#### Total Hours:
+#### Last Update: 
+
 ## Day 1 [02/05/18] : 5,5 ore
 * Spiegazione architettura software
 * Individato un percorso indicativo da seguire: AngularJS, Spring, ChatBot
