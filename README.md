@@ -129,3 +129,6 @@ Express server listening on port 9001 in development mode
 * Generati i primi [data set dell'intelligenza artificiale](https://github.com/Wabri/BVChatBot/tree/rasanlu/RASA_IA)
 * Fatti alcuni test sui modelli creati utilizzando il prototipo del chatbot
 * Spiegazione dell'architettura da usare per l'integrazione nell'applicativo web
+
+## Day 19 [26/06/18] : ore
+* Cominciato a studiare [rasa core](https://core.rasa.com/) utile per far comunicare il bot con il backend spring e rispondere alle richieste dell'utente
