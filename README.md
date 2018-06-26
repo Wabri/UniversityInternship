@@ -130,6 +130,6 @@ Express server listening on port 9001 in development mode
 * Fatti alcuni test sui modelli creati utilizzando il prototipo del chatbot
 * Spiegazione dell'architettura da usare per l'integrazione nell'applicativo web
 
-## Day 20 [26/06/18] : ore
+## Day 20 [26/06/18] : 7 ore
 * Cominciato a studiare [rasa core](https://core.rasa.com/) utile per far comunicare il bot con il backend spring e rispondere alle richieste dell'utente, ho rinominato la repository LearningRasaNLU in [LearningRasa](https://github.com/Wabri/LearningRasa)
 
