@@ -7,9 +7,13 @@ import java.io.IOException;
 
 public class HoursCalculator {
 
-	public static void main(String[] args) {
+	private String fileName;
 
-		String fileName = args[0];
+	public HoursCalculator(String fileName) {
+		this.fileName = fileName;
+	}
+
+	public void run() {
 		Double totalHours = new Double(0);
 		int totalDays = 0;
 		String lastDay = new String("");
@@ -24,7 +28,6 @@ public class HoursCalculator {
 
 			while ((line = bufferedReader.readLine()) != null) {
 				if (line.startsWith("##")) {
-					System.out.println(line);
 					totalHours += Integer.parseInt(String.valueOf(line.charAt(23)));
 					if (line.charAt(24) == ',') {
 						totalHours += 0.1 * Integer.parseInt(String.valueOf(line.charAt(25)));
@@ -33,9 +36,6 @@ public class HoursCalculator {
 					lastDay = line.substring(11, 19);
 				}
 			}
-
-			System.out.println("totale ore " + totalHours);
-			System.out.println("totale days " + totalDays);
 
 			reader.close();
 
@@ -55,11 +55,18 @@ public class HoursCalculator {
 			writer.write("\r\n");
 			writer.write("<!-- Per aggiornare eseguire il jar HoursCalculator.jar -->");
 			writer.write("\r\n");
+			writer.write("***Questo file è autogenerato dallo script ./runHoursCalculator.sh***");
+			writer.write("\r\n");
 			writer.close();
 		} catch (IOException e) {
-			// TODO: handle exception
+			e.printStackTrace();
 		}
 
+	}
+
+	public static void main(String[] args) {
+		HoursCalculator hoursCalculator = new HoursCalculator(args[0]);
+		hoursCalculator.run();
 	}
 
 }

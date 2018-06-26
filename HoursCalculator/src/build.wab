@@ -1,0 +1,8 @@
+rm HoursCalculator.jar
+
+javac wabri/hours/calculator/HoursCalculator.java
+
+jar -cvfm HoursCalculator.jar META-INF/MANIFEST.MF wabri/hours/calculator/HoursCalculator.class
+
+rm wabri/hours/calculator/HoursCalculator.class
+

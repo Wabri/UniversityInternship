@@ -1,5 +1,5 @@
 ## Totale ore e giorni calcolati con HoursCalculator
-#### Totale ore: 121.5
-#### Totale giorni: 20
-#### Ultimo aggiornamento: 26/06/18
+#### Totale ore: 158.9
+#### Totale giorni: 26
+#### Ultimo aggiornamento: 02/05/18
 <!-- Per aggiornare eseguire il jar HoursCalculator.jar -->

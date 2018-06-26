@@ -3,3 +3,4 @@
 #### Totale giorni: 20
 #### Ultimo aggiornamento: 26/06/18
 <!-- Per aggiornare eseguire il jar HoursCalculator.jar -->
+***Questo file è autogenerato dallo script ./runHoursCalculator.sh***
