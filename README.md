@@ -1,7 +1,7 @@
 # UniversityInternship
 
 Per sapere il resoconto del tirocinio andare: [totalDayHours.md](totalDayHours.md)
-(se risulta outdate eseguire HoursCalculator.jar)
+(se risulta outdate eseguire lo script runHC.sh)
 
 ## Day 01 [02/05/18] : 5,5 ore
 * Spiegazione architettura software
