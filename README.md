@@ -136,3 +136,5 @@ Express server listening on port 9001 in development mode
 ## Day 20 [26/06/18] : 7 ore
 * Cominciato a studiare [rasa core](https://core.rasa.com/) utile per far comunicare il bot con il backend spring e rispondere alle richieste dell'utente, ho rinominato la repository LearningRasaNLU in [LearningRasa](https://github.com/Wabri/LearningRasa)
 
+## Day 21 [27/06/18] : ... ore
+* Proseguito lo studio di [rasa core](https://core.rasa.com/) aggiornando la repository [LearningRasa](https://github.com/Wabri/LearningRasa)
