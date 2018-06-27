@@ -1,4 +1,4 @@
-## Totale ore e giorni calcolati
+## Totale ore e giorni di tirocinio
 #### Totale ore: 121.5
 #### Totale giorni: 20
 #### Ultimo aggiornamento: 26/06/18
