@@ -142,3 +142,7 @@ Express server listening on port 9001 in development mode
 ## Day 22 [28/06/18] : 6 ore
 * Creazione del primo rasa core nel [BVChatBot](https://github.com/Wabri/BVChatBot)
 * Continuata la stesura degli appunti [LearningRasa](https://github.com/Wabri/LearningRasa)
+
+## Day 23 [04/07/18] : 3,5 ore
+* Finito gli appunti su [LearningRasa](https://github.com/Wabri/LearningRasa)
+* Creato i primi esempi di conversazione tra rasa core e rasa nlu
