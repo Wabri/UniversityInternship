@@ -176,4 +176,4 @@ Express server listening on port 9001 in development mode
 * Decisione di usare una virtual machine (o docker) per l'uso del server rasa core
 * Su macchina linux è completamente funzionante:
 
-![rasaCoreServerPost.png](resources/rasaCoreServerPost.png)
+![rasaCoreServerWorkWithPostRequest.png](resources/rasaCoreServerWorkWithPostRequest.png)
