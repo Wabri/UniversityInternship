@@ -58,7 +58,7 @@ Per sapere il resoconto del tirocinio andare: [totalDaysHours.md](totalDaysHours
 * Continuato la stesura e l'aggiornamento del [BVChatBot](https://github.com/Wabri/BVChatBot)
 * Ho completato il cerchio di comunicazione tra il chatbot, dialogflow e backend (ancora nella fase base [exampleSpringRest](exampleSpringRest/BV-SERVICES-TEST))
 
-## Day 13 [31/05/18] : 6 ore (forse)
+## Day 13 [31/05/18] : 6,5 ore
 * Risolto un bug nel codice [BVChatBot](https://github.com/Wabri/BVChatBot) e successivo miglioramento del codice, il risultato attualmente è: ![Chatbot](resources/prototype.PNG)
 * Pubblicato il bot su [heroku](https://www.heroku.com/) all'indirizzo: [https://trainingchatbotbv.herokuapp.com/](https://trainingchatbotbv.herokuapp.com/). in questo modo posso fare training su più dispositivi (per ora funziona solo su chrome)
 * Studiato un modo per utilizzare [rasa_nlu](https://nlu.rasa.com/) per processare i messaggi del bot (vedi repository: [LearningRasaNLU](https://github.com/Wabri/LearningRasa))
