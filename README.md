@@ -174,3 +174,6 @@ Express server listening on port 9001 in development mode
 * Continuato la stesura del modello corretto da usare per il bot [BVChatBot](https://github.com/Wabri/BVChatBot)
 * Vari tentativi di esecuzione del server rasa core su macchina windows
 * Decisione di usare una virtual machine (o docker) per l'uso del server rasa core
+* Su macchina linux è completamente funzionante:
+
+![rasaCoreServerPost.png](resources/rasaCoreServerPost.png)
