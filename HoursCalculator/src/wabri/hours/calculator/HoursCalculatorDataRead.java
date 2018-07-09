@@ -1,13 +1,13 @@
 package wabri.hours.calculator;
 
-public class HoursCalculatorDataReader {
+public class HoursCalculatorDataRead {
 
 	private Double totalHours;
 	private int totalDays;
 	private Double[][] totalHoursPerMonth;
 	private String lastDay;
 
-	public HoursCalculatorDataReader(Double totalHours, int totalDays, Double[][] totalHoursPerMonth, String lastDay) {
+	public HoursCalculatorDataRead(Double totalHours, int totalDays, Double[][] totalHoursPerMonth, String lastDay) {
 		this.totalHours = totalHours;
 		this.totalDays = totalDays;
 		this.totalHoursPerMonth = totalHoursPerMonth;

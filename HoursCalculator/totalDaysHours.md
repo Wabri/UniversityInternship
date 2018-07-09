@@ -10,10 +10,11 @@
 | Luglio | 9.5| 2| 
 | Agosto | 0.0| 0| 
 | Settembre | 0.0| 0| 
-| Ottobre | 0.0| 0| 
-| Novembre | 0.0| 0| 
-| Totale | 143.0| 24| 
+| Ottobre | 22.0| 4| 
+| Novembre | 5.5| 1| 
+| Dicembre | 5.5| 1| 
+| Totale | 176.0| 30| 
 
-#### Ultimo aggiornamento: 05/07/18
+#### Ultimo aggiornamento: 02/10/18
 <!-- Per aggiornare eseguire il jar HoursCalculator.jar -->
 *Questo file è autogenerato da HoursCalculator*

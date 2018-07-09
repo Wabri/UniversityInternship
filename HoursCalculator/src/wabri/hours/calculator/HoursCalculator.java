@@ -24,66 +24,66 @@ public class HoursCalculator {
 	}
 
 	public void run() {
-		HoursCalculatorDataReader hoursCalculatorDataReader = new HoursCalculatorDataReader(new Double(0), 0,
+		HoursCalculatorDataRead hoursCalculatorDataReader = new HoursCalculatorDataRead(new Double(0), 0,
 				new Double[12][2], new String(""));
 		UtilityArray.newArray(hoursCalculatorDataReader.getTotalHoursPerMonth(), 12, 2, 0.0);
 
-		try (FileReader reader = new FileReader(fileNameInput)) {
-			BufferedReader bufferedReader = new BufferedReader(reader);
-			String line;
-			UtilityFile.jumpToLine(bufferedReader, 3);
-			while ((line = bufferedReader.readLine()) != null) {
-				if (line.startsWith("##")) {
-					double actualDayHours = Integer.parseInt(String.valueOf(line.charAt(23)));
-					if (line.charAt(24) == ',') {
-						actualDayHours += 0.1 * Integer.parseInt(String.valueOf(line.charAt(25)));
-					}
-					int indexMonth = getIndexMonth(line);
-					hoursCalculatorDataReader.addTotalHoursPerMonth(indexMonth, 0, actualDayHours);
-					hoursCalculatorDataReader.addTotalHoursPerMonth(indexMonth, 1, 1);
-					hoursCalculatorDataReader.addTotalHours(actualDayHours);
-					hoursCalculatorDataReader.addTotalDays(1);
-					hoursCalculatorDataReader.setLastDay(line.substring(11, 19));
-				}
-			}
-			reader.close();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-
 		try {
-			FileWriter writer = new FileWriter(fileNameOutput, false);
-			writer.write("## Totale ore e giorni di tirocinio");
-			writer.write("\n\r");
-			writer.write("| Mese | Ore | Giorni  |\r\n" + "| ------------- |:-------------:| -----:|\r\n");
-			for (int i = firstMonth; i < lastMonth; i++) {
-				writer.write("| " + UtilityDate.getMonthFromInt(i) + " | "
-						+ hoursCalculatorDataReader.getTotalHoursPerMonth()[i][0] + "| "
-						+ (int) Math.round(hoursCalculatorDataReader.getTotalHoursPerMonth()[i][1]) + "| \r\n");
-			}
-			writer.write("| Totale | " + hoursCalculatorDataReader.getTotalHours() + "| "
-					+ hoursCalculatorDataReader.getTotalDays() + "| \r\n");
-			writer.write("\r\n");
-			writer.write("#### Ultimo aggiornamento: " + hoursCalculatorDataReader.getLastDay());
-			writer.write("\r\n");
-			writer.write("<!-- Per aggiornare eseguire il jar HoursCalculator.jar -->");
-			writer.write("\r\n");
-			writer.write("*Questo file è autogenerato da HoursCalculator*");
-			writer.write("\r\n");
-			writer.close();
+			this.readFileInput(new FileReader(fileNameInput), hoursCalculatorDataReader);
+			this.writeFileOutput(new FileWriter(fileNameOutput, false), hoursCalculatorDataReader);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+	}
+
+	private void readFileInput(FileReader reader, HoursCalculatorDataRead hoursCalculatorDataReader)
+			throws IOException {
+		BufferedReader bufferedReader = new BufferedReader(reader);
+		String line;
+		UtilityFile.jumpToLine(bufferedReader, 3);
+		while ((line = bufferedReader.readLine()) != null) {
+			if (line.startsWith("##")) {
+				double actualDayHours = Integer.parseInt(String.valueOf(line.charAt(23)));
+				if (line.charAt(24) == ',') {
+					actualDayHours += 0.1 * Integer.parseInt(String.valueOf(line.charAt(25)));
+				}
+				int indexMonth = getIndexMonth(line);
+				hoursCalculatorDataReader.addTotalHoursPerMonth(indexMonth - 1, 0, actualDayHours);
+				hoursCalculatorDataReader.addTotalHoursPerMonth(indexMonth - 1, 1, 1);
+				hoursCalculatorDataReader.addTotalHours(actualDayHours);
+				hoursCalculatorDataReader.addTotalDays(1);
+				hoursCalculatorDataReader.setLastDay(line.substring(11, 19));
+			}
+		}
+		reader.close();
+	}
+
+	private void writeFileOutput(FileWriter writer, HoursCalculatorDataRead hoursCalculatorDataReader)
+			throws IOException {
+		writer.write("## Totale ore e giorni di tirocinio");
+		writer.write("\n\r");
+		writer.write("| Mese | Ore | Giorni  |\r\n" + "| ------------- |:-------------:| -----:|\r\n");
+		for (int i = firstMonth - 1; i < lastMonth; i++) {
+			writer.write("| " + UtilityDate.getMonthFromInt(i + 1) + " | "
+					+ hoursCalculatorDataReader.getTotalHoursPerMonth()[i][0] + "| "
+					+ (int) Math.round(hoursCalculatorDataReader.getTotalHoursPerMonth()[i][1]) + "| \r\n");
+		}
+		writer.write("| Totale | " + hoursCalculatorDataReader.getTotalHours() + "| "
+				+ hoursCalculatorDataReader.getTotalDays() + "| \r\n");
+		writer.write("\r\n");
+		writer.write("#### Ultimo aggiornamento: " + hoursCalculatorDataReader.getLastDay());
+		writer.write("\r\n");
+		writer.write("<!-- Per aggiornare eseguire il jar HoursCalculator.jar -->");
+		writer.write("\r\n");
+		writer.write("*Questo file è autogenerato da HoursCalculator*");
+		writer.write("\r\n");
+		writer.close();
 	}
 
 	private int getIndexMonth(String line) {
 		return (Integer.parseInt(String.valueOf(line.charAt(14))) == 1)
 				? Integer.parseInt(1 + String.valueOf(line.charAt(15)))
 				: Integer.parseInt(0 + String.valueOf(line.charAt(15)));
-	}
-
-	private void readFileInput(FileReader reader) {
-
 	}
 
 	public static void main(String[] args) {

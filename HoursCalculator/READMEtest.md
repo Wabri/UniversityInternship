@@ -177,3 +177,15 @@ Express server listening on port 9001 in development mode
 * Su macchina linux è completamente funzionante:
 
 ![rasaCoreServerWorkWithPostRequest.png](resources/rasaCoreServerWorkWithPostRequest.png)
+
+## Day 01 [02/10/18] : 5,5 ore
+
+## Day 01 [02/12/18] : 5,5 ore
+
+## Day 01 [02/11/18] : 5,5 ore
+
+## Day 01 [02/10/18] : 5,5 ore
+
+## Day 01 [02/10/18] : 5,5 ore
+
+## Day 01 [02/10/18] : 5,5 ore
