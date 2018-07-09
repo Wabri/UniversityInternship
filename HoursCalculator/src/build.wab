@@ -1,8 +1,8 @@
 rm HoursCalculator.jar
 
-javac wabri/hours/calculator/HoursCalculator.java
+javac Main.java wabri/hours/calculator/HoursCalculator.java wabri/hours/calculator/HoursCalculatorDataRead.java wabri/hours/calculator/utility/UtilityArray.java wabri/hours/calculator/utility/UtilityDate.java wabri/hours/calculator/utility/UtilityFile.java
 
-jar -cvfm HoursCalculator.jar META-INF/MANIFEST.MF wabri/hours/calculator/HoursCalculator.class
+jar -cvfm HoursCalculator.jar META-INF/MANIFEST.MF Main.class wabri/hours/calculator/HoursCalculator.class wabri/hours/calculator/HoursCalculatorDataRead.class wabri/hours/calculator/utility/UtilityArray.class wabri/hours/calculator/utility/UtilityDate.class wabri/hours/calculator/utility/UtilityFile.class
 
-rm wabri/hours/calculator/HoursCalculator.class
+rm Main.class wabri/hours/calculator/HoursCalculator.class wabri/hours/calculator/HoursCalculatorDataRead.class wabri/hours/calculator/utility/UtilityArray.class wabri/hours/calculator/utility/UtilityDate.class wabri/hours/calculator/utility/UtilityFile.class
 
