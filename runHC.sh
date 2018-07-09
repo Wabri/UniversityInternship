@@ -10,6 +10,3 @@ java -jar HC.jar README.md totalDaysHours.md 5 9
 
 rm HC.jar
 
-echo "file totalDayHours.md succesfully created"
-
-
