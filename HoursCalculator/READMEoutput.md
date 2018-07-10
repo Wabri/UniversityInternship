@@ -1,27 +1,12 @@
 # UniversityInternship
 
 <!-- HC.jar start -->
-## Totale ore e giorni di tirocinio
-| Mese | Ore | Giorni  |
-| ------------- |:-------------:| -----:|
-| Gennaio | 5.5| 1| 
-| Febbraio | 11.9| 2| 
-| Marzo | 12.0| 2| 
-| Aprile | 5.5| 1| 
-| Maggio | 80.0| 13| 
-| Giugno | 53.5| 9| 
-| Luglio | 9.5| 2| 
-| Agosto | 0.0| 0| 
-| Settembre | 6.8| 1| 
-| Ottobre | 6.7| 1| 
-| Novembre | 6.9| 1| 
-| Dicembre | 0.0| 0| 
-| Totale | 198.3| 33| 
+asllfdjaksjdfnasd
+adsf
+asdf
+adsf
+asdf
 
-#### Ultimo aggiornamento: 02/01/18
-*Questa tabella è autogenerata da HoursCalculator*
-<!-- HC.jar end -->
-fasdfasdfa
 <!-- HC.jar end -->
 
 ## Day 01 [02/05/18] : 5,5 ore

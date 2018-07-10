@@ -50,7 +50,10 @@ public class HoursCalculator {
 			bufferStringFile += line + "\r\n";
 		}
 		bufferStringFile = generateTableOfHoursDate(hoursCalculatorDataReader, bufferStringFile);
-		UtilityFile.jumpToLine(bufferedReader, 1);
+		while (!(line = bufferedReader.readLine()).equals("<!-- HC.jar end -->")) {
+			
+		}
+
 		while ((line = bufferedReader.readLine()) != null) {
 			bufferStringFile += line + "\r\n";
 		}
