@@ -15,6 +15,8 @@
 *Questa tabella è autogenerata da HoursCalculator*
 <!-- HC.jar end -->
 
+# Diario
+
 ## Day 01 [02/05/18] : 5,5 ore
 [:point_left:](#universityinternship) [:point_right:](#day-02-030518--65-ore)
 * Spiegazione architettura software
