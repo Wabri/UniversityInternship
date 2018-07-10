@@ -179,7 +179,7 @@ Express server listening on port 9001 in development mode
 * Continuata la stesura degli appunti [LearningRasa](https://github.com/Wabri/LearningRasa)
 
 ## Day 23 [04/07/18] : 3,5 ore
-[:point_left:](#day-22-280618--6-ore) [:point_right:](#day-24-050718---ore)
+[:point_left:](#day-22-280618--6-ore) [:point_right:](#day-24-050718--6-ore)
 * Finito gli appunti su [LearningRasa](https://github.com/Wabri/LearningRasa)
 * Creato i primi esempi di conversazione tra rasa core e rasa nlu (non funzionanti su macchina windows)
 
