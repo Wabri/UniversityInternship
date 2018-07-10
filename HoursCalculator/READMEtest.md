@@ -1,7 +1,9 @@
 # UniversityInternship
 
-Per sapere il resoconto del tirocinio andare: [totalDaysHours.md](totalDaysHours.md)
-(se risulta outdate eseguire lo script runHC.sh)
+<!-- HC.jar start -->
+fdasdfadsfadsf
+fasdfasdfa
+<!-- HC.jar end -->
 
 ## Day 01 [02/05/18] : 5,5 ore
 [:point_left:](#universityinternship) [:point_right:](#day-02-030518--65-ore)
@@ -178,14 +180,15 @@ Express server listening on port 9001 in development mode
 
 ![rasaCoreServerWorkWithPostRequest.png](resources/rasaCoreServerWorkWithPostRequest.png)
 
-## Day 01 [02/10/18] : 5,5 ore
 
-## Day 01 [02/12/18] : 5,5 ore
 
-## Day 01 [02/11/18] : 5,5 ore
+## Day 22 [28/02/18] : 6,4 ore
+## Day 22 [28/11/18] : 6,9 ore
+## Day 22 [28/09/18] : 6,8 ore
+## Day 22 [28/10/18] : 6,7 ore
+## Day 22 [28/03/18] : 6,5 ore
 
-## Day 01 [02/10/18] : 5,5 ore
-
-## Day 01 [02/10/18] : 5,5 ore
-
-## Day 01 [02/10/18] : 5,5 ore
+## Day 01 [02/04/18] : 5,5 ore
+## Day 01 [02/03/18] : 5,5 ore
+## Day 01 [02/02/18] : 5,5 ore
+## Day 01 [02/01/18] : 5,5 ore
