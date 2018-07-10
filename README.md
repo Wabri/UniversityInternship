@@ -1,32 +1,7 @@
 # UniversityInternship
 
-<!-- HC.jar start -->
-## Totale ore e giorni di tirocinio
-| Mese | Ore | Giorni  |
-| ------------- |:-------------:| -----:|
-| Maggio | 80.0| 13| 
-| Giugno | 53.5| 9| 
-| Luglio | 9.5| 2| 
-| Agosto | 0.0| 0| 
-| Settembre | 0.0| 0| 
-| Totale | 143.0| 24| 
-
-#### Ultimo aggiornamento: 05/07/18
-*Questa tabella è autogenerata da HoursCalculator*
-<!-- HC.jar end -->
-| Mese | Ore | Giorni  |
-| ------------- |:-------------:| -----:|
-| Maggio | 80.0| 13| 
-| Giugno | 53.5| 9| 
-| Luglio | 9.5| 2| 
-| Agosto | 0.0| 0| 
-| Settembre | 0.0| 0| 
-| Totale | 143.0| 24| 
-
-#### Ultimo aggiornamento: 05/07/18
-*Questa tabella è autogenerata da HoursCalculator*
-<!-- HC.jar end -->
-<!-- HC.jar end -->
+Per sapere il resoconto del tirocinio andare: [totalDaysHours.md](totalDaysHours.md)
+(se risulta outdate eseguire lo script runHC.sh)
 
 ## Day 01 [02/05/18] : 5,5 ore
 [:point_left:](#universityinternship) [:point_right:](#day-02-030518--65-ore)
@@ -195,10 +170,17 @@ Express server listening on port 9001 in development mode
 * Creato i primi esempi di conversazione tra rasa core e rasa nlu (non funzionanti su macchina windows)
 
 ## Day 24 [05/07/18] : 6 ore
-[:point_left:](#day-23-040718--35-ore) [:point_right:]()
+[:point_left:](#day-23-040718--35-ore) [:point_right:](#day-25-100718--65-ore)
 * Continuato la stesura del modello corretto da usare per il bot [BVChatBot](https://github.com/Wabri/BVChatBot)
 * Vari tentativi di esecuzione del server rasa core su macchina windows
 * Decisione di usare una virtual machine (o docker) per l'uso del server rasa core
 * Su macchina linux è completamente funzionante:
 
 ![rasaCoreServerWorkWithPostRequest.png](resources/rasaCoreServerWorkWithPostRequest.png)
+
+## Day 25 [10/07/18] : 6,5 ore
+[:point_left:](#day-24-050718--6-ore) [:point_right:]()
+* Provato a usare la macchina virtuale [Oracle](https://www.virtualbox.org/) con [debian 9 base](https://www.debian.org/) per eseguire il server rasa_core
+* Non avendo trovato un modo per effetturare una comunicazione con l'esterno ho abbandonato la vm e usato il mio pc con linux debian 9, modificando alcune impostazioni di [rasa](https://github.com/Wabri/BVChatBot/tree/master/RASA_IA) sono riuscito a comunicare da pc windows tramite post (vedi [chiamata post](https://github.com/Wabri/BVChatBot/blob/master/RASA_IA/README.MD#post-request-eseguire-il-curl))
+* Non sono riuscito a effettuare la stessa chiamata all'interno dello script [index.js](https://github.com/Wabri/BVChatBot/blob/issue-rasanlu/index.js), ancora non ho capito perchè
+
