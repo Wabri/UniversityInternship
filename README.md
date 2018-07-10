@@ -1,7 +1,32 @@
 # UniversityInternship
 
-Per sapere il resoconto del tirocinio andare: [totalDaysHours.md](totalDaysHours.md)
-(se risulta outdate eseguire lo script runHC.sh)
+<!-- HC.jar start -->
+## Totale ore e giorni di tirocinio
+| Mese | Ore | Giorni  |
+| ------------- |:-------------:| -----:|
+| Maggio | 80.0| 13| 
+| Giugno | 53.5| 9| 
+| Luglio | 9.5| 2| 
+| Agosto | 0.0| 0| 
+| Settembre | 0.0| 0| 
+| Totale | 143.0| 24| 
+
+#### Ultimo aggiornamento: 05/07/18
+*Questa tabella è autogenerata da HoursCalculator*
+<!-- HC.jar end -->
+| Mese | Ore | Giorni  |
+| ------------- |:-------------:| -----:|
+| Maggio | 80.0| 13| 
+| Giugno | 53.5| 9| 
+| Luglio | 9.5| 2| 
+| Agosto | 0.0| 0| 
+| Settembre | 0.0| 0| 
+| Totale | 143.0| 24| 
+
+#### Ultimo aggiornamento: 05/07/18
+*Questa tabella è autogenerata da HoursCalculator*
+<!-- HC.jar end -->
+<!-- HC.jar end -->
 
 ## Day 01 [02/05/18] : 5,5 ore
 [:point_left:](#universityinternship) [:point_right:](#day-02-030518--65-ore)
