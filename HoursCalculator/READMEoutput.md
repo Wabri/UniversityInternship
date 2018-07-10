@@ -4,10 +4,10 @@
 ## Totale ore e giorni di tirocinio
 | Mese | Ore | Giorni  |
 | ------------- |:-------------:| -----:|
-| Gennaio | 0.0| 0| 
-| Febbraio | 6.4| 1| 
-| Marzo | 6.5| 1| 
-| Aprile | 0.0| 0| 
+| Gennaio | 5.5| 1| 
+| Febbraio | 11.9| 2| 
+| Marzo | 12.0| 2| 
+| Aprile | 5.5| 1| 
 | Maggio | 80.0| 13| 
 | Giugno | 53.5| 9| 
 | Luglio | 9.5| 2| 
@@ -16,10 +16,12 @@
 | Ottobre | 6.7| 1| 
 | Novembre | 6.9| 1| 
 | Dicembre | 0.0| 0| 
-| Totale | 176.3| 29| 
+| Totale | 198.3| 33| 
 
-#### Ultimo aggiornamento: 28/03/18
-*Questo file è autogenerato da HoursCalculator*
+#### Ultimo aggiornamento: 02/01/18
+*Questa tabella è autogenerata da HoursCalculator*
+<!-- HC.jar end -->
+fasdfasdfa
 <!-- HC.jar end -->
 
 ## Day 01 [02/05/18] : 5,5 ore
@@ -204,3 +206,8 @@ Express server listening on port 9001 in development mode
 ## Day 22 [28/09/18] : 6,8 ore
 ## Day 22 [28/10/18] : 6,7 ore
 ## Day 22 [28/03/18] : 6,5 ore
+
+## Day 01 [02/04/18] : 5,5 ore
+## Day 01 [02/03/18] : 5,5 ore
+## Day 01 [02/02/18] : 5,5 ore
+## Day 01 [02/01/18] : 5,5 ore

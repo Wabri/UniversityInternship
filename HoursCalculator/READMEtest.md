@@ -187,3 +187,8 @@ Express server listening on port 9001 in development mode
 ## Day 22 [28/09/18] : 6,8 ore
 ## Day 22 [28/10/18] : 6,7 ore
 ## Day 22 [28/03/18] : 6,5 ore
+
+## Day 01 [02/04/18] : 5,5 ore
+## Day 01 [02/03/18] : 5,5 ore
+## Day 01 [02/02/18] : 5,5 ore
+## Day 01 [02/01/18] : 5,5 ore
