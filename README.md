@@ -183,4 +183,3 @@ Express server listening on port 9001 in development mode
 * Provato a usare la macchina virtuale [Oracle](https://www.virtualbox.org/) con [debian 9 base](https://www.debian.org/) per eseguire il server rasa_core
 * Non avendo trovato un modo per effetturare una comunicazione con l'esterno ho abbandonato la vm e usato il mio pc con linux debian 9, modificando alcune impostazioni di [rasa](https://github.com/Wabri/BVChatBot/tree/master/RASA_IA) sono riuscito a comunicare da pc windows tramite post (vedi [chiamata post](https://github.com/Wabri/BVChatBot/blob/master/RASA_IA/README.MD#post-request-eseguire-il-curl))
 * Non sono riuscito a effettuare la stessa chiamata all'interno dello script [index.js](https://github.com/Wabri/BVChatBot/blob/issue-rasanlu/index.js), ancora non ho capito perchè
-
