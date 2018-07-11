@@ -201,3 +201,186 @@ Express server listening on port 9001 in development mode
 ## Day 26 [11/07/18] : ... ore
 [:point_left:](#day-25-100718--65-ore) [:point_right:]()
 * Risolto il problema della post da client usando la libreria visionmedia [superagent](http://visionmedia.github.io/superagent/#test-documentation) (vedi repository: [github](https://github.com/visionmedia/superagent))
+* Modificato l'index del frontend [BVChatBot](https://github.com/Wabri/BVChatBot) con una descrizione delle chiamate e delle modalità di esecuzione azioni di rasa
+* creato una prima story di conversazione, replicabile con queste chiamate (ovviamente quando il server rasa è attivo):
+```bash
+curl -XPOST http://<indirizzo.server.rasa>:<porta.server.rasa>/conversations/wabritest02/parse -d '{"query":"Ciao bot"}'
+```
+```json
+{
+   "next_action":"reply_startConversation",
+   "tracker":{
+      "events":null,
+      "latest_event_time":1531315365.530708,
+      "latest_message":{
+         "entities":[
+
+         ],
+         "intent":{
+            "confidence":0.7679946534126374,
+            "name":"startConversation"
+         },
+         "intent_ranking":[
+            {
+               "confidence":0.7679946534126374,
+               "name":"startConversation"
+            },
+            {
+               "confidence":0.17978330024066333,
+               "name":"fine_conversazione"
+            },
+            {
+               "confidence":0.029311354983737103,
+               "name":"bankAccountsList"
+            },
+            {
+               "confidence":0.022910691362961987,
+               "name":"bankAccountTotalValue"
+            }
+         ],
+         "text":"Ciao bot"
+      },
+      "paused":false,
+      "sender_id":"wabritest02",
+      "slots":{
+
+      }
+   }
+}
+```
+```bash
+curl -XPOST http://<indirizzo.server.rasa>:<porta.server.rasa>/conversations/wabritest02/continue -d '{"executed_action":"reply_startConversation"}'
+```
+```json
+{
+   "next_action":"action_listen",
+   "tracker":{
+      "events":null,
+      "latest_event_time":1531315375.811979,
+      "latest_message":{
+         "entities":[
+
+         ],
+         "intent":{
+            "confidence":0.7679946534126374,
+            "name":"startConversation"
+         },
+         "intent_ranking":[
+            {
+               "confidence":0.7679946534126374,
+               "name":"startConversation"
+            },
+            {
+               "confidence":0.17978330024066333,
+               "name":"fine_conversazione"
+            },
+            {
+               "confidence":0.029311354983737103,
+               "name":"bankAccountsList"
+            },
+            {
+               "confidence":0.022910691362961987,
+               "name":"bankAccountTotalValue"
+            }
+         ],
+         "text":"Ciao bot"
+      },
+      "paused":false,
+      "sender_id":"wabritest02",
+      "slots":{
+
+      }
+   }
+}
+```
+```bash
+curl -XPOST http://<indirizzo.server.rasa>:<porta.server.rasa>/conversations/wabritest02/parse -d '{"query":"lista dei conti"}'
+```
+```json
+{
+   "next_action":"reply_giveConti",
+   "tracker":{
+      "events":null,
+      "latest_event_time":1531315383.569194,
+      "latest_message":{
+         "entities":[
+
+         ],
+         "intent":{
+            "confidence":0.7807691857848044,
+            "name":"bankAccountsList"
+         },
+         "intent_ranking":[
+            {
+               "confidence":0.7807691857848044,
+               "name":"bankAccountsList"
+            },
+            {
+               "confidence":0.0856577328380171,
+               "name":"bankAccountTotalValue"
+            },
+            {
+               "confidence":0.07901958209217798,
+               "name":"fine_conversazione"
+            },
+            {
+               "confidence":0.05455349928500059,
+               "name":"startConversation"
+            }
+         ],
+         "text":"lista dei conti"
+      },
+      "paused":false,
+      "sender_id":"wabritest02",
+      "slots":{
+
+      }
+   }
+}
+```
+```bash
+curl -XPOST http://<indirizzo.server.rasa>:<porta.server.rasa>/conversations/wabritest02/continue -d '{"executed_action":"reply_giveConti"}'
+```
+```json
+{
+   "next_action":"action_listen",
+   "tracker":{
+      "events":null,
+      "latest_event_time":1531315392.082046,
+      "latest_message":{
+         "entities":[
+
+         ],
+         "intent":{
+            "confidence":0.7807691857848044,
+            "name":"bankAccountsList"
+         },
+         "intent_ranking":[
+            {
+               "confidence":0.7807691857848044,
+               "name":"bankAccountsList"
+            },
+            {
+               "confidence":0.0856577328380171,
+               "name":"bankAccountTotalValue"
+            },
+            {
+               "confidence":0.07901958209217798,
+               "name":"fine_conversazione"
+            },
+            {
+               "confidence":0.05455349928500059,
+               "name":"startConversation"
+            }
+         ],
+         "text":"lista dei conti"
+      },
+      "paused":false,
+      "sender_id":"wabritest02",
+      "slots":{
+
+      }
+   }
+}
+```
+* Ho cominciato a creare i vari intents su cui lavorare, aggiornando di conseguenza le azioni che defe fare il bot e l'aggiunta delle stories
