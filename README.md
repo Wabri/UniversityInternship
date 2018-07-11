@@ -193,12 +193,12 @@ Express server listening on port 9001 in development mode
 ![rasaCoreServerWorkWithPostRequest.png](resources/rasaCoreServerWorkWithPostRequest.png)
 
 ## Day 25 [10/07/18] : 6,5 ore
-[:point_left:](#day-24-050718--6-ore) [:point_right:]()
+[:point_left:](#day-24-050718--6-ore) [:point_right:](#day-26-110718--55-ore)
 * Provato a usare la macchina virtuale [Oracle](https://www.virtualbox.org/) con [debian 9 base](https://www.debian.org/) per eseguire il server rasa_core
 * Non avendo trovato un modo per effetturare una comunicazione con l'esterno ho abbandonato la vm e usato il mio pc con linux debian 9, modificando alcune impostazioni di [rasa](https://github.com/Wabri/BVChatBot/tree/master/RASA_IA) sono riuscito a comunicare da pc windows tramite post (vedi [chiamata post](https://github.com/Wabri/BVChatBot/blob/master/RASA_IA/README.MD#post-request-eseguire-il-curl))
 * Non sono riuscito a effettuare la stessa chiamata all'interno dello script [index.js](https://github.com/Wabri/BVChatBot/blob/issue-rasanlu/index.js), ancora non ho capito perchè
 
-## Day 26 [11/07/18] : ... ore
+## Day 26 [11/07/18] : 5,5 ore
 [:point_left:](#day-25-100718--65-ore) [:point_right:]()
 * Risolto il problema della post da client usando la libreria visionmedia [superagent](http://visionmedia.github.io/superagent/#test-documentation) (vedi repository: [github](https://github.com/visionmedia/superagent))
 * Modificato l'index del frontend [BVChatBot](https://github.com/Wabri/BVChatBot) con una descrizione delle chiamate e delle modalità di esecuzione azioni di rasa
