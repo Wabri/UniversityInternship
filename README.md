@@ -203,7 +203,7 @@ Express server listening on port 9001 in development mode
 * Risolto il problema della post da client usando la libreria visionmedia [superagent](http://visionmedia.github.io/superagent/#test-documentation) (vedi repository: [github](https://github.com/visionmedia/superagent))
 * Modificato l'index del frontend [BVChatBot](https://github.com/Wabri/BVChatBot) con una descrizione delle chiamate e delle modalità di esecuzione azioni di rasa
 * creato una prima story di conversazione, replicabile con queste chiamate (ovviamente quando il server rasa è attivo):
-![cWRP1](#resources/conversationWithRasaParse1.PNG)
+![cWRP1](resources/conversationWithRasaParse1.PNG)
 ![cWRR1](resources/conversationWithRasaReply1.PNG)
 ![cWRP2](resources/conversationWithRasaParse2.PNG)
 ![cWRR2](resources/conversationWithRasaReply2.PNG)
