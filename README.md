@@ -199,4 +199,5 @@ Express server listening on port 9001 in development mode
 * Non sono riuscito a effettuare la stessa chiamata all'interno dello script [index.js](https://github.com/Wabri/BVChatBot/blob/issue-rasanlu/index.js), ancora non ho capito perchè
 
 ## Day 26 [11/07/18] : ... ore
+[:point_left:](#day-25-100718--65-ore) [:point_right:]()
 * Risolto il problema della post da client usando la libreria visionmedia [superagent](http://visionmedia.github.io/superagent/#test-documentation) (vedi repository: [github](https://github.com/visionmedia/superagent))
