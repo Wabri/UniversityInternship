@@ -211,7 +211,7 @@ Express server listening on port 9001 in development mode
 ![cWRR2](resources/conversationWithRasaReply2.PNG)
 * Ho cominciato a creare i vari intents su cui lavorare, aggiornando di conseguenza le azioni che defe fare il bot e l'aggiunta delle stories
 
-## Day 27 [12/07/18] : ... ore
+## Day 27 [12/07/18] : 6 ore
 * Scritta la parte di comunicazione nel frontend per poter eseguire la comunicazione con rasa:
 
 ![cD1](resources/conversationDefault1.png)
@@ -219,6 +219,8 @@ Express server listening on port 9001 in development mode
 ![cD2](resources/conversationDefault2.png)
 
 ![cD3](resources/conversationDefault3.png)
+
+* Generata una conversazione più complessa vedi repo [BVChatBot](https://github.com/Wabri/BVChatBot)
 
 ### Fine Diario
 Clicca questo [:point_up:](#universityinternship) per tornare all'inizio del diario.
