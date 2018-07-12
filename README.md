@@ -211,5 +211,11 @@ Express server listening on port 9001 in development mode
 ![cWRR2](resources/conversationWithRasaReply2.PNG)
 * Ho cominciato a creare i vari intents su cui lavorare, aggiornando di conseguenza le azioni che defe fare il bot e l'aggiunta delle stories
 
+## Day 27 [12/07/18] : ... ore
+* Scritta la parte di comunicazione nel frontend per poter eseguire la comunicazione con rasa:
+![cD1](conversationDefault1.png)
+![cD2](conversationDefault2.png)
+![cD3](conversationDefault3.png)
+
 ### Fine Diario
 Clicca questo [:point_up:](#universityinternship) per tornare all'inizio del diario.
