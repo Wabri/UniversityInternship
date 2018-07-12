@@ -213,8 +213,11 @@ Express server listening on port 9001 in development mode
 
 ## Day 27 [12/07/18] : ... ore
 * Scritta la parte di comunicazione nel frontend per poter eseguire la comunicazione con rasa:
+
 ![cD1](resources/conversationDefault1.png)
+
 ![cD2](resources/conversationDefault2.png)
+
 ![cD3](resources/conversationDefault3.png)
 
 ### Fine Diario
