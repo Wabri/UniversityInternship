@@ -210,3 +210,5 @@ Express server listening on port 9001 in development mode
 ![cWRP2](resources/conversationWithRasaParse2.PNG)
 ![cWRR2](resources/conversationWithRasaReply2.PNG)
 * Ho cominciato a creare i vari intents su cui lavorare, aggiornando di conseguenza le azioni che defe fare il bot e l'aggiunta delle stories
+
+[:point_up:](#universityinternship)
