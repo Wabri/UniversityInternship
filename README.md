@@ -1,6 +1,6 @@
 # UniversityInternship
 
-[:point_down:](#day-26-110718--55-ore)
+Clicca questo [:point_down:](#day-26-110718--55-ore) per andare alla fine del diario.
 
 <!-- HC.jar start -->
 ## Totale ore e giorni di tirocinio
@@ -211,4 +211,4 @@ Express server listening on port 9001 in development mode
 ![cWRR2](resources/conversationWithRasaReply2.PNG)
 * Ho cominciato a creare i vari intents su cui lavorare, aggiornando di conseguenza le azioni che defe fare il bot e l'aggiunta delle stories
 
-[:point_up:](#universityinternship)
+Clicca questo [:point_up:](#universityinternship) per tornare all'inizio del diario.
