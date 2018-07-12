@@ -1,5 +1,7 @@
 # UniversityInternship
 
+[:point_down:](#day-26-110718--55-ore)
+
 <!-- HC.jar start -->
 ## Totale ore e giorni di tirocinio
 | Mese | Ore | Giorni  |
@@ -16,8 +18,6 @@
 <!-- HC.jar end -->
 
 # Diario
-
-[:point_down:](#day-26-110718--55-ore)
 
 ## Day 01 [02/05/18] : 5,5 ore
 [:point_left:](#universityinternship) [:point_right:](#day-02-030518--65-ore)
