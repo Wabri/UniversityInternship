@@ -212,7 +212,7 @@ Express server listening on port 9001 in development mode
 * Ho cominciato a creare i vari intents su cui lavorare, aggiornando di conseguenza le azioni che defe fare il bot e l'aggiunta delle stories
 
 ## Day 27 [12/07/18] : 6 ore
-[:point_left:](#day-26-110718--55-ore) [:point_right:](#day-28-170718--...-ore)
+[:point_left:](#day-26-110718--55-ore) [:point_right:](#day-28-170718--6-ore)
 * Scritta la parte di comunicazione nel frontend per poter eseguire la comunicazione con rasa:
 
 ![cD1](resources/conversationDefault1.png)
@@ -223,9 +223,11 @@ Express server listening on port 9001 in development mode
 
 * Generata una conversazione più complessa vedi repo [BVChatBot](https://github.com/Wabri/BVChatBot)
 
-## Day 28 [17/07/18] : ... ore
+## Day 28 [17/07/18] : 6 ore
 [:point_left:](#day-27-120718--6-ore) [:point_right:]()
 * Risoluzione di alcuni bug nel codice [BVChatBot](https://github.com/Wabri/BVChatBot)
+* Modifica delle azioni del backend rasa core, ora tutte le azioni che fa sono determinate da classi python definite [qui](https://github.com/Wabri/BVChatBot/blob/master/RASA_IA/bot.py)
+* Modificato il frontend in modo da prevedere la risposta e inviarla all'utente che ha effettuato la chiamata
 
 ### Fine Diario
 Clicca questo [:point_up:](#universityinternship) per tornare all'inizio del diario.
