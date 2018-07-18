@@ -224,14 +224,14 @@ Express server listening on port 9001 in development mode
 * Generata una conversazione più complessa vedi repo [BVChatBot](https://github.com/Wabri/BVChatBot)
 
 ## Day 28 [17/07/18] : 6 ore
-[:point_left:](#day-27-120718--6-ore) [:point_right:](#day-29-180718--6-ore)
+[:point_left:](#day-27-120718--6-ore) [:point_right:](#day-29-180718--3-ore)
 * Risoluzione di alcuni bug nel codice [BVChatBot](https://github.com/Wabri/BVChatBot)
 * Modifica delle azioni del backend rasa core, ora tutte le azioni che fa sono determinate da classi python definite [qui](https://github.com/Wabri/BVChatBot/blob/master/RASA_IA/bot.py)
 * Modificato il frontend in modo da prevedere la risposta e inviarla all'utente che ha effettuato la chiamata
 
-## Day 28 [18/07/18] : 6 ore
+## Day 29 [18/07/18] : 3 ore
 [:point_left:](#day-28-170718--6-ore) [:point_right:]()
-* Create new action for rasa core
+* Create new action for rasa CORE and edit configuration of intent for rasa NLU
 
 ### Fine Diario
 Clicca questo [:point_up:](#universityinternship) per tornare all'inizio del diario.
