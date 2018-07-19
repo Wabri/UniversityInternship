@@ -230,8 +230,12 @@ Express server listening on port 9001 in development mode
 * Modificato il frontend in modo da prevedere la risposta e inviarla all'utente che ha effettuato la chiamata
 
 ## Day 29 [18/07/18] : 3 ore
-[:point_left:](#day-28-170718--6-ore) [:point_right:]()
-* Create new action for rasa CORE and edit configuration of intent for rasa NLU
+[:point_left:](#day-28-170718--6-ore) [:point_right:](#day-30-190718--3-ore)
+* Create nuove action per rasa CORE e modificate alcune configuration degli intent per rasa NLU
+
+## Day 30 [19/07/18] : 3 ore
+[:point_left:](#day-29-180718--3-ore) [:point_right:]()
+* Create nuove action per rasa CORE e modificate alcune configuration degli intent per rasa NLU
 
 ### Fine Diario
 Clicca questo [:point_up:](#universityinternship) per tornare all'inizio del diario.
