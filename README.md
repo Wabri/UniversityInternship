@@ -235,6 +235,7 @@ Express server listening on port 9001 in development mode
 
 ## Day 30 [19/07/18] : 3 ore
 [:point_left:](#day-29-180718--3-ore) [:point_right:]()
+* Refactor del codice front end [BVChatBot](https://github.com/Wabri/BVChatBot)
 * Create nuove action per rasa CORE e modificate alcune configuration degli intent per rasa NLU
 
 ### Fine Diario
