@@ -6,12 +6,12 @@ Clicca questo [:point_down:](#fine-diario) per andare alla fine del diario.
 ## Totale ore e giorni di tirocinio
 | Mese | Ore | Giorni  |
 | ------------- |:-------------:| -----:|
-| Maggio | 80.0| 13| 
-| Giugno | 53.5| 9| 
-| Luglio | 36.5| 7| 
-| Agosto | 0.0| 0| 
-| Settembre | 0.0| 0| 
-| Totale | 170.0| 29| 
+| Maggio | 80.0| 13|
+| Giugno | 53.5| 9|
+| Luglio | 36.5| 7|
+| Agosto | 0.0| 0|
+| Settembre | 0.0| 0|
+| Totale | 170.0| 29|
 
 #### Ultimo aggiornamento: 18/07/18
 *Questa tabella è autogenerata da HoursCalculator*
@@ -40,23 +40,23 @@ Clicca questo [:point_down:](#fine-diario) per andare alla fine del diario.
 
 ## Day 04 [09/05/18] : 7 ore
 [:point_left:](#day-03-080518--65-ore) [:point_right:](#day-05-100518--4-ore)
-* Creazione di un chatbot locale (vedi repository: [BVChatBot](https://github.com/Wabri/BVChatBot)) 
+* Creazione di un chatbot locale (vedi repository: [ChatBotPayments](https://github.com/Wabri/ChatBotPayments))
 * Creazione di un prototipo di inteligenza artificiale per pagamenti usando [dialogflow](https://dialogflow.com)
 * Tentativo di comprensione del vecchio prototipo (risultato: riesce solo a eseguire un singolo test e a generare un json con le diverse valute europee)
 
 ## Day 05 [10/05/18] : 4 ore
 [:point_left:](#day-04-090518--7-ore) [:point_right:](#day-06-160518--75-ore)
-* Continuato la stesura del codice del chatbot (vedi repository: [BVChatBot](https://github.com/Wabri/BVChatBot))
+* Continuato la stesura del codice del chatbot (vedi repository: [ChatBotPayments](https://github.com/Wabri/ChatBotPayments))
 * Studio degli strumenti usati nella chat: [SpeechRecognition](https://developer.mozilla.org/en-US/docs/Web/API/SpeechRecognition), [Socket.io](https://socket.io/) , [API.AI](https://github.com/dialogflow/dialogflow-nodejs-client-v2)
 
 ## Day 06 [16/05/18] : 7,5 ore
 [:point_left:](#day-05-100518--4-ore) [:point_right:](#day-07-170518--55-ore)
-* Continuato lo studio di AngularJS fino al capitolo 6 (vedi: [AngularJSRepo](https://github.com/Wabri/angularJS-Up-And-Running)) 
+* Continuato lo studio di AngularJS fino al capitolo 6 (vedi: [AngularJSRepo](https://github.com/Wabri/angularJS-Up-And-Running))
 * Continuato lo studio degli strumenti usati nella chat: [SpeechRecognition](https://developer.mozilla.org/en-US/docs/Web/API/SpeechRecognition), [Socket.io](https://socket.io/) , [API.AI](https://github.com/dialogflow/dialogflow-nodejs-client-v2)
 
 ## Day 07 [17/05/18] : 5,5 ore
 [:point_left:](#day-06-160518--75-ore) [:point_right:](#day-08-220518--65-ore)
-* Integrazione di una chat testuale al chatbot (vedi repository: [BVChatBot](https://github.com/Wabri/BVChatBot))
+* Integrazione di una chat testuale al chatbot (vedi repository: [ChatBotPayments](https://github.com/Wabri/ChatBotPayments))
 
 ## Day 08 [22/05/18] : 6,5 ore
 [:point_left:](#day-07-170518--55-ore) [:point_right:](#day-09-230518--65-ore)
@@ -78,17 +78,17 @@ Clicca questo [:point_down:](#fine-diario) per andare alla fine del diario.
 
 ## Day 11 [29/05/18] : 5,5 ore
 [:point_left:](#day-10-240518--65-ore) [:point_right:](#day-12-300518--6-ore)
-* Revisione del codice [exampleJavascriptFrontend](exampleJavascriptFrontend/front) per integrare il codice della chat precedentemente creata [BVChatBot](https://github.com/Wabri/BVChatBot)
-* Il codice [exampleJavascriptFrontend](exampleJavascriptFrontend/front) ha dato problemi quindi mi sono concentrato sulla modifica del [BVChatBot](https://github.com/Wabri/BVChatBot) per fare in modo che esegua una chiamata rest generica per una comunicazione base con [exampleSpringRest](exampleSpringRest/BV-SERVICES-TEST)
+* Revisione del codice [exampleJavascriptFrontend](exampleJavascriptFrontend/front) per integrare il codice della chat precedentemente creata [ChatBotPayments](https://github.com/Wabri/ChatBotPayments)
+* Il codice [exampleJavascriptFrontend](exampleJavascriptFrontend/front) ha dato problemi quindi mi sono concentrato sulla modifica del [ChatBotPayments](https://github.com/Wabri/ChatBotPayments) per fare in modo che esegua una chiamata rest generica per una comunicazione base con [exampleSpringRest](exampleSpringRest/BV-SERVICES-TEST)
 
 ## Day 12 [30/05/18] : 6 ore
 [:point_left:](#day-11-290518--55-ore) [:point_right:](#day-13-310518--65-ore)
-* Continuato la stesura e l'aggiornamento del [BVChatBot](https://github.com/Wabri/BVChatBot)
+* Continuato la stesura e l'aggiornamento del [ChatBotPayments](https://github.com/Wabri/ChatBotPayments)
 * Ho completato il cerchio di comunicazione tra il chatbot, dialogflow e backend (ancora nella fase base [exampleSpringRest](exampleSpringRest/BV-SERVICES-TEST))
 
 ## Day 13 [31/05/18] : 6,5 ore
 [:point_left:](#day-12-300518--6-ore) [:point_right:](#day-14-120618--75-ore)
-* Risolto un bug nel codice [BVChatBot](https://github.com/Wabri/BVChatBot) e successivo miglioramento del codice, il risultato attualmente è: ![Chatbot](resources/prototype.PNG)
+* Risolto un bug nel codice [ChatBotPayments](https://github.com/Wabri/ChatBotPayments) e successivo miglioramento del codice, il risultato attualmente è: ![Chatbot](resources/prototype.PNG)
 * Pubblicato il bot su [heroku](https://www.heroku.com/) all'indirizzo: [https://trainingchatbotbv.herokuapp.com/](https://trainingchatbotbv.herokuapp.com/). in questo modo posso fare training su più dispositivi (per ora funziona solo su chrome)
 * Studiato un modo per utilizzare [rasa_nlu](https://nlu.rasa.com/) per processare i messaggi del bot (vedi repository: [LearningRasaNLU](https://github.com/Wabri/LearningRasa))
 * Creato un esempio di modello di training per l'intelligenza artificiale della chat, creato un server locale e eseguita una semplice chiamata ![rasaCall](resources/rasaCall.PNG)
@@ -115,7 +115,7 @@ Clicca questo [:point_down:](#fine-diario) per andare alla fine del diario.
 
 ## Day 16 [14/06/18] : 3,5 ore
 [:point_left:](#day-15-130618--65-ore) [:point_right:](#day-17-190618--45-ore)
-* Ho modificato il codice del frontend [BVChatBot](https://github.com/Wabri/BVChatBot) per fare in modo che invii richieste a entrambi i backend.
+* Ho modificato il codice del frontend [ChatBotPayments](https://github.com/Wabri/ChatBotPayments) per fare in modo che invii richieste a entrambi i backend.
 * In locale ho eseguito i 2 server creati: rasa_nlu sulla porta 5000 e spring sulla porta 8080; lanciando il frontend sulla porta 9001  ho eseguito 2 richieste: una a rasa e una a spring, entrambe con risultato positivo.
 ```
 >node index.js
@@ -151,19 +151,19 @@ Express server listening on port 9001 in development mode
 * Continuato a studiare [TypeScript](https://www.typescriptlang.org/index.html) seguendo la guida di [html.it](http://www.html.it/guide/guida-typescript/) e aggiornata la repository [LearningTypescript](https://github.com/Wabri/LearningTypescript)
 * Comprensione della struttura interna effettiva per l'azione del pagamento
 * Alcuni esempi di pagamento nell'applicazione web reale e studio dei vari json da dover modificare nella parte di chatbot, necessario per comprendere un modo per intraprendere una conversazione con il bot (quindi per la creazione effettiva delle abilità dell'intelligenza)
-* Creati quindi gli issue: [pagamento a conosciuto](https://github.com/Wabri/BVChatBot/issues/5), [richieste all'intelligenza](https://github.com/Wabri/BVChatBot/issues/6), [pagamento a iban](https://github.com/Wabri/BVChatBot/issues/7)
+* Creati quindi gli issue: [pagamento a conosciuto](https://github.com/Wabri/ChatBotPayments/issues/5), [richieste all'intelligenza](https://github.com/Wabri/ChatBotPayments/issues/6), [pagamento a iban](https://github.com/Wabri/ChatBotPayments/issues/7)
 
 ## Day 18 [20/06/18] : 5,5 ore
 [:point_left:](#day-17-190618--45-ore) [:point_right:](#day-19-210618--75-ore)
 * Continuato a imparare TypeScript (vedi repo: [TypeScript](https://www.typescriptlang.org/index.html))
-* Riscritto il codice di [BVChatBot](https://github.com/Wabri/BVChatBot) in TypeScript
+* Riscritto il codice di [ChatBotPayments](https://github.com/Wabri/ChatBotPayments) in TypeScript
 * Create le prime classi per la comunicazione effettiva dei socket
 
 ## Day 19 [21/06/18] : 7,5 ore
 [:point_left:](#day-18-200618--55-ore) [:point_right:](#day-20-260618--7-ore)
-* Refactor del codice scritto ieri nella repo [BVChatBot](https://github.com/Wabri/BVChatBot)
+* Refactor del codice scritto ieri nella repo [ChatBotPayments](https://github.com/Wabri/ChatBotPayments)
 * Tentativo di utilizzo della chiamata rest per estrapolare l'account e l'effettiva richiesta di pagamento
-* Generati i primi [data set dell'intelligenza artificiale](https://github.com/Wabri/BVChatBot/tree/rasanlu/RASA_IA)
+* Generati i primi [data set dell'intelligenza artificiale](https://github.com/Wabri/ChatBotPayments/tree/rasanlu/RASA_IA)
 * Fatti alcuni test sui modelli creati utilizzando il prototipo del chatbot
 * Spiegazione dell'architettura da usare per l'integrazione nell'applicativo web
 
@@ -177,7 +177,7 @@ Express server listening on port 9001 in development mode
 
 ## Day 22 [28/06/18] : 6 ore
 [:point_left:](#day-21-270618--55-ore) [:point_right:](#day-23-040718--35-ore)
-* Creazione del primo rasa core nel [BVChatBot](https://github.com/Wabri/BVChatBot)
+* Creazione del primo rasa core nel [ChatBotPayments](https://github.com/Wabri/ChatBotPayments)
 * Continuata la stesura degli appunti [LearningRasa](https://github.com/Wabri/LearningRasa)
 
 ## Day 23 [04/07/18] : 3,5 ore
@@ -187,7 +187,7 @@ Express server listening on port 9001 in development mode
 
 ## Day 24 [05/07/18] : 6 ore
 [:point_left:](#day-23-040718--35-ore) [:point_right:](#day-25-100718--65-ore)
-* Continuato la stesura del modello corretto da usare per il bot [BVChatBot](https://github.com/Wabri/BVChatBot)
+* Continuato la stesura del modello corretto da usare per il bot [ChatBotPayments](https://github.com/Wabri/ChatBotPayments)
 * Vari tentativi di esecuzione del server rasa core su macchina windows
 * Decisione di usare una virtual machine (o docker) per l'uso del server rasa core
 * Su macchina linux è completamente funzionante:
@@ -197,13 +197,13 @@ Express server listening on port 9001 in development mode
 ## Day 25 [10/07/18] : 6,5 ore
 [:point_left:](#day-24-050718--6-ore) [:point_right:](#day-26-110718--55-ore)
 * Provato a usare la macchina virtuale [Oracle](https://www.virtualbox.org/) con [debian 9 base](https://www.debian.org/) per eseguire il server rasa_core
-* Non avendo trovato un modo per effetturare una comunicazione con l'esterno ho abbandonato la vm e usato il mio pc con linux debian 9, modificando alcune impostazioni di [rasa](https://github.com/Wabri/BVChatBot/tree/master/RASA_IA) sono riuscito a comunicare da pc windows tramite post (vedi [chiamata post](https://github.com/Wabri/BVChatBot/blob/master/RASA_IA/README.MD#post-request-eseguire-il-curl))
-* Non sono riuscito a effettuare la stessa chiamata all'interno dello script [index.js](https://github.com/Wabri/BVChatBot/blob/issue-rasanlu/index.js), ancora non ho capito perchè
+* Non avendo trovato un modo per effetturare una comunicazione con l'esterno ho abbandonato la vm e usato il mio pc con linux debian 9, modificando alcune impostazioni di [rasa](https://github.com/Wabri/ChatBotPayments/tree/master/RASA_IA) sono riuscito a comunicare da pc windows tramite post (vedi [chiamata post](https://github.com/Wabri/ChatBotPayments/blob/master/RASA_IA/README.MD#post-request-eseguire-il-curl))
+* Non sono riuscito a effettuare la stessa chiamata all'interno dello script [index.js](https://github.com/Wabri/ChatBotPayments/blob/issue-rasanlu/index.js), ancora non ho capito perchè
 
 ## Day 26 [11/07/18] : 5,5 ore
 [:point_left:](#day-25-100718--65-ore) [:point_right:](#day-27-120718--6-ore)
 * Risolto il problema della post da client usando la libreria visionmedia [superagent](http://visionmedia.github.io/superagent/#test-documentation) (vedi repository: [github](https://github.com/visionmedia/superagent))
-* Modificato l'index del frontend [BVChatBot](https://github.com/Wabri/BVChatBot) con una descrizione delle chiamate e delle modalità di esecuzione azioni di rasa
+* Modificato l'index del frontend [ChatBotPayments](https://github.com/Wabri/ChatBotPayments) con una descrizione delle chiamate e delle modalità di esecuzione azioni di rasa
 * creato una prima story di conversazione, replicabile con queste chiamate (ovviamente quando il server rasa è attivo):
 ![cWRP1](resources/conversationRasaParse1.PNG)
 ![cWRR1](resources/conversationRasaReply1.PNG)
@@ -221,12 +221,12 @@ Express server listening on port 9001 in development mode
 
 ![cD3](resources/conversationDefault3.png)
 
-* Generata una conversazione più complessa vedi repo [BVChatBot](https://github.com/Wabri/BVChatBot)
+* Generata una conversazione più complessa vedi repo [ChatBotPayments](https://github.com/Wabri/ChatBotPayments)
 
 ## Day 28 [17/07/18] : 6 ore
 [:point_left:](#day-27-120718--6-ore) [:point_right:](#day-29-180718--3-ore)
-* Risoluzione di alcuni bug nel codice [BVChatBot](https://github.com/Wabri/BVChatBot)
-* Modifica delle azioni del backend rasa core, ora tutte le azioni che fa sono determinate da classi python definite [qui](https://github.com/Wabri/BVChatBot/blob/master/RASA_IA/bot.py)
+* Risoluzione di alcuni bug nel codice [ChatBotPayments](https://github.com/Wabri/ChatBotPayments)
+* Modifica delle azioni del backend rasa core, ora tutte le azioni che fa sono determinate da classi python definite [qui](https://github.com/Wabri/ChatBotPayments/blob/master/RASA_IA/bot.py)
 * Modificato il frontend in modo da prevedere la risposta e inviarla all'utente che ha effettuato la chiamata
 
 ## Day 29 [18/07/18] : 3 ore
@@ -235,8 +235,8 @@ Express server listening on port 9001 in development mode
 
 ## Day 30 [19/07/18] : 3 ore
 [:point_left:](#day-29-180718--3-ore) [:point_right:]()
-* Refactor del codice front end [BVChatBot](https://github.com/Wabri/BVChatBot)
-* Create nuove stories per rasa CORE e scoperto un mega bug per un typo sbagliato nell'intent [endConversation](https://github.com/Wabri/BVChatBot/blob/master/RASA_IA/data/intents/endConversation.json)
+* Refactor del codice front end [ChatBotPayments](https://github.com/Wabri/ChatBotPayments)
+* Create nuove stories per rasa CORE e scoperto un mega bug per un typo sbagliato nell'intent [endConversation](https://github.com/Wabri/ChatBotPayments/blob/master/RASA_IA/data/intents/endConversation.json)
 
 ### Fine Diario
 Clicca questo [:point_up:](#universityinternship) per tornare all'inizio del diario.
