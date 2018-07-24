@@ -240,7 +240,8 @@ Express server listening on port 9001 in development mode
 
 ## Day 31 [24/07/18] : ... ore
 [:point_left:](#day-30-190718--3-ore) [:point_right:]()
-* Refactor del frontend
+* Piccole modifiche al frontend
+* Creato la base a tutte le probabili azioni del bot (vedi [bot.py](https://github.com/Wabri/ChatBotPayments/blob/master/RASA_IA/bot.py)
 
 ### Fine Diario
 Clicca questo [:point_up:](#universityinternship) per tornare all'inizio del diario.
