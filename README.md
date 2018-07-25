@@ -8,12 +8,12 @@ Clicca questo [:point_down:](#fine-diario) per andare alla fine del diario.
 | ------------- |:-------------:| -----:|
 | Maggio | 80.0| 13|
 | Giugno | 53.5| 9|
-| Luglio | 39.5| 8|
+| Luglio | 52.0| 10|
 | Agosto | 0.0| 0|
-| Settembre | 0.0| 0|
-| Totale | 173.0| 30|
+| Settembre | 0.0| 0| 
+| Totale | 185.5| 32|
 
-#### Ultimo aggiornamento: 19/07/18
+#### Ultimo aggiornamento: 25/07/18
 *Questa tabella è autogenerata da HoursCalculator*
 <!-- HC.jar end -->
 
@@ -239,13 +239,14 @@ Express server listening on port 9001 in development mode
 * Create nuove stories per rasa CORE e scoperto un mega bug per un typo sbagliato nell'intent [endConversation](https://github.com/Wabri/ChatBotPayments/blob/master/RASA_IA/data/intents/endConversation.json)
 
 ## Day 31 [24/07/18] : 6,5 ore
-[:point_left:](#day-30-190718--3-ore) [:point_right:](#day-32-250718---ore)
+[:point_left:](#day-30-190718--3-ore) [:point_right:](#day-32-250718-6-ore)
 * Piccole modifiche al frontend
 * Creato la base a tutte le probabili azioni del bot (vedi [bot.py](https://github.com/Wabri/ChatBotPayments/blob/master/RASA_IA/bot.py)
 
-## Day 32 [25/07/18] : --- ore
-[:point_left:](#day-30-190718--3-ore) [:point_right:](#day-32-250718---ore)
+## Day 32 [25/07/18] : 6 ore
+[:point_left:](#day-31-240718--65-ore) [:point_right:]()
 * Aggiornati i training di rasa_nlu con nuovi data set (vedi [intents](https://github.com/Wabri/ChatBotPayments/tree/master/RASA_IA/data/intents))
+* Generata un nuovo set di [stories](https://github.com/Wabri/ChatBotPayments/blob/master/RASA_IA/newStories.md), l'ho fatto perchè la precedente configurazione dava problemi di riconoscimento che ora cercherò di risolvere procedendo con set and test delle storie
 
 ### Fine Diario
 Clicca questo [:point_up:](#universityinternship) per tornare all'inizio del diario.
