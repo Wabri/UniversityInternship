@@ -245,7 +245,7 @@ Express server listening on port 9001 in development mode
 
 ## Day 32 [25/07/18] : --- ore
 [:point_left:](#day-30-190718--3-ore) [:point_right:](#day-32-250718---ore)
-* Aggiornati i training di rasa_nlu con nuovi data set (vedi [bot.py](https://github.com/Wabri/ChatBotPayments/blob/master/RASA_IA/bot.py)
+* Aggiornati i training di rasa_nlu con nuovi data set (vedi [intents](https://github.com/Wabri/ChatBotPayments/tree/master/RASA_IA/data/intents))
 
 ### Fine Diario
 Clicca questo [:point_up:](#universityinternship) per tornare all'inizio del diario.
