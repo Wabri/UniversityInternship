@@ -244,9 +244,13 @@ Express server listening on port 9001 in development mode
 * Creato la base a tutte le probabili azioni del bot (vedi [bot.py](https://github.com/Wabri/ChatBotPayments/blob/master/RASA_IA/bot.py)
 
 ## Day 32 [25/07/18] : 6 ore
-[:point_left:](#day-31-240718--65-ore) [:point_right:]()
+[:point_left:](#day-31-240718--65-ore) [:point_right:](#day-33-260718--5-ore)
 * Aggiornati i training di rasa_nlu con nuovi data set (vedi [intents](https://github.com/Wabri/ChatBotPayments/tree/master/RASA_IA/data/intents))
 * Generata un nuovo set di [stories](https://github.com/Wabri/ChatBotPayments/blob/master/RASA_IA/newStories.md), l'ho fatto perchè la precedente configurazione dava problemi di riconoscimento che ora cercherò di risolvere procedendo con set and test delle storie
+
+## Day 33 [26/07/18] : 5 ore
+[:point_left:](#day-32-250718--6-ore) [:point_right:]()
+* Continuato a lavorare sulle [stories](https://github.com/Wabri/ChatBotPayments/blob/master/RASA_IA/newStories.md), è probabile che stia sbagliando qualcosa dato che se aggiungo nuove stories non riesce più a comprendere come continuare la conversazione
 
 ### Fine Diario
 Clicca questo [:point_up:](#universityinternship) per tornare all'inizio del diario.
