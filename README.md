@@ -6,14 +6,14 @@ Clicca questo [:point_down:](#fine-diario) per andare alla fine del diario.
 ## Totale ore e giorni di tirocinio
 | Mese | Ore | Giorni  |
 | ------------- |:-------------:| -----:|
-| Maggio | 80.0| 13|
-| Giugno | 53.5| 9|
-| Luglio | 52.0| 10|
-| Agosto | 0.0| 0|
+| Maggio | 80.0| 13| 
+| Giugno | 53.5| 9| 
+| Luglio | 57.0| 11| 
+| Agosto | 0.0| 0| 
 | Settembre | 0.0| 0| 
-| Totale | 185.5| 32|
+| Totale | 190.5| 33| 
 
-#### Ultimo aggiornamento: 25/07/18
+#### Ultimo aggiornamento: 26/07/18
 *Questa tabella è autogenerata da HoursCalculator*
 <!-- HC.jar end -->
 
