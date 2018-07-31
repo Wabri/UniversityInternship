@@ -249,8 +249,12 @@ Express server listening on port 9001 in development mode
 * Generata un nuovo set di [stories](https://github.com/Wabri/ChatBotPayments/blob/master/RASA_IA/newStories.md), l'ho fatto perchè la precedente configurazione dava problemi di riconoscimento che ora cercherò di risolvere procedendo con set and test delle storie
 
 ## Day 33 [26/07/18] : 5 ore
-[:point_left:](#day-32-250718--6-ore) [:point_right:]()
+[:point_left:](#day-32-250718--6-ore) [:point_right:](#day-34-310718--45-ore)
 * Continuato a lavorare sulle [stories](https://github.com/Wabri/ChatBotPayments/blob/master/RASA_IA/newStories.md), è probabile che stia sbagliando qualcosa dato che se aggiungo nuove stories non riesce più a comprendere come continuare la conversazione
+
+## Day 34 [31/07/18] : 4,5 ore
+[:point_left:](#day-33-260718--5-ore) [:point_right:]()
+* 
 
 ### Fine Diario
 Clicca questo [:point_up:](#universityinternship) per tornare all'inizio del diario.
