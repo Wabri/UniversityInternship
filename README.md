@@ -254,7 +254,9 @@ Express server listening on port 9001 in development mode
 
 ## Day 34 [31/07/18] : 4,5 ore
 [:point_left:](#day-33-260718--5-ore) [:point_right:]()
-* 
+* Fattorizzate le azioni del bot
+* Create nuove storie
+* Definita l'architettura da usare per bypassare l'autenticazione diretta usando rasa
 
 ### Fine Diario
 Clicca questo [:point_up:](#universityinternship) per tornare all'inizio del diario.
