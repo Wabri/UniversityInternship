@@ -253,10 +253,14 @@ Express server listening on port 9001 in development mode
 * Continuato a lavorare sulle [stories](https://github.com/Wabri/ChatBotPayments/blob/master/RASA_IA/newStories.md), è probabile che stia sbagliando qualcosa dato che se aggiungo nuove stories non riesce più a comprendere come continuare la conversazione
 
 ## Day 34 [31/07/18] : 4,5 ore
-[:point_left:](#day-33-260718--5-ore) [:point_right:]()
+[:point_left:](#day-33-260718--5-ore) [:point_right:](#day-35-010818--..-ore)
 * Fattorizzate le azioni del bot
 * Create nuove storie
 * Definita l'architettura da usare per bypassare l'autenticazione diretta usando rasa
+
+## Day 35 [01/08/18] : .,. ore
+[:point_left:](#day-34-310718--45-ore) [:point_right:]()
+* Fattorizzate le azioni del bot
 
 ### Fine Diario
 Clicca questo [:point_up:](#universityinternship) per tornare all'inizio del diario.
