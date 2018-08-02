@@ -266,8 +266,11 @@ Express server listening on port 9001 in development mode
 
 ## Day 36 [02/08/18] : .,. ore
 [:point_left:](#day-35-010818--65-ore) [:point_right:]()
-* Creata la prima comunicazione rasa server funzionante:
+* Creata la prima comunicazione frontend-rasa-backend-rasa-frontend funzionante:
+
 ![chatAccountList.gif](resources/chatAccountList.gif)
+
+* Definita l'architettura per completare il progetto (mono account, pagamento specifico)
 
 ### Fine Diario
 Clicca questo [:point_up:](#universityinternship) per tornare all'inizio del diario.
