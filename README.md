@@ -259,12 +259,12 @@ Express server listening on port 9001 in development mode
 * Definita l'architettura da usare per bypassare l'autenticazione diretta usando rasa
 
 ## Day 35 [01/08/18] : 6,5 ore
-[:point_left:](#day-34-310718--45-ore) [:point_right:](#day-36-020818--..-ore)
+[:point_left:](#day-34-310718--45-ore) [:point_right:](#day-36-020818--65-ore)
 * Fattorizzate le azioni del bot
 * Aggiornato le dipendenze e di conseguenza creato problemi di creazione server rasa_core
 * Risolto anche se con molti warning da parte del debug
 
-## Day 36 [02/08/18] : .,. ore
+## Day 36 [02/08/18] : 6,5 ore
 [:point_left:](#day-35-010818--65-ore) [:point_right:]()
 * Creata la prima comunicazione frontend-rasa-backend-rasa-frontend funzionante:
 
