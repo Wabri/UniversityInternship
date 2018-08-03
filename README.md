@@ -268,7 +268,7 @@ Express server listening on port 9001 in development mode
 [:point_left:](#day-35-010818--65-ore) [:point_right:]()
 * Creata la prima comunicazione frontend-rasa-backend-rasa-frontend funzionante:
 
-![chatAccountList.gif](resources/chatAccountList.gif)
+![chatAccountList.gif](resources/chatListTest.gif)
 
 * Definita l'architettura per completare il progetto (mono account, pagamento specifico)
 
