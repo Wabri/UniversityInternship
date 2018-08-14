@@ -265,12 +265,16 @@ Express server listening on port 9001 in development mode
 * Risolto anche se con molti warning da parte del debug
 
 ## Day 36 [02/08/18] : 6,5 ore
-[:point_left:](#day-35-010818--65-ore) [:point_right:]()
+[:point_left:](#day-35-010818--65-ore) [:point_right:](#day-37-140818--..-ore)
 * Creata la prima comunicazione frontend-rasa-backend-rasa-frontend funzionante:
 
 ![chatAccountList.gif](resources/chatListTest.gif)
 
 * Definita l'architettura per completare il progetto (mono account, pagamento specifico)
+
+## Day 37 [14/08/18] : .,. ore
+[:point_left:](#day-36-020818--65-ore) [:point_right:]()
+* 
 
 ### Fine Diario
 Clicca questo [:point_up:](#universityinternship) per tornare all'inizio del diario.
