@@ -273,11 +273,16 @@ Express server listening on port 9001 in development mode
 * Definita l'architettura per completare il progetto (mono account, pagamento specifico)
 
 ## Day 37 [14/08/18] : 7 ore
-[:point_left:](#day-36-020818--65-ore) [:point_right:]()
+[:point_left:](#day-36-020818--65-ore) [:point_right:](#day-38-210818--...-ore)
 * Modificato e aggiunto alcune azioni e intenti nel codice del chatbot
 * Ci sono le ultime modifiche da fare prima dell'integrazione
 * Non ho eseguito i test dell'effettivo funzionamento del pagamento tramite chat
 * l'xcrsf e il jsession è necessario inserirli tramite frontend con una chiamata altrimenti non può eseguire le chiamate
+
+## Day 38 [21/08/18] : .,. ore
+[:point_left:](#day-37-140818--7-ore) [:point_right:]()
+* 
+
 
 ### Fine Diario
 Clicca questo [:point_up:](#universityinternship) per tornare all'inizio del diario.
