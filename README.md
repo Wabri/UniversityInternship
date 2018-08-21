@@ -273,15 +273,18 @@ Express server listening on port 9001 in development mode
 * Definita l'architettura per completare il progetto (mono account, pagamento specifico)
 
 ## Day 37 [14/08/18] : 7 ore
-[:point_left:](#day-36-020818--65-ore) [:point_right:](#day-38-210818--...-ore)
+[:point_left:](#day-36-020818--65-ore) [:point_right:](#day-38-210818--75-ore)
 * Modificato e aggiunto alcune azioni e intenti nel codice del chatbot
 * Ci sono le ultime modifiche da fare prima dell'integrazione
 * Non ho eseguito i test dell'effettivo funzionamento del pagamento tramite chat
 * l'xcrsf e il jsession è necessario inserirli tramite frontend con una chiamata altrimenti non può eseguire le chiamate
 
-## Day 38 [21/08/18] : .,. ore
+## Day 38 [21/08/18] : 7,5 ore
 [:point_left:](#day-37-140818--7-ore) [:point_right:]()
-* 
+
+* Aggiornate le azioni di rasa_core
+* Trovato il modo di fare il pagamento, sono 3 chiamate in sequenza: validatePayment (post, dove vengono validate le informazioni del pagamento), transactionProtection (post, viene controllato se il pagamento supera il transaction protection e restituisce il codice per effettuare il pagamento), safePayment (get, viene effettuato infine il pagamento usando il token restituito dalla post precedente)
+* Non sono ancora in grado di effettuare il pagamento tramite rasa, mi mancano alcune informazioni specifiche dell'architettura
 
 
 ### Fine Diario
