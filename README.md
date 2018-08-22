@@ -280,12 +280,19 @@ Express server listening on port 9001 in development mode
 * l'xcrsf e il jsession è necessario inserirli tramite frontend con una chiamata altrimenti non può eseguire le chiamate
 
 ## Day 38 [21/08/18] : 7,5 ore
-[:point_left:](#day-37-140818--7-ore) [:point_right:]()
+[:point_left:](#day-37-140818--7-ore) [:point_right:](#day-39-220818--65-ore)
 
 * Aggiornate le azioni di rasa_core
 * Trovato il modo di fare il pagamento, sono 3 chiamate in sequenza: validatePayment (post, dove vengono validate le informazioni del pagamento), transactionProtection (post, viene controllato se il pagamento supera il transaction protection e restituisce il codice per effettuare il pagamento), safePayment (get, viene effettuato infine il pagamento usando il token restituito dalla post precedente)
 * Non sono ancora in grado di effettuare il pagamento tramite rasa, mi mancano alcune informazioni specifiche dell'architettura
 
+## Day 39 [22/08/18] : 6,5 ore
+[:point_left:](#day-38-210818--75-ore) [:point_right:]()
+
+* Completato il prototipo del bot
+* Il pagamento tramite chat è possibile attualmente solo da destinatari già abilitati (ci ho messo tutto il giorno per capirlo)
+* Ci sono ancora problemi con il microfono
+* Manca l'ultimo passaggio che è quello dell'integrazione
 
 ### Fine Diario
 Clicca questo [:point_up:](#universityinternship) per tornare all'inizio del diario.
