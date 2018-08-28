@@ -300,5 +300,10 @@ Express server listening on port 9001 in development mode
 * Eseguito il merge dei branch di sviluppo di [ChatBotPayments](https://github.com/Wabri/ChatBotPayments)
 * Stesura della documentazione di [ChatBotPayments](https://github.com/Wabri/ChatBotPayments)
 
+## Day 41 [23/08/18] : ... ore
+[:point_left:](#day-40-230818--55-ore) [:point_right:]()
+
+* 
+
 ### Fine Diario
 Clicca questo [:point_up:](#universityinternship) per tornare all'inizio del diario.
