@@ -303,7 +303,7 @@ Express server listening on port 9001 in development mode
 ## Day 41 [28/08/18] : ... ore
 [:point_left:](#day-40-230818--55-ore) [:point_right:]()
 
-* 
+* Iniziata l'integrazione su Revux
 
 ### Fine Diario
 Clicca questo [:point_up:](#universityinternship) per tornare all'inizio del diario.
