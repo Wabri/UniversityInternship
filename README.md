@@ -295,12 +295,12 @@ Express server listening on port 9001 in development mode
 * Manca l'ultimo passaggio che è quello dell'integrazione
 
 ## Day 40 [23/08/18] : 5,5 ore
-[:point_left:](#day-39-220818--65-ore) [:point_right:]()
+[:point_left:](#day-39-220818--65-ore) [:point_right:](#day-41-280818--7-ore)
 
 * Eseguito il merge dei branch di sviluppo di [ChatBotPayments](https://github.com/Wabri/ChatBotPayments)
 * Stesura della documentazione di [ChatBotPayments](https://github.com/Wabri/ChatBotPayments)
 
-## Day 41 [28/08/18] : ... ore
+## Day 41 [28/08/18] : 7 ore
 [:point_left:](#day-40-230818--55-ore) [:point_right:]()
 
 * Iniziata l'integrazione nel sito dove dovrà essere usata la chat
