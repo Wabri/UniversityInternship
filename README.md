@@ -301,9 +301,14 @@ Express server listening on port 9001 in development mode
 * Stesura della documentazione di [ChatBotPayments](https://github.com/Wabri/ChatBotPayments)
 
 ## Day 41 [28/08/18] : 7 ore
-[:point_left:](#day-40-230818--55-ore) [:point_right:]()
+[:point_left:](#day-40-230818--55-ore) [:point_right:](#day-42-290818--5-ore)
 
 * Iniziata l'integrazione nel sito dove dovrà essere usata la chat
+
+## Day 42 [29/08/18] : 5 ore
+[:point_left:](#day-41-280818--7-ore) [:point_right:]()
+
+* Continuata l'integrazione nel sito dove dovrà essere usata la chat
 
 ### Fine Diario
 Clicca questo [:point_up:](#universityinternship) per tornare all'inizio del diario.
