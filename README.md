@@ -306,14 +306,15 @@ Express server listening on port 9001 in development mode
 * Iniziata l'integrazione nel sito dove dovrà essere usata la chat
 
 ## Day 42 [29/08/18] : 5 ore
-[:point_left:](#day-41-280818--7-ore) [:point_right:]()
+[:point_left:](#day-41-280818--7-ore) [:point_right:](#day-43-300818--65-ore)
 
 * Continuata l'integrazione nel sito dove dovrà essere usata la chat
 
-## Day 43 [30/08/18] : .. ore
+## Day 43 [30/08/18] : 6,5 ore
 [:point_left:](#day-42-300818--5-ore) [:point_right:]()
 
 * Studiato un metodo di sostituzione del framework [socket.io](https://socket.io/) con [angular-socket-io](https://github.com/btford/angular-socket-io), decisamente più difficile
+* Effettuato porting nel controller grazie a [angular-socket-io](https://www.npmjs.com/package/angular-socket-io), ora il problema rimane nello script in cui non so come usare il solito socket per comunicare
 
 ### Fine Diario
 Clicca questo [:point_up:](#universityinternship) per tornare all'inizio del diario.
