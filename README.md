@@ -316,10 +316,12 @@ Express server listening on port 9001 in development mode
 * Studiato un metodo di sostituzione del framework [socket.io](https://socket.io/) con [angular-socket-io](https://github.com/btford/angular-socket-io), decisamente più difficile
 * Effettuato porting nel controller grazie a [angular-socket-io](https://www.npmjs.com/package/angular-socket-io), ora il problema rimane nello script in cui non so come usare il solito socket per comunicare
 
-## Day 44 [04/09/18] : .,. ore
+## Day 44 [04/09/18] : 6 ore
 [:point_left:](#day-42-300818--5-ore) [:point_right:]()
 
-* 
+* Continuata l'integrazione
+* Il controller sarà l'unico a gestire sia la chiamata verso rasa che la gestione dell'index usando i moduli di angularjs
+* Ancora non funziona perchè c'è un problema per quanto riguarda l'Access-Control-Allow-Credentials
 
 ### Fine Diario
 Clicca questo [:point_up:](#universityinternship) per tornare all'inizio del diario.
