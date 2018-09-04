@@ -311,13 +311,13 @@ Express server listening on port 9001 in development mode
 * Continuata l'integrazione nel sito dove dovrà essere usata la chat
 
 ## Day 43 [30/08/18] : 6,5 ore
-[:point_left:](#day-42-300818--5-ore) [:point_right:]()
+[:point_left:](#day-42-290818--5-ore) [:point_right:](#day-44-040918--6-ore)
 
 * Studiato un metodo di sostituzione del framework [socket.io](https://socket.io/) con [angular-socket-io](https://github.com/btford/angular-socket-io), decisamente più difficile
 * Effettuato porting nel controller grazie a [angular-socket-io](https://www.npmjs.com/package/angular-socket-io), ora il problema rimane nello script in cui non so come usare il solito socket per comunicare
 
 ## Day 44 [04/09/18] : 6 ore
-[:point_left:](#day-42-300818--5-ore) [:point_right:]()
+[:point_left:](#day-43-300818--65-ore) [:point_right:]()
 
 * Continuata l'integrazione
 * Il controller sarà l'unico a gestire sia la chiamata verso rasa che la gestione dell'index usando i moduli di angularjs
