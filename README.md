@@ -317,11 +317,17 @@ Express server listening on port 9001 in development mode
 * Effettuato porting nel controller grazie a [angular-socket-io](https://www.npmjs.com/package/angular-socket-io), ora il problema rimane nello script in cui non so come usare il solito socket per comunicare
 
 ## Day 44 [04/09/18] : 6 ore
-[:point_left:](#day-43-300818--65-ore) [:point_right:]()
+[:point_left:](#day-43-300818--65-ore) [:point_right:](#day-45-050918--65-ore)
 
 * Continuata l'integrazione
 * Il controller sarà l'unico a gestire sia la chiamata verso rasa che la gestione dell'index usando i moduli di angularjs
 * Ancora non funziona perchè c'è un problema per quanto riguarda l'Access-Control-Allow-Credentials
+
+## Day 45 [05/09/18] : 6,5 ore
+[:point_left:](#day-44-040918--6-ore) [:point_right:]()
+
+* 
+
 
 ### Fine Diario
 Clicca questo [:point_up:](#universityinternship) per tornare all'inizio del diario.
