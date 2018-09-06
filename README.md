@@ -324,9 +324,14 @@ Express server listening on port 9001 in development mode
 * Ancora non funziona perchè c'è un problema per quanto riguarda l'Access-Control-Allow-Credentials
 
 ## Day 45 [05/09/18] : 6,5 ore
-[:point_left:](#day-44-040918--6-ore) [:point_right:]()
+[:point_left:](#day-44-040918--6-ore) [:point_right:](#day-46-060918---ore)
 
 * Completata la fase di integrazione fisica, sussiste però il problema del jsession e del xrftoken che non riesco a passare per problemi di autorizzazioni
+
+## Day 46 [06/09/18] : ore
+[:point_left:](#day-45-050918--65-ore) [:point_right:]()
+
+* refactor del codice
 
 ### Fine Diario
 Clicca questo [:point_up:](#universityinternship) per tornare all'inizio del diario.
