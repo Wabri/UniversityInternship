@@ -10,10 +10,10 @@ Clicca questo [:point_down:](#fine-diario) per andare alla fine del diario.
 | Giugno | 53.5| 9| 
 | Luglio | 61.5| 12| 
 | Agosto | 58.0| 9| 
-| Settembre | 18.5| 3| 
-| Totale | 271.5| 46| 
+| Settembre | 22.0| 4| 
+| Totale | 275.0| 47| 
 
-#### Ultimo aggiornamento: 06/09/18
+#### Ultimo aggiornamento: 11/09/18
 *Questa tabella è autogenerata da HoursCalculator*
 <!-- HC.jar end -->
 
