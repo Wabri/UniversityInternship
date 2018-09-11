@@ -329,9 +329,17 @@ Express server listening on port 9001 in development mode
 * Completata la fase di integrazione fisica, sussiste però il problema del jsession e del xrftoken che non riesco a passare per problemi di autorizzazioni
 
 ## Day 46 [06/09/18] : 6 ore
-[:point_left:](#day-45-050918--65-ore) [:point_right:]()
+[:point_left:](#day-45-050918--65-ore) [:point_right:](#day-47-110918--35-ore)
 
 * refactor del codice
+
+## Day 47 [11/09/18] : 3,5 ore
+[:point_left:](#day-46-060918--6-ore) [:point_right:]()
+
+* Risoluzione problema di compilazione sbagliata del payload di una chiamata.
+* Aggiornamento del codice
+* Ricerca di un modo di speech recognition per angularjs
+* Ricerca di un metodo per il synth voice su angularjs
 
 ### Fine Diario
 Clicca questo [:point_up:](#universityinternship) per tornare all'inizio del diario.
