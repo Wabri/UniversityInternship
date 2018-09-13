@@ -342,17 +342,18 @@ Express server listening on port 9001 in development mode
 * Ricerca di un metodo per il synth voice su angularjs
 
 ## Day 47 [12/09/18] : 6 ore
-[:point_left:](#day-47-110918--35-ore) [:point_right:]()
+[:point_left:](#day-47-110918--35-ore) [:point_right:](#day-48-130918--6-ore)
 
 * Problemi con il porting del server rasa dalla mia macchina al server
 * Problema risolto, l'ultima versione di rasa è incompatibile con i config della precedente versione
 * Creato script e requirement per il server rasa
 * Server rasa ora in ascolto
 
-## Day 48 [13/09/18] : ... ore
-[:point_left:](#day-47-110918--35-ore) [:point_right:]()
+## Day 48 [13/09/18] : 6 ore
+[:point_left:](#day-47-120918--6-ore) [:point_right:]()
 
 * Aggiornamento documentazione della repository [ChatBotPayments](https://github.com/Wabri/ChatBotPayments)
+* Creata la documentazione nel sito ufficiale wiki Best Vision
 
 ### Fine Diario
 Clicca questo [:point_up:](#universityinternship) per tornare all'inizio del diario.
