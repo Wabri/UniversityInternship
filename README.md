@@ -350,10 +350,16 @@ Express server listening on port 9001 in development mode
 * Server rasa ora in ascolto
 
 ## Day 49 [13/09/18] : 6 ore
-[:point_left:](#day-48-120918--6-ore) [:point_right:]()
+[:point_left:](#day-48-120918--6-ore) [:point_right:](#day-48-180918--6-ore)
 
 * Aggiornamento documentazione della repository [ChatBotPayments](https://github.com/Wabri/ChatBotPayments)
 * Creata la documentazione nel sito ufficiale wiki Best Vision
+
+## Day 50 [18/09/18] : 6 ore
+[:point_left:](#day-49-130918--6-ore) [:point_right:]()
+
+* Aggiornato il codice Frontend per fare synth voice e speech recognition
+* Fatta lezione rasa
 
 ### Fine Diario
 Clicca questo [:point_up:](#universityinternship) per tornare all'inizio del diario.
