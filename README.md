@@ -356,10 +356,16 @@ Express server listening on port 9001 in development mode
 * Creata la documentazione nel sito ufficiale wiki Best Vision
 
 ## Day 50 [18/09/18] : 6 ore
-[:point_left:](#day-49-130918--6-ore) [:point_right:]()
+[:point_left:](#day-49-130918--6-ore) [:point_right:](#day-50-190918--4-ore)
 
 * Aggiornato il codice Frontend per fare synth voice e speech recognition
 * Fatta lezione rasa
+
+## Day 51 [19/09/18] : 4 ore
+[:point_left:](#day-50-180918--6-ore) [:point_right:]()
+
+* Fatta seconda lezione rasa
+* Aggiornato il codice del server
 
 ### Fine Diario
 Clicca questo [:point_up:](#universityinternship) per tornare all'inizio del diario.
