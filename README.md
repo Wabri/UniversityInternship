@@ -366,7 +366,7 @@ Express server listening on port 9001 in development mode
 
 * Creato un environment all'interno del server su cui poter far test e modifiche
 
-## Day 52 [19/09/18] : 3 ore
+## Day 52 [20/09/18] : 3 ore
 [:point_left:](#day-51-190918--4-ore) [:point_right:](#fine-diario)
 
 * Fatta seconda lezione rasa
