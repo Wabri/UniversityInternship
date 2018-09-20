@@ -362,7 +362,12 @@ Express server listening on port 9001 in development mode
 * Fatta lezione rasa
 
 ## Day 51 [19/09/18] : 4 ore
-[:point_left:](#day-50-180918--6-ore) [:point_right:]()
+[:point_left:](#day-50-180918--6-ore) [:point_right:](#day-52-200918--3-ore)
+
+* Creato un environment all'interno del server su cui poter far test e modifiche
+
+## Day 52 [19/09/18] : 3 ore
+[:point_left:](#day-51-190918--4-ore) [:point_right:]()
 
 * Fatta seconda lezione rasa
 * Aggiornato il codice del server
