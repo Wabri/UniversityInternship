@@ -1,8 +1,0 @@
-{
-  "common.wait.title": "Wait...",
-  "common.exempio": "COMMON.EXAMPLE",
-  "common.button.close": "Close",
-  "directives.language-select.Language": "Select language",
-  "PAGE_TITLE": "Home Page",
-  "PAGE_CONTENT": "How to translate your AngularJS applications without page reload with angular-translate"
-}

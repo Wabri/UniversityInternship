@@ -6,12 +6,12 @@ Clicca questo [:point_down:](#fine-diario) per andare alla fine del diario.
 ## Totale ore e giorni di tirocinio
 | Mese | Ore | Giorni  |
 | ------------- |:-------------:| -----:|
-| Maggio | 80.0| 13| 
-| Giugno | 53.5| 9| 
-| Luglio | 61.5| 12| 
-| Agosto | 58.0| 9| 
-| Settembre | 47.0| 9| 
-| Totale | 300.0| 52| 
+| Maggio | 80.0| 13|
+| Giugno | 53.5| 9|
+| Luglio | 61.5| 12|
+| Agosto | 58.0| 9|
+| Settembre | 47.0| 9|
+| Totale | 300.0| 52|
 
 #### Ultimo aggiornamento: 20/09/18
 *Questa tabella è autogenerata da HoursCalculator*
@@ -68,23 +68,23 @@ Clicca questo [:point_down:](#fine-diario) per andare alla fine del diario.
 [:point_left:](#day-08-220518--65-ore) [:point_right:](#day-10-240518--65-ore)
 * Studio di Rasa NLU nei docs della pagina ufficiale [rasa](https://rasa.com/)
 * Studio dell'architettura MVC con servizi Rest e [spring boot](https://spring.io/guides)
-* Studio di un esempio spring e vari test usando swagger (vedi directory:  [exampleSpringRest](exampleSpringRest/BV-SERVICES-TEST))
+* Studio di un esempio spring e vari test usando swagger
 
 ## Day 10 [24/05/18] : 6,5 ore
 [:point_left:](#day-09-230518--65-ore) [:point_right:](#day-11-290518--55-ore)
-* Ricerca di un esempio di chat [exampleJavascriptFrontend](exampleJavascriptFrontend/front)
-* Tentativi di esecuzione di una comunicazione locale tra back-end [exampleSpringRest](exampleSpringRest/BV-SERVICES-TEST) e front-end [exampleJavascriptFrontend](exampleJavascriptFrontend/front)
-* Problemi con la comunicazione spring boot e grunt, la richiesta inviata tramite front-end non veniva accettata dal back-end in localhost quindi è stato necessario inserire una configurazione globale che potesse consentire lo scambio di dati, vedi [configurazione qui](https://github.com/Wabri/UniversityInternship/blob/9f6834eef8cebb01c19f8a1ecb02c40055c31d40/exampleSpringRest/BV-SERVICES-TEST/src/main/java/ch/bestvision/serv/config/WebConfig.java#L11)
+* Ricerca di un esempio di chat
+* Tentativi di esecuzione di una comunicazione locale tra back-end
+* Problemi con la comunicazione spring boot e grunt, la richiesta inviata tramite front-end non veniva accettata dal back-end in localhost quindi è stato necessario inserire una configurazione globale che potesse consentire lo scambio di dati
 
 ## Day 11 [29/05/18] : 5,5 ore
 [:point_left:](#day-10-240518--65-ore) [:point_right:](#day-12-300518--6-ore)
-* Revisione del codice [exampleJavascriptFrontend](exampleJavascriptFrontend/front) per integrare il codice della chat precedentemente creata [ChatBotPayments](https://github.com/Wabri/ChatBotPayments)
-* Il codice [exampleJavascriptFrontend](exampleJavascriptFrontend/front) ha dato problemi quindi mi sono concentrato sulla modifica del [ChatBotPayments](https://github.com/Wabri/ChatBotPayments) per fare in modo che esegua una chiamata rest generica per una comunicazione base con [exampleSpringRest](exampleSpringRest/BV-SERVICES-TEST)
+* Revisione del codice frontend per integrare il codice della chat precedentemente creata [ChatBotPayments](https://github.com/Wabri/ChatBotPayments)
+* Il codice frontend ha dato problemi quindi mi sono concentrato sulla modifica del [ChatBotPayments](https://github.com/Wabri/ChatBotPayments) per fare in modo che esegua una chiamata rest generica per una comunicazione base
 
 ## Day 12 [30/05/18] : 6 ore
 [:point_left:](#day-11-290518--55-ore) [:point_right:](#day-13-310518--65-ore)
 * Continuato la stesura e l'aggiornamento del [ChatBotPayments](https://github.com/Wabri/ChatBotPayments)
-* Ho completato il cerchio di comunicazione tra il chatbot, dialogflow e backend (ancora nella fase base [exampleSpringRest](exampleSpringRest/BV-SERVICES-TEST))
+* Ho completato il cerchio di comunicazione tra il chatbot, dialogflow e backend
 
 ## Day 13 [31/05/18] : 6,5 ore
 [:point_left:](#day-12-300518--6-ore) [:point_right:](#day-14-120618--75-ore)
