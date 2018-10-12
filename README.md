@@ -89,7 +89,7 @@ Clicca questo [:point_down:](#fine-diario) per andare alla fine del diario.
 ## Day 13 [31/05/18] : 6,5 ore
 [:point_left:](#day-12-300518--6-ore) [:point_right:](#day-14-120618--75-ore)
 * Risolto un bug nel codice [ChatBotPayments](https://github.com/Wabri/ChatBotPayments) e successivo miglioramento del codice, il risultato attualmente è: ![Chatbot](resources/prototype.PNG)
-* Pubblicato il bot su [heroku](https://www.heroku.com/) all'indirizzo: [https://trainingchatbotbv.herokuapp.com/](https://trainingchatbotbv.herokuapp.com/). in questo modo posso fare training su più dispositivi (per ora funziona solo su chrome)
+* Pubblicato il bot su [heroku](https://www.heroku.com/) all'indirizzo: [https://trainingchatbotbv.herokuapp.com/](https://trainingchatbotbv.herokuapp.com/) (non più aggiornato e mantenuto). in questo modo posso fare training su più dispositivi (per ora funziona solo su chrome)
 * Studiato un modo per utilizzare [rasa_nlu](https://nlu.rasa.com/) per processare i messaggi del bot (vedi repository: [LearningRasaNLU](https://github.com/Wabri/LearningRasa))
 * Creato un esempio di modello di training per l'intelligenza artificiale della chat, creato un server locale e eseguita una semplice chiamata ![rasaCall](resources/rasaCall.PNG)
 
