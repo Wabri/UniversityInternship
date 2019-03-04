@@ -239,7 +239,7 @@ Express server listening on port 9001 in development mode
 * Create nuove stories per rasa CORE e scoperto un mega bug per un typo sbagliato nell'intent [endConversation](https://github.com/Wabri/ChatBotPayments/blob/master/RASA_IA/data/intents/endConversation.json)
 
 ## Day 31 [24/07/18] : 6,5 ore
-[:point_left:](#day-30-190718--3-ore) [:point_right:](#day-32-250718-6-ore)
+[:point_left:](#day-30-190718--3-ore) [:point_right:](#day-32-250718--6-ore)
 * Piccole modifiche al frontend
 * Creato la base a tutte le probabili azioni del bot (vedi [bot.py](https://github.com/Wabri/ChatBotPayments/blob/master/RASA_IA/bot.py)
 
